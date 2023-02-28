@@ -8,9 +8,9 @@
 
 - odprti računalniški sistemi - računalnik,
 
--  komunikacijski sistemi - router,
+- komunikacijski sistemi - router,
 
--  vgrajeni sistemi - projektor.
+- vgrajeni sistemi - projektor.
 
 Za izvajanje forenzične preiskave ni dovolj znanje, ampak se zahteva certificiranost osebja, organizacije, laboratorija, ...
 
@@ -114,8 +114,38 @@ Pomembna razlika med preiskovanjem in analizo podatkov:
 
 - informacija kot dokaz
 
+### Naloge izvedenca
 
+- predstavitev dokaznega gradiva:
+  
+  - ne podleči vplivom
+  
+  - odklanjati prezgodaj postavljene teorije
+  
+  - raba znanstvene resnice za potrebe pravnega procesa
 
+- ACM code of ethics
 
+- IEEE code of ethics
 
+### Sprejemljivost gradiva
 
+Pet osnovnih pravil:
+
+1. relevantnost gradiva za primer
+
+2. avtentičnost grradiva (zajem, sledljivost)
+
+3. niso govorice (heresay)
+
+4. najboljši možen dokaz
+
+5. dokazno gradivo brez potrebe ne napeljuje na zakljčke
+
+Nalog za preiskavo
+
+### Stopnje zanesljivosti
+
+(1) skoraj zagotovo, (2) zelo vrjetno, (3) vrjetno, (4) zelo možno, (5) možno
+
+# Predavanje 2
