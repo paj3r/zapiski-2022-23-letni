@@ -94,7 +94,7 @@ Pomembna razlika med preiskovanjem in analizo podatkov:
 
 2. osebek (subjekt) zločina -> zločin je bil narejen nad računalnikom
 
-3. orodje za pripravo in/ali izvedbo zločina -> kopiranje dokumentov
+3. orodje za pripravo in/ali izvedbo zločina(instrument) -> kopiranje dokumentov
 
 4. uporaba po svojih lastnostih v sločinu (symbol) -> ponujanje storitev ali zmožnosti storitev : dobitki na borzi, ...
 
