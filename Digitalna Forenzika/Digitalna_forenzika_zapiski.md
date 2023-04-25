@@ -1791,3 +1791,471 @@ Zaustavitev sistema:
 - **VEDNO OCENIMO TEHNIČNE SPOSOBNOSTI STORILCA**
 
 ![](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\turn_off_machine.jpg)
+
+
+
+
+
+
+
+
+
+# Izzivi
+
+
+
+## Windows datotečni sistemi
+
+
+
+
+
+### Opišite uporabo orodja dd za skrivanje datotek v drugih
+
+Primarna vloga ukaza dd je pretvorba in kopiranje datotek. Lahko jo uporabljamo za skrivanje datotek v drugih datotekah. Primer:
+
+dd zastavice:
+
+- bs (block size) - povečamo, če je podatkov veliko in želimo večjo hitrost
+
+- if (input file) - vhodna datoteka
+
+- of (output file) - izhodna datoteka
+
+- seek n (skip) - preskoči n blokov
+
+- conv (convert) - spremeni datoteko glede na comma seperated symbol list
+
+```shell
+$ cat catpic
+
+ ^ ^
+>'.'<
+(U U)
+$ wc -c # need this later to extract image
+18 catpic
+
+$ cat diskimage
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore
+magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea
+```
+
+ Nato sliko umestimo v diskimage z odmikom 100
+
+```shell
+$ dd if=catpic of=diskimage bs=1 seek=100 conv=notrunc
+18+0 records in
+18+0 records out
+18 Bytes (18B) copied, 8.5e-05 seconds, 212 kB/s
+```
+
+Da pogledamo, če je slika znotraj diskimage, jo ekstrahiramo
+
+```shell
+$ cat diskimage
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore
+ ^ ^
+>'.'<
+(U U)
+iqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea
+
+$dd if=diskimage bs=1 skip=100 count=18 2>/dev/null
+
+ ^ ^
+>'.'<
+(U U)
+```
+
+
+
+### Uporaba orodja dd za razkosane datoteke
+
+Porobno kot v zgornjem primeru, le da moramo veliko datoteko razkosati. To naredimo z ukazom *split*:
+
+```shell
+split myfile # če je datoteka dolga 3000 vrstic,
+# bodo izhodne datoteke xaa, xab in xac dolge vsaka 1000 vrstic.
+
+
+split -l 500 myfile seg # Izhod tega bo 6 500-vrstic dolgih datotek:
+# sega, segb, segc, segd, sege, segf
+
+
+split -b 40k myfile seg # Če je datoteka dolga 160KB, bo vsaka datoteka
+# sega, segb, segc, segd dolga 40KB
+```
+
+
+
+### Poiščite orodje anadisk in poglejte, kaj zna in zmore početi
+
+Anadisk je orodje za analizo disket. Uporablja se pri forenzični analizi disket.
+
+Omogoča:
+
+- Varnostni pregled disket za nepravilnosti pri shranjevanju
+
+- Dupliciranje disket, ki so ne-standardne ali imajo nepravilnosti pri shranjevanju
+
+- Urejevanje disket na fizičnem sektoprskem nivoju
+
+- Iskanje podatkov na disketi v tradicionalnih ali ne-tradicionalnih mestih
+
+- Formatiranje disket na ne-tradicionalne načine, da se ponazori skrivanje datotek.
+
+### Kakšna je struktura MBR?
+
+MBR ali master boot record je poseben tip zagonskega sektorja na začetku particioniranega medija za shranjevanje. Hrani informacije, kako so diskovni sektorji ali bloki porazdeljeni v particije. Vsaka particija vsebuje podatkovni sistem. MBR tudi shranjuje executable kodo, ki deluje kot nalagalnik za operacijski sistem. Ta MBR koda se imenuje tudi Boot Loader ali zagonski nalagalnik.
+
+Struktura MBR omogoča največje naslovnljivi prostor 2TiB \~2 TB. Uporablja 32-bitno aritmetiko in sektorje velike 512-Bytov.
+
+### Preverite konfiguracijo vašega diska
+
+Na Linux komanda:
+
+```shell
+df -H # H naredi izhod human-readable
+```
+
+Na windows:
+
+1. Windows key + R
+
+2. MSINFO32
+
+3. Components > Storage > Devices (standardne informacije) / Disks (napredne informacije)
+
+Notri so vse informacije o disku.
+
+### Sami poglejte, kako izgleda FAT na vašem disku. Poglejte še posebej tiste gruče, ki so prazne - niso del nobenega datotečnega sistema
+
+Primer sestave 16- bitnega FAT sistema (FAT16)![FAT.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\FAT.jpg)
+
+### Poiščite v svojem NTFS sistemu gruče, ki so prazne (neuporabljene) in nato poglejte njihovo vsebino
+
+
+
+
+
+### Katere gruče sestavljajo vašo datoteko? Poiščite zaseden a uporabljen del vaše datoteke (na akterih gručah) in kaj je v njem?
+
+Datoteka je en podatek v datotečnem sistemu, ki ga lahko uporabniki uporabljajo in urejajo. Mora imeti unikatno ime v svojem imeniku. Sestavljena je iz enega ali večih tokov bajtov, ki vsebujejo relevantne podatke plus lastnosti (attributes/properties) - čas urejanja, kreiranja. Vsaka gruča v datoteki ima svojo virtualno številko gruče (VCN - virtual cluster number), ki je relativna odmiku od začetka datoteke. Te gruče so samo relativne.
+
+### Kaj se zgodi, če naredimo 1000 datotek, jih nato 1000 pobrišemo in delamo naprej?
+
+Prostor, ki so ga datoteke rezervirale, bo še vedno zapisan na disku, izbrisali se bodo samo logična sposobnost dostopa do teh podatkov. Gruče, ki so bile rezervirane za te datoteke bodo sedaj zopet na voljo.
+
+### Najdite datoteko, ki ima čas tvorjenja večji od časa zadnje spremembe
+
+To se lahko zgodi z datotekami, ki smo jih kopirali. Ko kopiramo datoteko, je čas kreiranja enak času modificiranja, trenutni datum pa postane čas kreiranja.
+
+##### kaj lahko rečete, če ima nakdo takšno datoteko na sistemu in ima čas zadnjega dostopa enak času tvorjenja?
+
+Da je bila datoteka samo kopirana, ni pa bila odprta.
+
+### Kaj je to EMF način tiskanja? Kaj se v tem primeru shrani v datoteki tiskalniške vrste (spool)?
+
+EMF ali Enhanced Medafile sestavljajo navodila za klice GDI funkcij. GDI funkcije tiskalni procesor, da renderira slike ki jih lahko tiskamo. EMF je neodvisna od sistema, in je lahko hitrejša od RAW podatkov.
+
+### Namestite Sleuthkit in AutopsyBrowser in poiščite izgubljene datoteke.
+
+
+
+
+
+### Preverite format evt datoteke in poglejte, kdaj ste se prijavili v sistem
+
+EVT datoteka je Windowsova datoteka za ogled dnevnika dogodkov.
+V start napišemo "Event viewer"
+
+![Event viewer.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\Event%20viewer.jpg)
+
+### Preverite forenzično vrednost podatkov v registru
+
+Lahko preverimo:
+
+- Transakcijske zabeležke registrarja (.LOG) - dejanski entryji v registrarju
+
+- Transakcijski register transakcijskih dnevnikov (.TxR) - task scheduler
+
+- Izbrisani vnosi v registerske "panje" - hives
+
+- Varnostne kopije sistemskih panjev (REGBACK)
+
+- Panji, ki so varnostno kopirani z System Restore.
+
+### Poiščite kakšne ostanke v svoje predpomnilniku in jih preverite z zgodovino brskanja
+
+Notri so podatki o brskanju in piškotkih, v disku pa so lahko shranjeni predogledi slik ipd.
+
+![](C:\Users\Pajer\AppData\Roaming\marktext\images\2023-04-25-18-02-23-image.png)
+
+### Preverite kakšne vse sledi pušča brskalnik IE, kakšne Mozilla in kakšne Opera
+
+
+
+
+
+## Unix datotečni sistemi
+
+
+
+### Čemu je namenjen zapis reclen? Se to da izkoristiti za skrivanje podatkov?
+
+
+
+
+
+### Kaj je to ACL? Kako je implementiran pri ufs?
+
+
+
+
+
+### Poiščite sktukturo nadbloka. Kako vemo, da imamo opravka z UFS datotečnim sistemom? kje to piše? Preberite superblock z vašega unix datotečnega sistema in v njem ugotovite, za kateri dadotečni sistem gre.
+
+
+
+
+
+### Poiščite strukturo nadbloka ext2. Primerjajte jo s strukturo UFS superbloka
+
+
+
+
+
+### Preučite strukturo nadbloka. Pridobite blok iz svojega datotečnega sistema in komentirajne njegovo vsebino.
+
+
+
+
+
+### Kako dobiti nazaj izbrisano datoteko v sistemu ext2 in kako v ext3? Kaj pa v UFS?
+
+
+
+
+
+### naredite podrobno analizo za omenjene sisteme (reiserFS, XFS, gfs, afs, ext4, HSM) kot smo jo narediti za UFS in ext.
+
+
+
+
+
+### Primerjajte opisanje datotečne sisteme med seboj - v katerem lahko kje skrijemo kakšne podatke?
+
+
+
+
+
+### Katera orodja so na Helix CD? Podobni sistemi njemu.
+
+
+
+
+
+## Osnove računalniških omrežij za potrebe forenzike
+
+
+
+
+
+### Preverite kateri računalniki so v vaši mreži. Kako lahko uporabimo protokol v forenzični preiskavi? Kako s protokolom in še kakšnim orodjem sledimo dogodkom v naši mreži?
+
+
+
+
+
+### Preglejte svoj sistem in preverite, katere vse storitve nudi okolica?
+
+
+
+
+
+### Orodje tcpdump omogoča hranjenje zajetih podatkov in kasnejšo raziskavo. Slednjo lahko naredimo z orodjem wireshark. Preverite
+
+
+
+
+
+### Poiščite orodja za preiskovanje omrežja s protokolom snmp in preiščite svojo okolico.
+
+
+
+
+
+### Poiščite z ustreznim okoljem svoj strežnik DNS storitve in preglejte, kaj vse hrani
+
+
+
+
+
+### Zajeli ste naslednji paket na omrežju:
+
+09:13:01.839003 IP (tos 0x10, ttl 64, id 13571,
+
+offset 0, flags [DF], proto TCP (6), length 180)
+
+    [www.brodnik.org.ssh>](http://www.brodnik.org.ssh>)
+
+AndyMac.gotska.brodnik.org.53845: Flags [P.], cksum
+
+0xf181 (correct), seq 1108696419:1108696547, ack
+
+2653946897, win 1040, options [nop, nop, TS val
+
+2247733168 ecr 1042469077], length 128
+
+#### Komentirajne vsebino in kdo komu pošilja
+
+
+
+
+
+### Kako se v resnici imenuje DNS storitev v sockstat tabeli?
+
+
+
+
+
+### Če dodamo kakšen vnos v /etc/services tabeli, ali se kdaj spremeni pri sockstat, netstat, tcpdump?
+
+
+
+
+
+### Kako operacijski sistem poveže aplikacijo z vrati storitev? Kako se to naredi na Windows, na FreeBSD in Linux?
+
+
+
+
+
+### Kateri protokol ima številko vrat 50 in zakaj se uporablja?
+
+
+
+
+
+### Kakšni so formati vseh treh etc datotek - hosts, protocols, services?
+
+
+
+
+
+### kaj je to cifs / smb? V kateri datoteki bi iskali njegovo definicijo?
+
+
+
+
+
+### Iskanje podatkov o domeni gov.si ne bo težko. Kaj pa o kakšni drugi, tuji domeni?
+
+
+
+
+
+### Našli smo naslednje pakete, ki jih komentiranjte, upoštevajte vire informacij, ki smo jih spoznali:
+
+14:59:25.608728 IP xx.domain.netbcp.net.52497 >
+
+    valh4.lell.net.ssh: . ack 540 win 16554
+
+14.59.26.610602 IP resolver.lell.net.domain >
+
+    valh4.lell.net.24151: 4278 1/0/0 (73)
+
+14:59:26:611262 IP valh4.lell.net.38527 >
+
+    resolver.lell.net.domain: 26364+ PTR?
+
+    244.207.104.10.in-addr.arpa. (45)
+
+
+
+
+
+
+
+## Mobilne naprave
+
+
+
+
+
+### Katere podatke še vse vsebuje SIM kartica (razen MCC, MNC, serijska)?
+
+
+
+
+
+### Kaj je to LAI in kaj je IMSI?
+
+
+
+
+
+### Kaj vsebuje vaša SIM kartica? Kakšne so vrednosti teh podatkov? Kakšna je identifikacijska številka mobilne naprave?
+
+
+
+
+
+### Poiščite geografske podatke v vašem telefonu
+
+
+
+
+
+### Poiščite koledarske podatke v vašem telefonu
+
+
+
+
+
+### Kako deluje MobileSpy?
+
+
+
+
+
+### Programje, ki nam lahko škoduje na Android sistemu in iPhone?
+
+
+
+
+
+### Preučite orodje DFF in kako se ga uporablja?
+
+
+
+
+
+### Poiščite SMIL datoteko in jo preučite
+
+
+
+
+
+### Kako bi dostopili do podatkov na vaši SIM kartici?
+
+
+
+
+
+### Ali se hrani celotna zgodovina GPRS usmerjanja?
+
+
+
+
+
+### Naštejte EF, v katere lahko piše uporabnik
+
+
+
+
+
+### Recimo, da se je zgodil zločin v predavalnici, v avli, v računalnici, ... Naredite načrt zavarovanja mesta digitalnega zločina
