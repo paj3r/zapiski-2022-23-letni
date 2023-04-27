@@ -1229,7 +1229,7 @@ Sloji referenčnega modela OSI: fizični, povezavni, mrežni, transportni, sejni
   
   - drugi načini
 
-![](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\mobile_shutdown.jpg)
+![](.\slike\mobile_shutdown.jpg)
 
 - Umakniti pomnilniške module
   
@@ -1461,7 +1461,7 @@ Poznamo več vrst zaporedij kriminalnih preiskav: Casey 2004, DFRWS 2001, NIJ 20
 
 - ni enosmeren tok, ampak se lahko vračamo na prejšnje faze
 
-![](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\Stopnicast.jpg)
+![](.\slike\Stopnicast.jpg)
 
 ### Procesni modeli preisakve - model toka podatkov
 
@@ -1471,7 +1471,7 @@ Poznamo več vrst zaporedij kriminalnih preiskav: Casey 2004, DFRWS 2001, NIJ 20
 
 - celotna veriga dogodkov
 
-![](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\Tok_podatkov.jpg)
+![](.\slike\Tok_podatkov.jpg)
 
 ### Procesni modeli preiskave - (pod)fazni model
 
@@ -1529,7 +1529,7 @@ Poznamo več vrst zaporedij kriminalnih preiskav: Casey 2004, DFRWS 2001, NIJ 20
 
 - FORZA - vsak udečeženec ima določeno vlogo v procesu
 
-![](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\FORZA.jpg)
+![](.\slike\FORZA.jpg)
 
 ### Zbiranje podatkov
 
@@ -1790,25 +1790,11 @@ Zaustavitev sistema:
 
 - **VEDNO OCENIMO TEHNIČNE SPOSOBNOSTI STORILCA**
 
-![](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\turn_off_machine.jpg)
-
-
-
-
-
-
-
-
+![](.\slike\turn_off_machine.jpg)
 
 # Izzivi
 
-
-
 ## Windows datotečni sistemi
-
-
-
-
 
 ### Opišite uporabo orodja dd za skrivanje datotek v drugih
 
@@ -1870,8 +1856,6 @@ $dd if=diskimage bs=1 skip=100 count=18 2>/dev/null
 (U U)
 ```
 
-
-
 ### Uporaba orodja dd za razkosane datoteke
 
 Porobno kot v zgornjem primeru, le da moramo veliko datoteko razkosati. To naredimo z ukazom *split*:
@@ -1888,8 +1872,6 @@ split -l 500 myfile seg # Izhod tega bo 6 500-vrstic dolgih datotek:
 split -b 40k myfile seg # Če je datoteka dolga 160KB, bo vsaka datoteka
 # sega, segb, segc, segd dolga 40KB
 ```
-
-
 
 ### Poiščite orodje anadisk in poglejte, kaj zna in zmore početi
 
@@ -1933,13 +1915,9 @@ Notri so vse informacije o disku.
 
 ### Sami poglejte, kako izgleda FAT na vašem disku. Poglejte še posebej tiste gruče, ki so prazne - niso del nobenega datotečnega sistema
 
-Primer sestave 16- bitnega FAT sistema (FAT16)![FAT.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\FAT.jpg)
+Primer sestave 16- bitnega FAT sistema (FAT16)![FAT.jpg](.\slike\FAT.jpg)
 
 ### Poiščite v svojem NTFS sistemu gruče, ki so prazne (neuporabljene) in nato poglejte njihovo vsebino
-
-
-
-
 
 ### Katere gruče sestavljajo vašo datoteko? Poiščite zaseden a uporabljen del vaše datoteke (na akterih gručah) in kaj je v njem?
 
@@ -1963,16 +1941,12 @@ EMF ali Enhanced Medafile sestavljajo navodila za klice GDI funkcij. GDI funkcij
 
 ### Namestite Sleuthkit in AutopsyBrowser in poiščite izgubljene datoteke.
 
-
-
-
-
 ### Preverite format evt datoteke in poglejte, kdaj ste se prijavili v sistem
 
 EVT datoteka je Windowsova datoteka za ogled dnevnika dogodkov.
 V start napišemo "Event viewer"
 
-![Event viewer.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Digitalna%20Forenzika\slike\Event%20viewer.jpg)
+![Event viewer.jpg](.\slike\Event%20viewer.jpg)
 
 ### Preverite forenzično vrednost podatkov v registru
 
@@ -1990,109 +1964,195 @@ Lahko preverimo:
 
 ### Poiščite kakšne ostanke v svoje predpomnilniku in jih preverite z zgodovino brskanja
 
-Notri so podatki o brskanju in piškotkih, v disku pa so lahko shranjeni predogledi slik ipd.
+V memory so podatki o brskanju in piškotkih, v disku pa so lahko shranjeni predogledi slik ipd.
 
-![](C:\Users\Pajer\AppData\Roaming\marktext\images\2023-04-25-18-02-23-image.png)
+Primer pri mozilla:
+
+![](.\slike\mozilla.png)
+
+Primer memory pri mozilla:
+
+![](.\slike\mozilla-memory.png)
+
+Podobno je tudi pri disk, razen, da je podatkov več in večji so.
 
 ### Preverite kakšne vse sledi pušča brskalnik IE, kakšne Mozilla in kakšne Opera
 
-
-
-
+TODO: mislim, da puščajo za sabo podobne podatke.
 
 ## Unix datotečni sistemi
 
+### Čemu je namenjen zapis reclen pri UFS imeniškem vnosu? Se to da izkoristiti za skrivanje podatkov?
 
-
-### Čemu je namenjen zapis reclen? Se to da izkoristiti za skrivanje podatkov?
-
-
-
-
+Zapis *reclen* nam pove, kakšna je dolžina tega zapisa. Verjetno, lahko reclen zmanjšamo, in tako skrijemo podatke, ki niso pod okriljem te dolžine zapisa. Ti podatki s tem razlogom "plavajo" v disku in o nedostopni, razen, če spremenimo *reclen*, tega inode zapisa.
 
 ### Kaj je to ACL? Kako je implementiran pri ufs?
 
+ACL (Access control lists), nam omogočajo, da imeniku ali datoteki podamo bolj specifične množice dovoljenj (permissions), brez, da bi (nujno) spreminjali bazno lastništvo ali dovoljenja. Omogočajo, da se na datoteke ali imenike "pripne" dostop az druge uporabnike ali skupine uporabnikov.
 
+Pru *ufs* je implementirana z komando *setfacl*.
 
+Vnosi ACL pri ufs so sledeči:
 
+```shell
+entry-type: [uid|gid]:perms
+```
 
-### Poiščite sktukturo nadbloka. Kako vemo, da imamo opravka z UFS datotečnim sistemom? kje to piše? Preberite superblock z vašega unix datotečnega sistema in v njem ugotovite, za kateri dadotečni sistem gre.
+kjer:
 
+- entry-type: tip ACL vnosa, na katerega bi vnesli pravice datoteke (user, mask)
 
+- uid: uporabniško ime ali uporabniški ID (User ID)
+
+- gid: ime skupine ali ID skupine (Group ID)
+
+- perms: Katera dovoljenja ima entry-type. Lahko z *rwx*, ali osmiško številko (isti format kot pri *chmod*).
+
+### Poiščite sktukturo nadbloka. Kako vemo, da imamo opravka z UFS datotečnim sistemom? kje to piše? Preberite superblock z vašega unix datotečnega sistema in v njem ugotovite, za kateri datotečni sistem gre.
+
+V nadbloku se shranjuje veliko informacij o podatkovnem sistemu,  kot so naprimer:
+
+- Velikost in status podatkovnega sistema
+
+- Značka (label) - podatkovnega sistema in imena volumna
+
+- Velikost logičnega bloka podatkovnega sistem
+
+- Datum in čas zadnje posodobitve
+
+- Velikost cilindrične skupine
+
+- Število podatkovnik blokov v cilindrični skupini
+
+- Povzetek podatkovni blok (Summary data block)
+
+- Stanje podatkovnega sistema: *clean, stable, active*
+
+- Pot do prejšnje bhodne točke (mounting point)
+
+Nadblok lahko pogledamo z uporabo komande:
+
+```shell
+root@localhost: dumpe2fs -h /dev/xvda1
+dumpe2fs 1.42.9 (4-Feb-2014)
+Filesystem volume name:   cloudimg-rootfs
+Last mounted on:          /
+Filesystem UUID:          f75f9307-27dc-4af8-87b7-f414c0fe280f
+Filesystem magic number:  0xEF53
+Filesystem revision #:    1 (dynamic)
+Filesystem features:      has_journal ext_attr resize_inode dir_index filetype needs_recovery extent flex_bg sparse_super large_file huge_file uninit_bg dir_nlink extra_isize
+Filesystem flags:         signed_directory_hash
+Default mount options:    (none)
+Filesystem state:         clean
+Errors behavior:          Continue
+Filesystem OS type:       Linux
+Inode count:              6553600
+Block count:              26212055
+Reserved block count:     1069295
+Free blocks:              20083290
+Free inodes:              6470905
+First block:              0
+Block size:               4096
+Fragment size:            4096
+Reserved GDT blocks:      505
+Blocks per group:         32768
+Fragments per group:      32768
+Inodes per group:         8192
+Inode blocks per group:   512
+Flex block group size:    16
+Filesystem created:       Sat Sep 27 13:05:57 2014
+Last mount time:          Mon Feb  2 14:43:31 2015
+Last write time:          Sat Sep 27 13:06:55 2014
+Mount count:              4
+Maximum mount count:      20
+Last checked:             Sat Sep 27 13:05:57 2014
+Check interval:           15552000 (6 months)
+Next check after:         Thu Mar 26 13:05:57 2015
+Lifetime writes:          305 GB
+Reserved blocks uid:      0 (user root)
+Reserved blocks gid:      0 (group root)
+First inode:              11
+Inode size:              256
+Required extra isize:     28
+Desired extra isize:      28
+Journal inode:            8
+First orphan inode:       396056
+Default directory hash:   half_md4
+Directory Hash Seed:      2124542b-ea2f-4552-afaa-c5720283d2cd
+Journal backup:           inode blocks
+Journal features:         journal_incompat_revoke
+Journal size:             128M
+Journal length:           32768
+Journal sequence:         0x0151d29d
+Journal start:            11415<span style="font-size:16px;">
+</span>
+```
 
 
 
 ### Poiščite strukturo nadbloka ext2. Primerjajte jo s strukturo UFS superbloka
 
+Oba imata podobno strukturo, glavne razlike pa so:
 
+- Velikost: Velikost UFS nadbloka je 32 bytov, velikost ext nadbloka pa je 1024 bytov.
 
+- Lokacija:Pri UFS je nadblok lociran na zažetku podatkovnega sistema (pod boot block), prri ext2 pa je na fiksnem odmiku začetka podatkovnega sistema.
 
+- Vasnostne kopije: UFS ima več varnostnih kopij nadbloka podazdeljenih po sistemu, ext2 pa ima samo eno na fiksni lokaciji.
 
-### Preučite strukturo nadbloka. Pridobite blok iz svojega datotečnega sistema in komentirajne njegovo vsebino.
+- Polja: UFS vsebuje polja (npr. povzetek cilindrične skupine, inode in bločna bitna slika), ki jih ext2 nima.
 
+- Kontrolna vsota: UFS nadblok vključuje kontrolno vsoto, medtem, ko jo ext2 ne.
 
-
-
+Oba nadbloka igrata podobno vlogo, le da imata drugačni implementaciji.
 
 ### Kako dobiti nazaj izbrisano datoteko v sistemu ext2 in kako v ext3? Kaj pa v UFS?
 
+Pri ext2 ni možno pridobiti nazaj izbrisano datoteko, brez bralnega dostopa do dejanske naprave, na kateri je bila shranjena datoteka - moraš imeti root dostop.
 
+Nazaj lahko datoteko dobimo z orodjem TestDisk ali pa "na roke". Obastajata dva nalčina:
 
+- Modificiramo obstoječ datotečni sistem, tako, da imajo izbrisanim inodom odstranimo "deleted" zastavico v upanju, da bodo podatki nazaj.
 
+- Bolj varna, a počasnejša metoda je, da pogledamo, kje se podatki nahajajo v datotečnem sistemu in te podatke zapišemo v drug datotečni sistem.
+
+Pri ext3 dobivanje nazaj izbrisanih datotek ni možno, saj je to varnostna funkcija. Naše najboljše upanje je da *grep*-amo dele datoteke in upamo na najboljše.
+
+Pri UFS je podatke možno dobiti nazaj. Obstajajo orodja kot so UFS Explorer in drugi v FTK.
 
 ### naredite podrobno analizo za omenjene sisteme (reiserFS, XFS, gfs, afs, ext4, HSM) kot smo jo narediti za UFS in ext.
 
+- reiserFS - znan po učinkovitim raznanjem z majhnimi podatki in metapodatki. Uporablja uravnoteženo drevo za strukturo za organiziranje podatkov in uporablja dnevnike za konsistentnost in obnovitev podatkov
 
+- XFS - visoko-zmogljiv sistem namenjen skalabinosti in visoki podpori za sočasnost. Podpira velike podatkovne sisteme in je zmožen delom z velikimi datotekami, ter omogoča visoko učinkovitost V/I operacij
 
+- GFS(Global File System) - je porazdeljen datotečni sistem, namejen gručam računalniških sistemov. Omogoča večim napravam dostop do skupnega spomina skočasno, kar omogoča visoko stopnjo dostopnosti in uravnoteženjem bremena.
 
+- AFS (Andrew File System) - tudi za porazdeljene sisteme. Uporablja client-server model in podpira avtentikacijo in enkripcijo za varen dostop do podatkov
+
+- ext4 - izboljšana različina ext3, ki omogoča večje podatkovne sisteme in datoteke, hitrejše preverjanje podatkovnega sistema in boljšo zanesljivost. Vključuje tudi kontrolne vsote dnevnikov, kasnejšo alokacijo in hiter *fsck*
+
+- HSM (Hierarchical Storage Management) - Podatkovna struktura, ki kombinira več tehnologij, da optimizira shranjevanje in pridobivanje podatkov. Manj uporabljene datoteke premakne v počasnejše naprave, bolj uporabljene pa v hitrejše.
 
 ### Primerjajte opisanje datotečne sisteme med seboj - v katerem lahko kje skrijemo kakšne podatke?
 
-
-
-
+Pri nobenem ni priporočeno skrivanje podatkov. Podatke lahko skrijemo v AFS, če modificiramo server in client programje.
 
 ### Katera orodja so na Helix CD? Podobni sistemi njemu.
 
-
-
-
+Najbrš kakšna dobra.
 
 ## Osnove računalniških omrežij za potrebe forenzike
 
-
-
-
-
 ### Preverite kateri računalniki so v vaši mreži. Kako lahko uporabimo protokol v forenzični preiskavi? Kako s protokolom in še kakšnim orodjem sledimo dogodkom v naši mreži?
-
-
-
-
 
 ### Preglejte svoj sistem in preverite, katere vse storitve nudi okolica?
 
-
-
-
-
 ### Orodje tcpdump omogoča hranjenje zajetih podatkov in kasnejšo raziskavo. Slednjo lahko naredimo z orodjem wireshark. Preverite
-
-
-
-
 
 ### Poiščite orodja za preiskovanje omrežja s protokolom snmp in preiščite svojo okolico.
 
-
-
-
-
 ### Poiščite z ustreznim okoljem svoj strežnik DNS storitve in preglejte, kaj vse hrani
-
-
-
-
 
 ### Zajeli ste naslednji paket na omrežju:
 
@@ -2112,51 +2172,19 @@ AndyMac.gotska.brodnik.org.53845: Flags [P.], cksum
 
 #### Komentirajne vsebino in kdo komu pošilja
 
-
-
-
-
 ### Kako se v resnici imenuje DNS storitev v sockstat tabeli?
-
-
-
-
 
 ### Če dodamo kakšen vnos v /etc/services tabeli, ali se kdaj spremeni pri sockstat, netstat, tcpdump?
 
-
-
-
-
 ### Kako operacijski sistem poveže aplikacijo z vrati storitev? Kako se to naredi na Windows, na FreeBSD in Linux?
-
-
-
-
 
 ### Kateri protokol ima številko vrat 50 in zakaj se uporablja?
 
-
-
-
-
 ### Kakšni so formati vseh treh etc datotek - hosts, protocols, services?
-
-
-
-
 
 ### kaj je to cifs / smb? V kateri datoteki bi iskali njegovo definicijo?
 
-
-
-
-
 ### Iskanje podatkov o domeni gov.si ne bo težko. Kaj pa o kakšni drugi, tuji domeni?
-
-
-
-
 
 ### Našli smo naslednje pakete, ki jih komentiranjte, upoštevajte vire informacij, ki smo jih spoznali:
 
@@ -2174,88 +2202,30 @@ AndyMac.gotska.brodnik.org.53845: Flags [P.], cksum
 
     244.207.104.10.in-addr.arpa. (45)
 
-
-
-
-
-
-
 ## Mobilne naprave
-
-
-
-
 
 ### Katere podatke še vse vsebuje SIM kartica (razen MCC, MNC, serijska)?
 
-
-
-
-
 ### Kaj je to LAI in kaj je IMSI?
-
-
-
-
 
 ### Kaj vsebuje vaša SIM kartica? Kakšne so vrednosti teh podatkov? Kakšna je identifikacijska številka mobilne naprave?
 
-
-
-
-
 ### Poiščite geografske podatke v vašem telefonu
-
-
-
-
 
 ### Poiščite koledarske podatke v vašem telefonu
 
-
-
-
-
 ### Kako deluje MobileSpy?
-
-
-
-
 
 ### Programje, ki nam lahko škoduje na Android sistemu in iPhone?
 
-
-
-
-
 ### Preučite orodje DFF in kako se ga uporablja?
-
-
-
-
 
 ### Poiščite SMIL datoteko in jo preučite
 
-
-
-
-
 ### Kako bi dostopili do podatkov na vaši SIM kartici?
-
-
-
-
 
 ### Ali se hrani celotna zgodovina GPRS usmerjanja?
 
-
-
-
-
 ### Naštejte EF, v katere lahko piše uporabnik
-
-
-
-
 
 ### Recimo, da se je zgodil zločin v predavalnici, v avli, v računalnici, ... Naredite načrt zavarovanja mesta digitalnega zločina
