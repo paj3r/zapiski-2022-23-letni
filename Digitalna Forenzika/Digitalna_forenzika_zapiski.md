@@ -1229,7 +1229,7 @@ Sloji referenčnega modela OSI: fizični, povezavni, mrežni, transportni, sejni
   
   - drugi načini
 
-![](.\slike\mobile_shutdown.jpg)
+![](./slike/mobile_shutdown.jpg)
 
 - Umakniti pomnilniške module
   
@@ -1461,7 +1461,7 @@ Poznamo več vrst zaporedij kriminalnih preiskav: Casey 2004, DFRWS 2001, NIJ 20
 
 - ni enosmeren tok, ampak se lahko vračamo na prejšnje faze
 
-![](.\slike\Stopnicast.jpg)
+![](./slike/Stopnicast.jpg)
 
 ### Procesni modeli preisakve - model toka podatkov
 
@@ -1471,7 +1471,7 @@ Poznamo več vrst zaporedij kriminalnih preiskav: Casey 2004, DFRWS 2001, NIJ 20
 
 - celotna veriga dogodkov
 
-![](.\slike\Tok_podatkov.jpg)
+![](./slike/Tok_podatkov.jpg)
 
 ### Procesni modeli preiskave - (pod)fazni model
 
@@ -1529,7 +1529,7 @@ Poznamo več vrst zaporedij kriminalnih preiskav: Casey 2004, DFRWS 2001, NIJ 20
 
 - FORZA - vsak udečeženec ima določeno vlogo v procesu
 
-![](.\slike\FORZA.jpg)
+![](./slike/FORZA.jpg)
 
 ### Zbiranje podatkov
 
@@ -1790,7 +1790,7 @@ Zaustavitev sistema:
 
 - **VEDNO OCENIMO TEHNIČNE SPOSOBNOSTI STORILCA**
 
-![](.\slike\turn_off_machine.jpg)
+![](./slike/turn_off_machine.jpg)
 
 # Izzivi
 
@@ -1915,7 +1915,7 @@ Notri so vse informacije o disku.
 
 ### Sami poglejte, kako izgleda FAT na vašem disku. Poglejte še posebej tiste gruče, ki so prazne - niso del nobenega datotečnega sistema
 
-Primer sestave 16- bitnega FAT sistema (FAT16)![FAT.jpg](.\slike\FAT.jpg)
+Primer sestave 16- bitnega FAT sistema (FAT16)![FAT.jpg](./slike/FAT.jpg)
 
 ### Poiščite v svojem NTFS sistemu gruče, ki so prazne (neuporabljene) in nato poglejte njihovo vsebino
 
@@ -1946,7 +1946,7 @@ EMF ali Enhanced Medafile sestavljajo navodila za klice GDI funkcij. GDI funkcij
 EVT datoteka je Windowsova datoteka za ogled dnevnika dogodkov.
 V start napišemo "Event viewer"
 
-![Event viewer.jpg](.\slike\Event%20viewer.jpg)
+![Event viewer.jpg](./slike/Event%20viewer.jpg)
 
 ### Preverite forenzično vrednost podatkov v registru
 
@@ -1968,11 +1968,11 @@ V memory so podatki o brskanju in piškotkih, v disku pa so lahko shranjeni pred
 
 Primer pri mozilla:
 
-![](.\slike\mozilla.png)
+![](./slike/mozilla.png)
 
 Primer memory pri mozilla:
 
-![](.\slike\mozilla-memory.png)
+![](./slike/mozilla-memory.png)
 
 Podobno je tudi pri disk, razen, da je podatkov več in večji so.
 
