@@ -401,7 +401,7 @@ Orodja za razbijanje in iskanje gesel:
 
 - FATxx je povezan seznam indeksov gruč, v katerih je shranjena posamezna datoteka
 
-- xx pomeni število bitov uporablenih za indeks
+- xx pomeni število bitov uporabljenih za indeks
 
 - O datotekah hrani čas tvorjenja in zadnje spremembe, a le datum zadnjega dostopa
 
@@ -472,6 +472,14 @@ V imeniku lahko obstajajo datoteke z enakimi imeni
   - C:\Windows\Spool\Printers, C:\WinNT\System32\Spool\Printers
   
   - tudi, ko tiskamo spletno vsebino
+
+- Zapisi imajo tri dolžine:
+  
+  - AS - allocation size
+  
+  - FS - file size
+  
+  - VDL - valid data length
 
 ### Kodiranje časa pri datotekah
 
@@ -2088,8 +2096,6 @@ Journal start:            11415<span style="font-size:16px;">
 </span>
 ```
 
-
-
 ### Poiščite strukturo nadbloka ext2. Primerjajte jo s strukturo UFS superbloka
 
 Oba imata podobno strukturo, glavne razlike pa so:
@@ -2146,13 +2152,37 @@ Najbrš kakšna dobra.
 
 ### Preverite kateri računalniki so v vaši mreži. Kako lahko uporabimo protokol v forenzični preiskavi? Kako s protokolom in še kakšnim orodjem sledimo dogodkom v naši mreži?
 
-### Preglejte svoj sistem in preverite, katere vse storitve nudi okolica?
+Postopek je sledeč:
 
-### Orodje tcpdump omogoča hranjenje zajetih podatkov in kasnejšo raziskavo. Slednjo lahko naredimo z orodjem wireshark. Preverite
+- Odpremo command prompt / terminal / ...
+
+- Vpišemo *ipconfig* / *ifconfig*, da dobimo naslov našega računalnika, ter naslov omrežja v katerega smo povezani
+
+- Vpiemo *arp -a*, kar pokaže ARP tabelo, za vse naprave v omrežju na vseh omrežjih.
+
+- Nato lahko uporabimo *nslookup* z IP-jem omrežja, kjer iščemo, da dobimo vse naprave na omrežju
+
+S protokolom SNMP lahko sledimo napravam v omrežju. Preverimo lahko dostopnost vseh naprav z *SNMP PING*. SNMP je namenjen upravljanju omrežja.
+
+Lahko pa opravljamo tudi zajem omrežja z orodjem **Wireshark**, kjer lahko opazujemo vse pakete na omrežju.
 
 ### Poiščite orodja za preiskovanje omrežja s protokolom snmp in preiščite svojo okolico.
 
+Lahko uporabimo SNMP PING, lahko pa uporabimo druge metode, kot na primer Nmap-ovo komando snmp-brute:
+
+```shell
+nmap -sU -p161 --script snmp-brute --script-args snmplist=community.lst 192.168.1.0/24*
+```
+
 ### Poiščite z ustreznim okoljem svoj strežnik DNS storitve in preglejte, kaj vse hrani
+
+DNS strežnik pregledamo z orodjem *nslookup*, ki nam pove podatke o infrastrukturi DNS za naše omrežje.
+
+Komande so sledeče:
+
+![nslookup.png](./slike/nslookup.png)
+
+To so samo osnovne komande.
 
 ### Zajeli ste naslednji paket na omrežju:
 
@@ -2174,17 +2204,85 @@ AndyMac.gotska.brodnik.org.53845: Flags [P.], cksum
 
 ### Kako se v resnici imenuje DNS storitev v sockstat tabeli?
 
+Pomagamo si lahko s tem, da poslušamo promet na vratih, kjer se pogovarja DNS strežnik. ponavadi so ta vrata 53.
+
+```shell
+sockstat -u -l | grep :53
+```
+
+zastavice:
+
+- -u pove, da gledamo UDP povezave
+
+- -l pove, da gledamo poslučalske povezave
+
+- grep :53 - vzamemo samo vrstice, ki vsebujejo ':53' 
+
 ### Če dodamo kakšen vnos v /etc/services tabeli, ali se kdaj spremeni pri sockstat, netstat, tcpdump?
+
+`/etc/services` datoteka se uporablja za pretvarjanje številk vrat v človeško-berljiva imena storitev.
+
+S tem ne vpliva na `sockstat` in `netstat`. pri `tcpdump`, pa se ta imena uporabljajo pri zajemanju paketkov, razen če uporabljamo pri tem samo številke z uporabo `-n` zastavice.
 
 ### Kako operacijski sistem poveže aplikacijo z vrati storitev? Kako se to naredi na Windows, na FreeBSD in Linux?
 
+Pri različnih operacijskih sistemih to naredimo na različne načine:
+
+Windows:
+
+- Dodamo aplikacijo v seznam dovoljenih aplikacij (manj riskantno) - Samo dovoljena aplikacija lahko "odpre luknjo" v požarnem zidu, ko to potrebuje.
+
+- odpremo vrata (bolj riskantno) - Ko odpremo vrata "preluknjamo" požarni zid in s tem lahko kdorkoli dostopa do našega omrežja prek odprtih vrat.
+
+FreeBSD in Lunx:
+
+- Vse poteka prek vtičev (socket API) programično. Najprej vtič kreiramo, nato ga povežemop z vrati, ter poslušamo, ter sprejemamo pakete. Lahko se tudi povežemo z oddaljenimi vrati.
+
+- Lahko odpremo vrata, kar zahteva administratorske pravice.
+
 ### Kateri protokol ima številko vrat 50 in zakaj se uporablja?
+
+Port 50 je dodeljen re-mail-ck (Remote Mail Checking) protokolu. Uporablja se za preverjaje e-mail sporočil med klientom in serverjem. Po navadi bi maajhnen program na klientovi napravi skozi vrata 50 spraševal server, ali je nova e-popšta prispela.
 
 ### Kakšni so formati vseh treh etc datotek - hosts, protocols, services?
 
-### kaj je to cifs / smb? V kateri datoteki bi iskali njegovo definicijo?
+**etc/hosts** - Datoteka, v kateri se mapirajo IP naslovi v gostiteljska imena (host name) ali imena domene:
+
+Format je sledeč: *Addesss HostName*.
+
+- polje *Address* vsebuje IP naslov
+
+- polje *HostName* pa hostname v relativni ali polnem domenskem imenskem formatu.
+
+**etc/protocols** - Datoteka, ki shranjuje informacije o znanih protokolih v uporabi v DARPA Internetu.
+
+Format je sledeč: *official_protocol_name protocol_number aliases*
+
+- *official_protocol_name* - Specificira uradno Internet Protocol ime
+
+- *protocol_number* - Vsebuje številko protokola
+
+- *aliases* - Vsebuje kakršnokoli neuradno ime za protokol
+
+**etc/services** - Datoteka, ki jo uporeabljajo apikacije, da prevedejo človeško-berljiva imena storitev v številke vrat
+
+Format je sledeč: *service-name port/protocol [aliases] [#comment]*
+
+- *service-name* - Ime omrežne naprave npr. Telnet, FTP
+
+- *port/protocol* - Vrata in protokol, ki se uporabljajo pri storitvi npr. 1/TCP
+
+- *alias* - Alternativno ime storitve
+
+- *comment* - Dodaten komentar pri storitvi
 
 ### Iskanje podatkov o domeni gov.si ne bo težko. Kaj pa o kakšni drugi, tuji domeni?
+
+Informacije o drugih domenah so lahko težje za pridobivanje podatkov. Za državne domene npr. .si, .ca, .us, .eu, je odvisno kakšne privatnostne regulacije imajo lastnice teh domen (države). 
+
+Pri registriranju domenskih imenov, lahko registrant uporablja tudi proxy, da zamaskira svojo lokacijo in podatke o njemu.
+
+Za nekatere domene npr. .onion, pa nemoremo narediti whois iskanje, saj te domene niso registrirane na tradicionalni način, ampak se generirajo avtomatsko z uporabo TOR programskega orodja. Zato se informacije o lastniku domene na .onion ne shranjujejo.
 
 ### Našli smo naslednje pakete, ki jih komentiranjte, upoštevajte vire informacij, ki smo jih spoznali:
 
@@ -2202,30 +2300,400 @@ AndyMac.gotska.brodnik.org.53845: Flags [P.], cksum
 
     244.207.104.10.in-addr.arpa. (45)
 
+###### 1. paket
+
+- izvorni IP naslov: xx.domain.netbcp.net
+
+- izvorna vrata: 52497
+
+- ciljni IP naslov: valh4.lell.net
+
+- ciljna vrata: ssh (22)
+
+- Zastavice: ACK (Acknowledgement)
+
+- Acknowledgement number: 540
+
+- Velikost okna: 16554
+
+Paket opiše, da je ciljna naprava sprejela podatkoe do zaporedne številke 540 in velikost okna pove, koliko še podatkov lahko pošlje pošiljatelj, preden se čaka na ponovno potrditev. Verjetno gre za SSH povezavo na server xx.domain.netbcp.net s strani naprave na naslovu valh4.lell.net.
+
+###### 2. paket
+
+- izvorni IP naslov: resolver.lell.net
+
+- izvorna vrata: domain (53)
+
+- ciljni IP naslov: valh4.lell.net
+
+- ciljna vrata: 24151 (22)
+
+- Zastavice: Response
+
+- Odgovor: 1/0/0 (73)
+
+Paket predstavlja odziv DNS poizvedovanja s strani naprave na valh4.lell.net. Odgovor je en brez dodatnih informacij. Iz tega paketka lahko izvemo, da je resolver.lell.net DNS strežnik.
+
+###### 3. paket
+
+- izvorni IP naslov: valh4.lell.net
+
+- izvorna vrata: 38527
+
+- ciljni IP naslov: resolver.lell.net
+
+- ciljna vrata: domain (53)
+
+- Zastavice: Query
+
+- Odgovor: PTR? 244.207.104.10.in-addr.arpa. (45)
+
+Ta paket potrdi, da je resolver.lell.net DNS strežnik. Naprava je poslala reverse DNS lookup zahtevek na DNS strežnik, ki je v paketu predstavljena v napačnem vrstnem redu (10.104.207.244).
+
+Reverse dns lookup se naredi z komando: 
+
+```shell
+dig -t ptr 244.207.104.10.in-addr.arpa 
+```
+
 ## Mobilne naprave
 
 ### Katere podatke še vse vsebuje SIM kartica (razen MCC, MNC, serijska)?
 
+MCC- Mobile country code (386 slovenija)
+
+MNC - Mobile Network code (41 mobitel)
+
+Lahko vsebuje še:
+
+- Identiteto uporabnika
+
+- Lokacijo in tel. številko
+
+- Podatke za mrežno avtorizacijo
+
+- Osebne privatne ključe
+
+- SMS sporočila
+
+- Imenik
+
 ### Kaj je to LAI in kaj je IMSI?
+
+LAI (Location Area Identity) - Vsaka lokacija mobilnega omrežja ima svojo identifikacijsko številko, ki jo imenujemo LAI. Vsaka oddajna postaja ima svoj LAI, ki ga redno prenaša skozi broadcast control channel.
+
+IMSI (International Mobile Subscriber Identity) - Je unikatna številka, ki identificira vsakega uporabnika celičnega omrežja, vsak SIM ima unikaten IMSI. Vsebuje MCC, MNS in MSIN-serijska številka, ki jo ima mobilni operater za identifikacijo posamezne sim.
 
 ### Kaj vsebuje vaša SIM kartica? Kakšne so vrednosti teh podatkov? Kakšna je identifikacijska številka mobilne naprave?
 
 ### Poiščite geografske podatke v vašem telefonu
 
+To lahko dobimo s pomočjo zapiskov, informacij shranjenih v apliakcijah tretjega vira ali pa to vidimo v nastavitvah.
+
+V svojem telefonu imam vklopljen Google Timeline, ki ima shranjene geografske podatke tudi skoi čas.
+
 ### Poiščite koledarske podatke v vašem telefonu
+
+V nekaterih napravah so podatki shranjeni v aplikaciji ali pa v oblaku. Android in iPhone oba omogočata shranjevanje koledarskih poratkov v obblaku. Drugače pa do njih dostopamo preko aplikacij.
 
 ### Kako deluje MobileSpy?
 
+- Najprej moramo program namestiti na telefon, katerega hočemo slediti
+
+- Nato MobileSpy pobira podatke iz telefona, kot so dnevniki klicev, SMS sporočila, GPS lokacija in internetna aktivnost. Lahko se tudi uporablja za zajeme zaslonov, zajem tipkanja, ter dostopa do kamere in mikrofona
+
+- Nato se ti podatki v realnem času pošljejo  strežnik v oblaku
+
+- Uporabniki Lahko nato pogledajo informacije, ki so shranjene v oblaku, če imajo dostop do njih.
+
 ### Programje, ki nam lahko škoduje na Android sistemu in iPhone?
+
+Na sistemu Android je veliko bolj enostavno naložiti programje, ki nam ahko škoduje, saj sistem Android omogoča da namestimo aplikacije tretjega vira in ne nujno iz Google Play store. pri iPhone pa lahko nalagamo samo aplikacije iz trgovine App Store. iPhonei so tudi znani po tem, da imajo bolj restriktivna varnostna dovoljenja.
 
 ### Preučite orodje DFF in kako se ga uporablja?
 
+DFF (Digital Forensics Framework) je multi-platformna in odprtokodna aplikacija, ki ponuja vrsto storitev in je visoko modularna. Cilj je forenzični skupnosti dati pravo ogrodje za uporabo orodij tekom poteka analize.
+
 ### Poiščite SMIL datoteko in jo preučite
+
+SMIL (Synchronised Multimedia Integration Language) je XML markup jezik namenjen predstavi multimetijskkih vsebin. Definira merkup za čas, pstaitev, animacije, prehode in vdelavo multimedijskih vsebin. Najbolj znana aplikacija je SVG slike.
 
 ### Kako bi dostopili do podatkov na vaši SIM kartici?
 
+na iPhone:
+
+- kliknemo na Settings meni
+
+- izberemo "Mobile data"
+
+- izberemo "SIM applications"
+
+na Android:
+
+- kliknemo na Settings
+
+- kliknemo na "About phone"
+
+- kliknemo "Status"
+
+- kliknemo "SIM staus"
+
+Na obeh mestih se skrivajo podatki o napši SIM karici.
+
 ### Ali se hrani celotna zgodovina GPRS usmerjanja?
+
+Telefon sam po sebi ne potrebuje vse zgodovine GPRS usmerjanja, zato je tudi ne shrani. Informacije o usmerjevanju hrani GPRS omrežje. Telefon uporablja signalne protokole za upravljanje seje (sesion) in poskrbi, da se paketi pošiljajo pravilno. Signalne informacije se lahko shranjujejo v telefonu začasno, a se ponavadi ne držijo za dolgo časa.
+
+Lahko pa telefon hrani dnevniške informacije o povezavah GPRS, katerih pa je lahko cela zgodovina.
 
 ### Naštejte EF, v katere lahko piše uporabnik
 
+- EF Phonebook - imenik: Uporabnik lahko v ta EF piše svoje kontakte
+
+- EF SMS: Tu se shranjujejo SMS podatki. Tipično lahko uporabnik v to datoteko piše.
+
+- EF IMSI: Shranjuje IMSI podatke. V nekaterih primerih lahko uporabnik modificira te informacije.
+
+- EF GID: Shranjujeo podatke o uporabnikovem ponudniku storitve in obračunskem načrtu. V nekaterih primerih lahko uporabnik modificira te informacije,.
+
 ### Recimo, da se je zgodil zločin v predavalnici, v avli, v računalnici, ... Naredite načrt zavarovanja mesta digitalnega zločina
+
+Za zavarovanje mesta zločina uporabimo ACPO priporočila za prripravo za delo na mestu digitalnega zločina:
+
+1. Najprej moramo opraviti nadzor dostopov na mesto zločina:
+   
+   - Že obstoječe nadzorne sisteme ugasnemo, da se podatki ohranijo. V našem primeru je to kamere, ki so po fakulteti.
+   
+   - Žična in brezžična omrežja ugasnemo, da ne pride do nehotenega ali drugega dostopa, ki bi lahko "kvaril" dokaze. V našem primeru je to brezžično omrežje eduroam in druga brezžična in žična omrežja na fakulteti.
+
+2- Nato zamrznemo mesto zločina:
+
+- Dokaze premišemo z ustreznimi napravami, te jih podpišemo in pravilno shranimo. npr. najdemo USB ključ na mestu zločina, ga zapakiramo v ustrezno embalažo, podpišemo, ...
+
+- Zavarujemo oddaljene podatke, v našem primeru podatki, ki so v oblaku ali na stžnkih, ki niso na fakulteti, npr. spletna učilnica.
+
+- Zavarujemo nedigitalne dokaze v našem pimeru npr. prstni odtis.
+
+# Prejšnji testi
+
+### Pri hišni preiskavi smo našli prižgan, a zaklenjen računalnik. Predpostavljamo, da je tudi disk zašifriran. Kako lahko postopamo? Utemeljite odgovor.
+
+![turn_off_machine.jpg](C:\Users\ivopa\OneDrive\Dokumente\GitHub\zapiski-2022-23-zimski\Digitalna%20Forenzika\slike\turn_off_machine.jpg)
+
+Najprej pregledamo okolico, če je slučajno na mestu dokaza kakšno geslo za bodisi odklep računalnika, ali pa enkripcijski ključ računalnika, saj nam to delo mnogo olajša.
+
+Odvisno od enkripcije diska lahko ključ dobimo tudi z "brute force" metodo. Če je kriptiran z DES, to ni velik problem, saj imamo metode za hito razbitje te enkripcije, če pa je zakodiran z AES, pa to težko naredimo. Izvedemo lahko npr. napad z hladnim zagonom (cold-boot attack), ki poskuša izkoristiti lastnosti DRAM-a, da lahko dobimo posnetem RAM-a in s tem tudi ključ za dekripcijo.
+
+Podatke laahko dobimo tudi, če se bomo prijavili v sistem kot administrator in s tem lahko odklenili zakodirane podatke. To lahko naredimo bodisi z ugibanjem ali pa kakšno drugo "hekersko" metodo, kot so razni znani "expoiti", ki nam dobijo administratorske pravice. 
+
+### Za to, da je dokazno gradivo sprejemljivo na sodišču, mora zadoščati patim osnovnim pravilom. 1. katera so ta? Utemeljite za vsako od pravil, zakaj mu mora dokazno gradivo zadočati. 2. za tri pravila navedite primer, ko gradivo ne zadoča glede na to pravilo.
+
+###### 1.
+
+- Relevantnost gradiva za primer. Če je gradivo relevantno, lahko prepriča žirijo o napačnem zaključku
+
+- avtentičnost gradiva (zajem, sledljivost). Če gradivo ni avtentično, je lahko neznanega izvora in je lahko nerelevantno za primer.
+
+- niso govorice (dokaz sam niso govorice, če ni govorec prisoten). Govorice niso podkrepljene s konkretnimi dokazi, lahko spravijo do napačnih zaključkov.
+
+- najboljši možen dokaz (original in kopija). Če je dokaz slab, spet lahko privede do napačnih zaključkov.
+
+- dokazno gradivo brez potrebe ne napeljuje na zaključke. Če je možnost, da gradivo ne napeljuje na zaključek, se mora tudi to upoštevati.
+
+###### 2.
+
+avtentičnost: Zajeli smo trdi disk, a ga nismo pravilno hranili, zato se je v raziskavi zamenjal z drugim trdim diskom, ki ni relevanten.
+
+Relevantnost gradiva za primer. Naprimer najdemo dokaze, da je osumljenec prakticiral satanizem in ta dokaz uporabi tožilec na sodišču. To naredi samo zato da prepriča žirijo, da je slab človek. prikažemo napačne zapisnike youtuba...
+
+Najboljši možen dokaz: V kopiranju dokaza so se zgodile napake in dokaz ni več dovolj dober za zaključke.
+
+### Peter Zmeda sumi, da mu je nekdo vrinil virus v zagonski ram-disk (initial ram dist, initrd). 1. Je sploh to mogoče? Če ne zakaj? Če da, kako? 2. Peter bi se rad znebil initrd-ja. Je to sploh mogoče? Če ne zakaj? Če ja, kako?
+
+###### 1.
+
+initrd je datoteka v imeniku /mnt/, zato lahko notri zapišemo karkoli, če imamo administratorski dostop. Moral bi narediti svojo initr datoteko. Z uporabo orodij kot so unmakeinitramfs & mkinitramfs, ki zapakirajo našo kodo v initramfs image.
+
+###### 2.
+
+Peter lahko zamenja star okužen initrd z novim initrd iz spletne strani proizvajalca njegove distribucije Linux sistema. Lahko pa tudi nastavi nov initrd. To naredi tako, da konfigurira in compila krenel sam.
+
+### Peter Zmeda je dobil v preiskavo disk z datotečnim sistemom XFS. Da ne bi uničil podatkov, ga je priklopil samo za branje (-o ro). Nato je skopiral vse datoteke. 1. Katere podatke je uničil? 2. Na katere podatke je pozabil? 3. Kako bi moral disk v resnici pregledati? Zapišite zaporedje ukazov in vsakega utemeljite.
+
+###### 1.
+
+Lahko ej uničil podatke o zadnjem dostopu do datotek an disku, število priklopov diska, zadlje priklapljanje diska, ...
+
+###### 2.
+
+Lahko je pozabil skopirati skrite datoteke in metapodatke
+
+###### 3.
+
+Disk bi moral samo priklopiti in ne mountati (vklopiti). potem bi moral izračunati varnostno vsoto za priklopljeno napravo, skopirati napravo v surovo datoteko z uporabo dd ali cat oz. kakršnega koli drugega namenskega orodja, ki ne spremeni vsebine datotek in nato še izračunati varnostno vsoto kopije, ki bi morala biti enaka varnostni vsoti originalnega diska. Nato bi moral originalno disk odklopiti in raziskovaje nadaljevati na kopiji diska.
+
+```shell
+sha512sum /dev/disk
+cat /dev/disk > kopija.img
+modprobe nbd max_part=32
+qemu-nbd /dev/nbd0p1 kopija.img
+mount /dev/nbd0p1 /mnt/disk
+```
+
+### Čemu je enako število možnih vnosov tabele FAT? Utemeljite odgovor.
+
+Število možnih vnosov je enako maksimalnemu številu gruč na nosilcu. To izračunamo tako, da velikost diska delimo z velikostjo gruče. Pove nam koliko različnih gruč lahko ima disk. Se pravi če imamo 1GB disk in 4kB (FAT 12) velikost gruče to pomeni 262144 vnosov v FAT tabelo.
+
+Velikost gruče: 512B do 8kB za FAT12, 512B do 64kB za FAT16 in 512B do 32kB za FAT32,
+
+Velikost diska: največ $cluster\_size * 2^{xx}$
+
+### Dnevniški zapisi so se pojavlili kot del datotečnega sistema iz več razlogov. 1. Opišite vsaj eno težavo, ki jo dnevniški zapisi odpravljajo na sistemu. Kako? 2. Pri dnevniških zapisih ext datotečnega sistema obstajajo 4 vrste blokov. Katere? 3. Dva od štirih blokov nikoli ne nastopita hkrati v isti transakciji. Katera in zakaj? 4. skicirajte particijo in označite, kje se v njej nahajajo dnevniški zapisi.
+
+###### 1.
+
+Omogočajo popravljanje nekonsistentnosti v datotekah, ki nastanejo ob izpadu elektrike ali kakšni drugi operaciji nad datotekami. Dnevniki sledijo spremembam v sistemu, ki se še niso dokončno zapisale na disk.
+
+###### 2.
+
+1. Opisni blok - kaže začetek transakcije
+
+2. Metapodatkovni blok - Hrani podatke o opisu transakcije
+
+3. zaključni blok (commit block) - kaže zaključek transakcije
+
+4. preklicni blok (revoke block) - če pride do napake vsebuje seznam blokov v datotečnem sistemu, ki jih je potrebno ponovno namestiti (restavrirati).
+
+###### 3.
+
+Nikoli ne nastopita skupaj preklicni in zaključni blok, saj če se transakcija , potem ne pride do napake in ne nastopi preklicni blok.
+
+###### 4.
+
+Odvisno od datotečnega sistema. V primeru NTFS, se dnevniški podatki shranjujejo na korenu NTFS particije v \$LogFile.
+
+V primeru ext2/3, pa se shranjujejo na začetku particije v t.i. "dnevniškem bloku", pred prvo skupino blokov,pri Boot sectorju, med superblock in group descriptor table.
+
+![parttion.png](./slike/parttion.png)
+
+### Peter je v pregled dobil računalnik z OS Windows XP. Zanima ga samo, kdo in kolikokrat se je prijavljal na računalnik. Ima orodje, ki sprejme pot do datotečnega sistema in izpiše vse prijave. Na žalost si ne more privoščiti, da bi skopiral celoten disk, saj je le-ta velik 4TB in skoraj povsem zaseden, Peter pa ima le 500GB prostora. Katere datoteke mora dejansko skopirati?
+
+Potrebuje kopirati samo zabeležke sistema, ki jih najdemo na za XP: %systemroot%\system32\config in za win7: Windows\System32\winevt\logs\*.evtx . Te datoteke ne bodo zasedle veliko prostora, sakoraj zagotovo manj kot 500GB.
+
+### Najznačilnejša lastnost mobilnih naprav je, da so mobilne. 1. Opišite tri načine kako lahko Peter ugotovi, kje se nahaja mobilna naprava osumljenca. 2. Za vsakega od načinov opišite, kje naj Peter išče podatke o nahajanju naprave. 3. Peter sumi, da je Luka po mobilnem telefonu pogovarjal s strašnim razbojnikom. Zapišite pet hipotez, kje in kako lahko Peter preveri če je to res. Seveda hipoteze morajo biti smiselne.
+
+###### 1., 2.
+
+- Lahko pogleda zgodovino prehodov med baznimi postajami, na katero bano postajo je trenutno povezan. Te informacije lahko pridobi pri mobilnem operaterju.
+
+- Lahko pogleda GPS podatke v napravi, če so dostopni na daljavo npr. prek SpyMobile
+
+- Lahko se osumljencu pošlje phishing SMS z linkom, ki ga klikne in nato zabeležimo njegov IP in lokacijo.
+
+###### 3.
+
+- Peter se je pogovarjal z razbojnikom, zato se podatki o tem skrivajo v zgodovini klicev naprave. To lahko preveri s tem, da ima dostop do naprave.
+
+- Peter se je pogovarjal z razbojnikom, in podatke o tem ima mobilni operater. To lako preveri s tem, da mobilnega operaterja prosi za podatke o klicih.
+
+- Peter se je pogovarjal z neznano številko, ki je lahko razbojnik. Peter se mora prepričati, da je neznana številka res razbojnikova. To lahko naredi na mobilnem operaterju, kjer pogelda zgodovino klicev in SMS-ov
+
+- Peter se je pogovarjal z razbojnikom saj sta bila telefona v neposredni bližini. Potrebuje GPS podatke obeh telefonov.
+
+- Peter se je pogovarjal z razbojnikom, saj sta se pogovarjala preko skupne tretje osebe. To lahko preveri s pogledom v telefon tretje osebe, ali pa izpraša tretjo osebo.
+
+### Kateremu napadu so podvržene naprave, ki zaupajo ostalim napravam zgolj na podlagi njihovega IP naslova? Utemeljite odgovor, kako se tak napad izvede?
+
+Te naprave so podvržene napadom lažnih IP naslovov (IP spoofing) in lažni ARP odziv (ARP table spoofing), pri obeh se napadalec pretvarja, da je druga naprava v omrežju kot dejansko je. Pretvarja se, da je zaupanja vredna naprava. Napadalec dobi IP in MAC zaupanja vredne naprave in nato pošlje lažen ARP odziv s svojim MAC naslovom. MAC naslov lahko zamenja samov  primeru, da onesposobi zaupanja vredno napravo, saj ni nujno da bo napadalec dobil vse pakete.
+
+### Peter je v preiskavo dobil računalnik z dvema diskoma. Korenski imenik oz. C: je na njegovi delovni posatji, na kateri poganja Linux, dostopen kot /dev/md0. Naredil je kopijo korenskega imenika, ne da bi datotečni sistem prej priklopil. Nato je raziskavo izvajal na tej kopiji. Na sodišču so ga obtožili, da je uničil dokaze. Jih je res? Če da, kako? Kaj bi moral storiti, da jih ne bi? Če ne, kaj je moral storiti, da lahko dokaže, da jih ni.
+
+Peter je lako uničil dokaze, saj je samo kopiral korenski imenik. Korenski imenik vsebuje le trenutno stanje datotek, ter njihove atrubite, ne vsebuje pa zgodovine sprememb in metapodatke. Te bi lahko pridobil z uporabo forenzičnih orodij kot so `dd` ali `dc3dd`, ki naredijo dejansko bitno kopio diska, vključno z vsemi sektorji in metapodatki.
+
+### Kateri od principov ni osnovni princip, katerega se morajo držati digitalni preiskovalci na mestu zločina?
+
+##### a) najprej poiščemo osumljence, da ne pokvarijo dokazov.
+
+##### b) podatkov na preiskovalni napravi ne spreminjamo
+
+##### c) voditi moramo zapis o vseh dejavnostih na mestu zločina
+
+##### d) vse našteto
+
+A) ni osnovni princip, saj ne potrebujemo poiskati osumljence, moramo samo zavarovati mesto zločina, da bodo dokazi pridobljeni s kraja zločina verodostojni.
+
+### Obstaja več načinov oz modelov vodenja preiskave. 1. Če modele posplošimo dobimo 5 osnovnih korakov. Katere? 2. Zamslite si neko kaznivo dejanje in ga opišite. Nato za vsakega od petih korakov zapišite tipično opravilo, ki se izvaja v njem, pri obravnavi zamiljenega kaznivega dejanja
+
+###### 1.
+
+1. Priprava: priprava načrta preiskave
+
+2. pregled/identifikacija: kaj je potrebno zajeti in kako
+
+3. shranjevanje: forenzična korektnost zajetega gradiva
+
+4. raziskava (examination) in analiza: zajeto gradivo se ustrezno pripravi an analizo, ki temelji na znanstvenih metodah.
+
+5. predstavitev gradiva: izsledke preiskave se ustrtezno namenu predstavi.
+
+###### 2.
+
+Zgodil se je rop trafike na slovenski cesti. Rop se je zgodil ob 9 uri zjutraj pozimi s pištolo. strelov ni bilo ustreljenih.
+
+1. priprava: pogledati moramo fizične dokaze (odtise čevljev, lasje, prstni odtisi, ...) in izprašati očevidce.
+
+2. Potrebno je zajeti odtise čevljen, dnk vzorce, na način, ki ga predlaga forenzična skupina
+
+3. Forenzilčne dokaze je potrebno shranjevati v posebnih posodah/vrečkah, ki so vse podpisane s strani nadrejenega in prej poslikane.
+
+4. Gradivo ustrezno izoliramo in analiziramo, na podkagi teh lahko naredimo zaključke.
+
+5. Predstavimo izsledke dela nadrejenemu preiskovalcu primera.
+
+### V katere kategorije po parkerju spada računalnik, vpleten v zločin?
+
+Računalnik kot:
+
+1. predmet (objekt) zločina -> kraja računalnika ali uničenje
+
+2. osebek (subjekt) zločina -> Zločin je bil narejen nad računalnikom
+
+3. orodje za pripravo in/ali izvedbo zločina (instrument) -> kopiranje dokumentov, hekanje
+
+4. Uporaba po svojih lastnostih v zločinu (symbol) -> ponujanje storite ali zmožnosti storitev: dobitki na bozri, VPN gateway, ...
+
+5. Vir podatkov -> ostanki datotek, e-pošte
+
+### Dokazno gradivo je osrednji element v forenziki in za dokaz o pravilnem rokovanju z njim uporabljamo pojem dokazne verige. 1. Kje se dokazna veriga prične in kje konča? 2. Zapišite primer vsebine posameznega člena dokazne verige in razložite, kaj dokazuje vap primer. 3. Zakaj mora biti dokazna veriga nepretrgana? Kje in kako bi lahko kdo izkoristil pretrganost verige?
+
+###### 1.
+
+Dokazna veriga se prične pri delavcu, ki je prvič dokumentiral dokaz. Konča pa se, ko se dokaz poda na sodišču ali pa se ga izroči nazaj lastniku.
+
+###### 2.
+
+Vsak člen dokazne veriga ima:
+
+- Identifikacijsko številko objekta
+
+- Datum
+
+- Kdo je dal dokaz in podpis
+
+- Komu je dal dokaz in podpis
+
+- Komentarji
+
+###### 3.
+
+Če bi bila dokazna veriga pretrgana, bi lahko bli dokazi spremenjeni in ne bi več bili uporabni za forenzično preiskavo ali v sodnem postopku.
+
+### Peter je v roke dobil star disk. ob priklopu je disk javil, da ima 256 glav. Ko ga je odprl je videl le eno ploščico in ročico, ki se ob njej premika. 1. Koliko bralno/pisalnih glav dejansko ima njegov disk? 2. Zakaj bi disk lagal glede števila glav?
+
+###### 1.
+
+Njegov disk ima eno bralno/pisalno glavo.
+
+###### 2.
+
+Lahko je disk starejši in ima drugačno konfiguracijo, kot sodobnejši sistemi. Dejansko ni pomembno koliko glav ima disk dejansko in koliko logično, če vse deluje. Vse načeloma obdela disk.
