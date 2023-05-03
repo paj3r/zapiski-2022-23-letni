@@ -650,4 +650,226 @@ Lightweight Time Synchronization
   
   - sinhronizacija v omrežju, kjer je nekej.....
 
-# 
+# Določanje razdalje
+
+- triangulacija
+
+- merjenje razdalj
+
+Komercialno dostopni sistemi za merjenje časa:
+
+- Delujejo na principu merjenja časa potovanja radijskega signala
+
+- Delujejo po standardu IEEE802.15.4-2011-UWB
+
+- Doseg do 290m
+
+- Natančnost v območju 10cm
+
+- Majhna poraba energije
+
+Bluetooth low energy:
+
+- uporablja svetilnike (iBeacon)
+
+- svetilniki trošijo ezelo malo energije
+
+- svetilniki so poceni
+
+- narančnost v rangu +/- 1,5m
+
+- primerni so za grobo določanje položaja, kot na primer v nakupovalnih centrih, muzejih, ...
+
+### Določanje pozicije v prostoru
+
+- običajno se za določanje pozicije v prostoru uporabljajo radijski svetilniki
+
+- Naprave lahko poleg merjenja razdalj do svetilnikov uporabljajo še senzorje za pospešek, žiroskope in magnetometer
+
+- Na osnovi oddaljenosti od znanih točk (svetilnikov) izračunajo svoj položaj v prostoru
+
+- Potrebno je postaviti infrastrukturo (svetilnike) in natanččno določiti pozicijo le teh.
+
+### Določanje pozicije s pomočjo slike
+
+- Določanje pozicij v prostoru se uporablja za različne namene:
+  
+  - določanje pozicije satelita na položaj zvezd
+  
+  - določanje relativne pozicije (optična miška)
+
+- Optična miška:
+  
+  - majhna poraba energije
+  
+  - zajema črno belo sliko 20x20 točk
+  
+  - obdelava slike na čipu
+
+### Določanje pozicije na osnovi jakosti signala
+
+- Pozicijo lahko določimo s pomočjo jakosti sprejetega signala (RSSI)
+
+- Težava je predvsem v velikem nihanju sprejetega signala
+
+### Neznan naslov
+
+### Izzivi
+
+- V velikih omrežjih se pojavije težave:
+  
+  - Veliko trkov
+  
+  - velike obremenitve sprejemnika
+  
+  - veliko možih poti do naslovnika
+  
+  - velik doseg oddajnika pomeni veliko porabo energije
+
+### Nadzor topologije
+
+\# TODO slikca
+
+- Omrežjee lahko zapišemo kot graf:
+  
+  $G = (V, E)$
+  
+  $V - $ množica točk
+  
+  $(v_1, v_2) \in E \subseteq V^2$
+
+- Pri spremembi je...
+
+##### Enostavno omrežje
+
+- Število aktivnih točk (elementov) se lahko zmanjša:
+  
+  $V_T \subseteq V$
+
+- Upravljamo lahko število aktivnih povezav med elementi
+  
+  - Običajno z nadzorom oddajne moči
+  
+  - Uvajanjem hierarhije
+
+##### Hierarhično omrežje
+
+- Hrbtenica:
+  
+  $D \subset V - $ Točke hrbtenice  dominantoan množica
+  
+  $\forall v \in V:v \in D \ \vee \ \exists D \in (v, e)...$
+
+- Gruče:
+  
+  $C \subset V - $ Točke vodij gruč
+  
+  $\forall v \in V - C: \exists c \in C:(v, c) \in E$
+  
+  $\forall c_1, c_2 \in C:(c_1, c_2) \notin E$
+
+- Vodje gruč niso neposredno povezani med seboj
+
+##### Kazalniki
+
+- povezanost - pri spremembi topologije se povezanost elementov ne sme prekiniti
+
+- Faktor povečanja:
+  
+  - Faktor povešanja števila korakov: $max_{u, v\in V} \frac{|(u, v)_T|}{|(u, v)_G|}$
+  
+  - Faktor povečanja porabe energije = $max_{u, v\in V} \frac{E_T(u, v)}{E_T(u, v)}$
+
+- Zmanjpevanje števila povezav
+
+- Propustnost: promet med posameznimi elementi se lahko poveča, kar lahko povzroči težave
+
+- Odpornost na premikanje točk
+
+- Dodatna sporočila, ki so posledica algoritmov za nadzor topologije
+
+##### Graf povezanosti
+
+- Omrežje s 5000 elementi na področju 1000 x 1000 m
+
+- Spreminja se izhodna moč in s tem doseg elementa
+
+- Graf prikazuje:
+  
+  - Verjetnost povezanosti omrežja v odvisnosti od dosega elementa
+  
+  - Velikost največje gruče v odvisnosti od dosega elementa
+
+##### Nadzor izhodne moči
+
+###### Algoritem RNG
+
+- Algoritem RNG (Relative Neighbourhood Graph) izvede povezavo med dvema elementoma, če med njima ni nobenega drugega elementa
+
+$\forall u, v \in V: (u, v) \in E' \iff \nexists w \in V: d(u, w)^2 \lt d(u, v^2)$
+
+- Ohrani povezanost
+
+- Lokalno izvajanje
+
+- Faktor povečanja dolžine je  $O(\sqrt{|V|})$
+
+- Faktor poveččanja energije je linearen
+
+###### Delaunayeva triangulacija
+
+- Izračuna se Voronoiev diagram
+  
+  - Čas izračuna je $O(|V|log|V|)$
+
+- Elementa se povežeta, če se Voronijeva podtočja stikajo
+
+- Lahko nastanejo zelo dolge povezave, kar poveča rabo energije
+
+###### Algoritem na osnovi kota
+
+- Osnova algoritma (cone based) je kot iskane naprave
+
+- Prvi korak:
+  
+  - Začenja z najmanjšo močjo, ...
+
+###### Dominantna množica
+
+- povezana dominantna množica (CDS) - vsi elementi dominantne množice so povezane
+
+- Minimalna povezana dominantna množica (MCDS) - najmanjše število točk v dominantni množici
+
+- MDS in MCDS sta NP-polna problema
+
+##### Usmerjanje pmeta
+
+- Usmerjanje prometa je potrebno, ko želimo paket poslati točno določenemu naslovniku, ki je oddaljen več kot en korak. Naslovnik mora imeti enoličen naslov.
+
+- Težave pri usmerjanju prometa:
+  
+  - mobilnost elementov
+  
+  - poraba energije
+  
+  - velikost usmerjevalnih tabel
+  
+  - potrebna procesorska moč
+
+##### Poplavljanje
+
+- Najenostavnejši način dostave paketa je poplavljanje.
+  
+  - paket pošljemo vsem prejemnikom
+  
+  - ne upošteva se vsebina paketa in naslov,
+  
+  - Paketi običajno dosežejo svoj cilj
+  
+  - slaba učinkovitost - zelo veliko poslanih in prejetih paketov
+  
+  - za preprečevanje zank se uporablja:
+    
+    - identifikacija paketa
+    
+    - števec korakov (TTL)
