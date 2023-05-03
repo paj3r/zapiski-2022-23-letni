@@ -675,7 +675,7 @@ Operacijski sistem je zasnovan tako, da sos sistemske datoteke človeku prijazne
 
 ### Beležke
 
-V beležkah so pionavadi zapisi po RFC formatu:
+V beležkah so ponavadi zapisi po RFC formatu:
 
 - when where who: what
 
@@ -1818,6 +1818,8 @@ dd zastavice:
 
 - seek n (skip) - preskoči n blokov
 
+- count - pove, koliko blokov naj kopiramo.
+
 - conv (convert) - spremeni datoteko glede na comma seperated symbol list
 
 ```shell
@@ -2539,6 +2541,10 @@ modprobe nbd max_part=32
 qemu-nbd /dev/nbd0p1 kopija.img
 mount /dev/nbd0p1 /mnt/disk
 ```
+
+**modprobe nbd max_part=32** naredi novo bločno napravo (Network block device), ki jo lahko uporabljamo za vklop diska na njo. To naredimo, ko imamo omejeno prostora na disku.
+
+**qemu-nbd /dev/nbd0p1 kopija.img** datoteko kopija.img prilepi kot bločno napravo na nbd0p1 NBD napravo na sistemu QEMU NBD server.
 
 ### Čemu je enako število možnih vnosov tabele FAT? Utemeljite odgovor.
 
