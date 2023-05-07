@@ -389,3 +389,35 @@ Sestavljen iz:
 V postingih imamo oznako termina, frekvenco termina, in offsete, kje od začetka se pojavlja ta beseda v dokumentu
 
 $<id_j, f_{ij}, [o_1, o_2, ...,o_{|f_{ij}|}]>$
+
+### Latentna semantična analiza - LSI
+
+Namestu, da dokumente predstavimo v vektorskem prostoru, vzpostavimo koncepte, na katere bi dokumente boljše razločili med seboj.
+
+Naredimo razcep na singularne vrednosti.
+
+$A = U \ \Sigma \ V^T$
+
+$U = AA^T$ - kateri termini nastopajo v skupnih dokumentih
+
+$\Sigma = diagonalna \ martika$
+
+$V^T = Singularni \ vektorji \ A^TA$ - kateri dokumetnti imajo skupne termine
+
+# Spletno iskanje
+
+Crawling -> parsing -> indexing -> search & rank
+
+#### Prestiž
+
+preko teorije grafov
+
+- Prestiž povezanosti
+
+- Prestiž okolice
+
+- Prestiž ranga
+  
+  - pageRank
+  
+  - HITS
