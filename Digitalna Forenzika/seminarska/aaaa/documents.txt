@@ -1,0 +1,306 @@
+./Program Files/Common Files/microsoft shared/Stationery/Bears.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Garden.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Green Bubbles.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Hand Prints.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Orange Circles.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Peacock.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Roses.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Shades of Blue.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Soft Blue.htm: HTML document
+./Program Files/Common Files/microsoft shared/Stationery/Stars.htm: HTML document
+./Program Files/Internet Explorer/ie8props.propdesc: XML document
+./Program Files/Windows Sidebar/Gadgets/Calendar.Gadget/en-US/calendar.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/Clock.Gadget/en-US/clock.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/Clock.Gadget/en-US/settings.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/CPU.Gadget/en-US/cpu.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/Currency.Gadget/en-US/currency.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/MediaCenter.Gadget/flyout.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/MediaCenter.Gadget/main.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/MediaCenter.Gadget/settings.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/PicturePuzzle.Gadget/en-US/picturePuzzle.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/PicturePuzzle.Gadget/en-US/settings.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/RSSFeeds.Gadget/en-US/flyout.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/RSSFeeds.Gadget/en-US/RSSFeeds.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/RSSFeeds.Gadget/en-US/settings.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/SlideShow.Gadget/en-US/settings.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/SlideShow.Gadget/en-US/slideShow.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/Weather.Gadget/en-US/settings.html: HTML document
+./Program Files/Windows Sidebar/Gadgets/Weather.Gadget/en-US/weather.html: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/01_Music_auto_rated_at_5_stars.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/02_Music_added_in_the_last_month.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/03_Music_rated_at_4_or_5_stars.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/04_Music_played_in_the_last_month.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/05_Pictures_taken_in_the_last_month.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/06_Pictures_rated_4_or_5_stars.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/07_TV_recorded_in_the_last_week.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/08_Video_rated_at_4_or_5_stars.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/09_Music_played_the_most.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/10_All_Music.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/11_All_Pictures.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Media Player/Sync Playlists/sl-SI/00027879/12_All_Video.wpl: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/8NZOH9AK/new[1].htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/9EORU9N2/common-resp-min[1].js: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/9EORU9N2/home[1].htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/9EORU9N2/html5shiv[1].js: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/9EORU9N2/ie-8-welcome[1].htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/PA3958W0/246059135[1].js: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/PA3958W0/modernizr.wol[1].js: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/PA3958W0/new[1].txt: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/PA3958W0/unknownprotocol[1]: HTML document
+./Users/user/AppData/Local/Microsoft/Windows/Temporary Internet Files/Low/Content.IE5/SW2BF3WU/firefox_new-min[1].js: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Bears.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Garden.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Green Bubbles.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Hand Prints.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Orange Circles.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Peacock.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Roses.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Shades of Blue.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Soft Blue.htm: HTML document
+./Users/user/AppData/Local/Microsoft/Windows Mail/Stationery/Stars.htm: HTML document
+./Windows/ehome/CreateDisc/SonicResources/ClickMe.htm: HTML document
+./Windows/ehome/mcsrchPH.propdesc: XML document
+./Windows/assembly/GAC_32/MSBuild/3.5.0.0__b03f5f7f11d50a3a/msbuild.exe.config: XML document
+./Windows/diagnostics/scheduled/Maintenance/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/IEBrowseWeb/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/IESecurity/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/PCW/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/Performance/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/Printer/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/Search/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/WindowsMediaPlayerMediaLibrary/DiagPackage.diagpkg: HTML document
+./Windows/diagnostics/system/WindowsMediaPlayerPlayDVD/DiagPackage.diagpkg: HTML document
+./Windows/Microsoft.NET/Framework/v1.0.3705/installutil.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v1.0.3705/mscormmc.cfg: XML document
+./Windows/Microsoft.NET/Framework/v1.0.3705/regsvcs.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v1.1.4322/gacutil.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v1.1.4322/regsvcs.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/AppConfigHome.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/AppSetting.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/CreateAppSetting.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/DebugAndTrace.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/DefineErrorPage.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/EditAppSetting.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/ManageAppSettings.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/AppConfig/SmtpSettings.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/default.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/error.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/home0.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/home1.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/home2.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/navigationBar.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Providers/chooseProviderManagement.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Providers/ManageConsolidatedProviders.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Providers/ManageProviders.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Providers/ProviderList.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Permissions/createPermission.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Permissions/managePermissions.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Roles/manageAllRoles.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Roles/manageSingleRole.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/security.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/security0.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/setUpAuthentication.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Users/addUser.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Users/editUser.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Users/findUsers.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Users/manageUsers.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/confirmation.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/wizard.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/wizardAddUser.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/wizardAuthentication.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/wizardCreateRoles.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/wizardInit.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/wizardPermission.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/Security/Wizard/wizardProviderInfo.ascx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/webAdmin.master: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/webAdminButtonRow.master: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/WebAdminHelp.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/WebAdminHelp_Application.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/WebAdminHelp_Internals.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/WebAdminHelp_Provider.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/WebAdminHelp_Security.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/webAdminNoButtonRow.master: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/WebAdminWithConfirmation.master: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ASP.NETWebAdminFiles/WebAdminWithConfirmationNoButtonRow.master: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/regasm.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/regsvcs.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/Aspnet_regsql.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/caspol.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/CONFIG/DefaultWsdlHelpGenerator.aspx: HTML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/csc.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ieexec.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/ilasm.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/jsc.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/msbuild.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v2.0.50727/vbc.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v3.5/csc.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v3.5/msbuild.exe.config: XML document
+./Windows/Microsoft.NET/Framework/v3.5/vbc.exe.config: XML document
+./Windows/System32/manage-bde.wsf: HTML document
+./Windows/System32/migwiz/dlmanifests/Microsoft-Windows-IE-InternetExplorer-DL.man: HTML document
+./Windows/System32/migwiz/PostMigRes/Web/reportapi.js: HTML document
+./Windows/winsxs/msil_jsc_b03f5f7f11d50a3a_6.1.7600.16385_none_7c5b469993c3ad32/jsc.exe.config: XML document
+./Windows/winsxs/x86_caspol_b03f5f7f11d50a3a_6.1.7600.16385_none_405dfa65ac2b545d/caspol.exe.config: XML document
+./Windows/winsxs/x86_microsoft-windows-e..ebargadgetresources_31bf3856ad364e35_6.1.7600.16385_none_2c57df12005e7ecb/flyout.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-e..ebargadgetresources_31bf3856ad364e35_6.1.7600.16385_none_2c57df12005e7ecb/main.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-e..ebargadgetresources_31bf3856ad364e35_6.1.7600.16385_none_2c57df12005e7ecb/settings.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-ehome-mcsrchph_31bf3856ad364e35_6.1.7600.16385_none_dddc0717fd55b308/mcsrchPH.propdesc: XML document
+./Windows/winsxs/x86_microsoft-windows-g..-currency.resources_31bf3856ad364e35_6.1.7600.16385_en-us_d158ae10876efd6d/currency.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..edsgadget.resources_31bf3856ad364e35_6.1.7600.16385_en-us_2b166002b7f51771/flyout.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..edsgadget.resources_31bf3856ad364e35_6.1.7600.16385_en-us_2b166002b7f51771/RSSFeeds.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..edsgadget.resources_31bf3856ad364e35_6.1.7600.16385_en-us_2b166002b7f51771/settings.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..howgadget.resources_31bf3856ad364e35_6.1.7600.16385_en-us_6d7d60ea24be809c/settings.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..howgadget.resources_31bf3856ad364e35_6.1.7600.16385_en-us_6d7d60ea24be809c/slideShow.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..s-weather.resources_31bf3856ad364e35_6.1.7600.16385_en-us_36bc61b12dcec80c/settings.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..s-weather.resources_31bf3856ad364e35_6.1.7600.16385_en-us_36bc61b12dcec80c/weather.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..zlegadget.resources_31bf3856ad364e35_6.1.7600.16385_en-us_a6285ac2a45ae884/picturePuzzle.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..zlegadget.resources_31bf3856ad364e35_6.1.7600.16385_en-us_a6285ac2a45ae884/settings.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..-calendar.resources_31bf3856ad364e35_6.1.7600.16385_en-us_dd95cd2390bb17bc/calendar.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..ets-clock.resources_31bf3856ad364e35_6.1.7600.16385_en-us_7fddcd6a1ab604da/clock.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-g..ets-clock.resources_31bf3856ad364e35_6.1.7600.16385_en-us_7fddcd6a1ab604da/settings.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-gadgets-cpu.resources_31bf3856ad364e35_6.1.7600.16385_en-us_4d6aa30008b38d10/cpu.html: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-4.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/401-1.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/401-2.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/401-3.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/401-4.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/401-5.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/401.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-1.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-10.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-11.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-12.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-13.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-14.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-15.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-16.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-17.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-18.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-19.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-2.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-3.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-5.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-6.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-7.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-8.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403-9.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/403.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-1.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-10.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-11.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-12.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-13.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-14.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-15.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-2.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-3.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-4.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-5.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-6.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-7.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-8.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404-9.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/404.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/405.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/406.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/412.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-100.asp: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-13.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-14.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-15.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-16.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-17.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-18.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500-19.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/500.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/501.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-i..sbinaries.resources_31bf3856ad364e35_6.1.7600.16385_en-us_5c5f09abef8c45ca/502.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-ie-gc-registeriepkeys_31bf3856ad364e35_8.0.7600.16385_none_42797377fc24e88d/ie8props.propdesc: XML document
+./Windows/winsxs/x86_microsoft-windows-iebrowsewebdiagnostic_31bf3856ad364e35_6.1.7600.16385_none_244f8b5ccebcd9d0/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-iesecuritydiagnostic_31bf3856ad364e35_6.1.7600.16385_none_943b64866919bd54/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-iis-corewebengine_31bf3856ad364e35_6.1.7600.16385_none_cf805e4a8a98528e/iisstart.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-m..-downlevelmanifests_31bf3856ad364e35_6.1.7600.16385_none_024f0ba1e4ed554c/Microsoft-Windows-IE-InternetExplorer-DL.man: HTML document
+./Windows/winsxs/x86_microsoft-windows-m..onwizardapplication_31bf3856ad364e35_6.1.7600.16385_none_ba516d0cf5a8dbbc/reportapi.js: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Bears.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Garden.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Green Bubbles.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Hand Prints.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Orange Circles.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Peacock.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Roses.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Shades of Blue.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Soft Blue.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-mail-app_31bf3856ad364e35_6.1.7600.16385_none_f12e83abb108c86c/Stars.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-maintenancediagnostic_31bf3856ad364e35_6.1.7600.16385_none_89c559b86af7962b/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-pcwdiagnostic_31bf3856ad364e35_6.1.7600.16385_none_f502240760fba9c4/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-performancediagnostic_31bf3856ad364e35_6.1.7600.16385_none_5f70ff9698136d48/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-printerdiagnostic_31bf3856ad364e35_6.1.7600.16385_none_c5959753fc0d041e/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-searchdiagnostic_31bf3856ad364e35_6.1.7600.16385_none_317f26a254b0a962/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-securestartup-tool_31bf3856ad364e35_6.1.7600.16385_none_3c3755c44e9d429c/manage-bde.wsf: HTML document
+./Windows/winsxs/x86_microsoft-windows-sonic-clickme_31bf3856ad364e35_6.1.7600.16385_none_f9ef3b0feee9fb56/ClickMe.htm: HTML document
+./Windows/winsxs/x86_microsoft-windows-w..erplaydvddiagnostic_31bf3856ad364e35_6.1.7600.16385_none_9bbaec0c1216ea1a/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_microsoft-windows-w..ialibrarydiagnostic_31bf3856ad364e35_6.1.7600.16385_none_28c43026c9854fd9/DiagPackage.diagpkg: HTML document
+./Windows/winsxs/x86_msbuild_b03f5f7f11d50a3a_3.5.7600.16385_none_8c3cf176a8e91487/msbuild.exe.config: XML document
+./Windows/winsxs/x86_msbuild_b03f5f7f11d50a3a_6.1.7600.16385_none_55ba67026d843961/msbuild.exe.config: XML document
+./Windows/winsxs/x86_netfx-aspnet_defwsdlhlpgen_b03f5f7f11d50a3a_6.1.7600.16385_none_0d1a731008072b5c/DefaultWsdlHelpGenerator.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_regsql_cfg_b03f5f7f11d50a3a_6.1.7600.16385_none_50c699991f042ec2/Aspnet_regsql.exe.config: XML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/AppConfigHome.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/AppSetting.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/CreateAppSetting.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/DebugAndTrace.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/DefineErrorPage.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/EditAppSetting.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/ManageAppSettings.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_appconfig_b03f5f7f11d50a3a_6.1.7600.16385_none_23564575263c5038/SmtpSettings.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/default.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/error.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/home0.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/home1.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/home2.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/navigationBar.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/webAdmin.master: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/webAdminButtonRow.master: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/webAdminNoButtonRow.master: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/WebAdminWithConfirmation.master: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_b03f5f7f11d50a3a_6.1.7600.16385_none_b462020700d120ce/WebAdminWithConfirmationNoButtonRow.master: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_permissions_b03f5f7f11d50a3a_6.1.7600.16385_none_696b97ec96ddc5e9/createPermission.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_permissions_b03f5f7f11d50a3a_6.1.7600.16385_none_696b97ec96ddc5e9/managePermissions.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_providers_b03f5f7f11d50a3a_6.1.7600.16385_none_4787122493c6fe3f/chooseProviderManagement.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_providers_b03f5f7f11d50a3a_6.1.7600.16385_none_4787122493c6fe3f/ManageConsolidatedProviders.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_providers_b03f5f7f11d50a3a_6.1.7600.16385_none_4787122493c6fe3f/ManageProviders.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_providers_b03f5f7f11d50a3a_6.1.7600.16385_none_4787122493c6fe3f/ProviderList.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_security_b03f5f7f11d50a3a_6.1.7600.16385_none_3713518ac93852c5/security.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_security_b03f5f7f11d50a3a_6.1.7600.16385_none_3713518ac93852c5/security0.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_security_b03f5f7f11d50a3a_6.1.7600.16385_none_3713518ac93852c5/setUpAuthentication.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_users_b03f5f7f11d50a3a_6.1.7600.16385_none_063ec2d6aa35e4cb/addUser.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_users_b03f5f7f11d50a3a_6.1.7600.16385_none_063ec2d6aa35e4cb/editUser.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_users_b03f5f7f11d50a3a_6.1.7600.16385_none_063ec2d6aa35e4cb/findUsers.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_users_b03f5f7f11d50a3a_6.1.7600.16385_none_063ec2d6aa35e4cb/manageUsers.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/confirmation.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/wizard.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/wizardAddUser.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/wizardAuthentication.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/wizardCreateRoles.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/wizardInit.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/wizardPermission.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_wizard_b03f5f7f11d50a3a_6.1.7600.16385_none_3b58a6c648c06462/wizardProviderInfo.ascx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_help_b03f5f7f11d50a3a_6.1.7600.16385_none_50f19738760fdcfc/WebAdminHelp.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_help_b03f5f7f11d50a3a_6.1.7600.16385_none_50f19738760fdcfc/WebAdminHelp_Application.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_help_b03f5f7f11d50a3a_6.1.7600.16385_none_50f19738760fdcfc/WebAdminHelp_Internals.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_help_b03f5f7f11d50a3a_6.1.7600.16385_none_50f19738760fdcfc/WebAdminHelp_Provider.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_help_b03f5f7f11d50a3a_6.1.7600.16385_none_50f19738760fdcfc/WebAdminHelp_Security.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_roles_b03f5f7f11d50a3a_6.1.7600.16385_none_4a4ed9b05d847e7e/manageAllRoles.aspx: HTML document
+./Windows/winsxs/x86_netfx-aspnet_webadmin_roles_b03f5f7f11d50a3a_6.1.7600.16385_none_4a4ed9b05d847e7e/manageSingleRole.aspx: HTML document
+./Windows/winsxs/x86_netfx-clr_ilasm_exe_b03f5f7f11d50a3a_6.1.7600.16385_none_d797745a4a1a7c82/ilasm.exe.config: XML document
+./Windows/winsxs/x86_netfx-config_files_.._gacutil_exe_config_31bf3856ad364e35_6.1.7600.16385_none_9cd3d8b937a10c58/gacutil.exe.config: XML document
+./Windows/winsxs/x86_netfx-config_files_.._regsvcs_exe_config_31bf3856ad364e35_6.1.7600.16385_none_5947b564ea0f3bc8/regsvcs.exe.config: XML document
+./Windows/winsxs/x86_netfx-installutil_exe_config_rtm_31bf3856ad364e35_6.1.7600.16385_none_c4b459e91851aaf5/installutil.exe.config: XML document
+./Windows/winsxs/x86_netfx-mscormmc_cfg_rtm_31bf3856ad364e35_6.1.7600.16385_none_085ad573cbfb762a/mscormmc.cfg: XML document
+./Windows/winsxs/x86_netfx-redist_config_files_b03f5f7f11d50a3a_6.1.7600.16385_none_4fb004028b6c4e65/ieexec.exe.config: XML document
+./Windows/winsxs/x86_netfx-regsvcs_exe_config_v1_31bf3856ad364e35_6.1.7600.16385_none_dd975ffb8de73e55/regsvcs.exe.config: XML document
+./Windows/winsxs/x86_netfx-csc_exe_config_b03f5f7f11d50a3a_6.1.7600.16385_none_5bfb623d555cccb6/csc.exe.config: XML document
+./Windows/winsxs/x86_netfx-vbc_exe_config_b03f5f7f11d50a3a_6.1.7600.16385_none_0703ef18cc0efa5a/vbc.exe.config: XML document
+./Windows/winsxs/x86_netfx35linq-csharp_31bf3856ad364e35_6.1.7600.16385_none_1702052d757d6e3d/csc.exe.config: XML document
+./Windows/winsxs/x86_netfx35linq-vbc_exe_config_orcas_31bf3856ad364e35_6.1.7600.16385_none_08da65ebfde7c5d8/vbc.exe.config: XML document
+./Windows/winsxs/x86_regasm_b03f5f7f11d50a3a_6.1.7600.16385_none_eb9b7307d1d0eae8/regasm.exe.config: XML document
+./Windows/winsxs/x86_regsvcs_b03f5f7f11d50a3a_6.1.7600.16385_none_beb69dae2443e398/regsvcs.exe.config: XML document

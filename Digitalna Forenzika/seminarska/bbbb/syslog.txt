@@ -1,0 +1,731 @@
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 rsyslogd: [origin software="rsyslogd" swVersion="7.4.4" x-pid="366" x-info="http://www.rsyslog.com"] start
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 rsyslogd: rsyslogd's groupid changed to 104
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 rsyslogd: rsyslogd's userid changed to 101
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Initializing cgroup subsys cpuset
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Initializing cgroup subsys cpu
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Initializing cgroup subsys cpuacct
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Linux version 4.2.0-27-generic (buildd@lcy01-23) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #32~14.04.1-Ubuntu SMP Fri Jan 22 15:32:26 UTC 2016 (Ubuntu 4.2.0-27.32~14.04.1-generic 4.2.8-ckt1)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-4.2.0-27-generic root=UUID=5db45e38-9239-45e7-a20b-535f2df0cc85 ro quiet splash
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] KERNEL supported cpus:
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   Intel GenuineIntel
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   AMD AuthenticAMD
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   Centaur CentaurHauls
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] x86/fpu: Legacy x87 FPU detected.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] x86/fpu: Using 'lazy' FPU context switches.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] e820: BIOS-provided physical RAM map:
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000003ffdffff] usable
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BIOS-e820: [mem 0x000000003ffe0000-0x000000003fffffff] reserved
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] NX (Execute Disable) protection: active
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] SMBIOS 2.8 present.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS Debian-1.8.2-1 04/01/2014
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Hypervisor detected: KVM
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] e820: remove [mem 0x000a0000-0x000fffff] usable
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] e820: last_pfn = 0x3ffe0 max_arch_pfn = 0x400000000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] MTRR default type: write-back
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] MTRR fixed ranges enabled:
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   00000-9FFFF write-back
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   A0000-BFFFF uncachable
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   C0000-FFFFF write-protect
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] MTRR variable ranges enabled:
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   0 base 0080000000 mask FF80000000 uncachable
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   1 disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   2 disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   3 disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   4 disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   5 disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   6 disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   7 disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WC  UC- WT  
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] found SMP MP-table at [mem 0x000f6640-0x000f664f] mapped at [ffff8800000f6640]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Scanning 1 areas for low memory corruption
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Base memory trampoline at [ffff880000099000] 99000 size 24576
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] init_memory_mapping: [mem 0x00000000-0x000fffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]  [mem 0x00000000-0x000fffff] page 4k
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BRK [0x01ff3000, 0x01ff3fff] PGTABLE
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BRK [0x01ff4000, 0x01ff4fff] PGTABLE
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BRK [0x01ff5000, 0x01ff5fff] PGTABLE
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] init_memory_mapping: [mem 0x3fc00000-0x3fdfffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]  [mem 0x3fc00000-0x3fdfffff] page 2M
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] init_memory_mapping: [mem 0x20000000-0x3fbfffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]  [mem 0x20000000-0x3fbfffff] page 2M
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] init_memory_mapping: [mem 0x00100000-0x1fffffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]  [mem 0x00100000-0x001fffff] page 4k
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]  [mem 0x00200000-0x1fffffff] page 2M
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] init_memory_mapping: [mem 0x3fe00000-0x3ffdffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]  [mem 0x3fe00000-0x3ffdffff] page 4k
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] BRK [0x01ff6000, 0x01ff6fff] PGTABLE
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] RAMDISK: [mem 0x359fc000-0x36cf5fff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: Early table checksum verification disabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: RSDP 0x00000000000F6470 000014 (v00 BOCHS )
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: RSDT 0x000000003FFE16EE 000034 (v01 BOCHS  BXPCRSDT 00000001 BXPC 00000001)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: FACP 0x000000003FFE0C14 000074 (v01 BOCHS  BXPCFACP 00000001 BXPC 00000001)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: DSDT 0x000000003FFE0040 000BD4 (v01 BOCHS  BXPCDSDT 00000001 BXPC 00000001)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: FACS 0x000000003FFE0000 000040
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: SSDT 0x000000003FFE0C88 0009B6 (v01 BOCHS  BXPCSSDT 00000001 BXPC 00000001)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: APIC 0x000000003FFE163E 000078 (v01 BOCHS  BXPCAPIC 00000001 BXPC 00000001)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: HPET 0x000000003FFE16B6 000038 (v01 BOCHS  BXPCHPET 00000001 BXPC 00000001)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: Local APIC address 0xfee00000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] No NUMA configuration found
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Faking a node at [mem 0x0000000000000000-0x000000003ffdffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] NODE_DATA(0) allocated [mem 0x3ffdb000-0x3ffdffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] kvm-clock: cpu 0, msr 0:3ffd7001, primary cpu clock
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]  [ffffea0000000000-ffffea0000ffffff] PMD -> [ffff88003e600000-ffff88003f5fffff] on node 0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Zone ranges:
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   DMA32    [mem 0x0000000001000000-0x000000003ffdffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   Normal   empty
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Movable zone start for each node
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Early memory node ranges
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   node   0: [mem 0x0000000000100000-0x000000003ffdffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x000000003ffdffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] On node 0 totalpages: 262014
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   DMA zone: 64 pages used for memmap
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   DMA zone: 21 pages reserved
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   DMA zone: 3998 pages, LIFO batch:0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   DMA32 zone: 4032 pages used for memmap
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000]   DMA32 zone: 258016 pages, LIFO batch:31
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: PM-Timer IO Port: 0x608
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: Local APIC address 0xfee00000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: IRQ0 used by override.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: IRQ5 used by override.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: IRQ9 used by override.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: IRQ10 used by override.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: IRQ11 used by override.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Using ACPI (MADT) for SMP configuration information
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] smpboot: Allowing 1 CPUs, 0 hotplug CPUs
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] e820: [mem 0x40000000-0xfeffbfff] available for PCI devices
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Booting paravirtualized kernel on KVM
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] setup_percpu: NR_CPUS:256 nr_cpumask_bits:256 nr_cpu_ids:1 nr_node_ids:1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] PERCPU: Embedded 33 pages/cpu @ffff88003fc00000 s96728 r8192 d30248 u2097152
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] pcpu-alloc: s96728 r8192 d30248 u2097152 alloc=1*2097152
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] pcpu-alloc: [0] 0 
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] KVM setup async PF for cpu 0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] kvm-stealtime: cpu 0, msr 3fc0e600
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Built 1 zonelists in Node order, mobility grouping on.  Total pages: 257897
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Policy zone: DMA32
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.2.0-27-generic root=UUID=5db45e38-9239-45e7-a20b-535f2df0cc85 ro quiet splash
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] PID hash table entries: 4096 (order: 3, 32768 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Calgary: detecting Calgary via BIOS EBDA area
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Memory: 995380K/1048056K available (7940K kernel code, 1243K rwdata, 3816K rodata, 1468K init, 1292K bss, 52676K reserved, 0K cma-reserved)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Hierarchical RCU implementation.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] 	Build-time adjustment of leaf fanout to 64.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=1.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=64, nr_cpu_ids=1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] NR_IRQS:16640 nr_irqs:256 16
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] 	Offload RCU callbacks from all CPUs
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] 	Offload RCU callbacks from CPUs: 0.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] Console: colour VGA+ 80x25
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] console [tty0] enabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] hpet clockevent registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.000000] tsc: Detected 3200.178 MHz processor
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Calibrating delay loop (skipped) preset value.. 6400.35 BogoMIPS (lpj=12800712)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] pid_max: default: 32768 minimum: 301
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] ACPI: Core revision 20150619
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] ACPI: All ACPI Tables successfully acquired
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Security Framework initialized
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] AppArmor: AppArmor initialized
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Yama: becoming mindful.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys blkio
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys memory
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys devices
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys freezer
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys net_cls
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys perf_event
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys net_prio
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Initializing cgroup subsys hugetlb
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] mce: CPU supports 10 MCE banks
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.008000] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.014114] Freeing SMP alternatives memory: 28K (ffffffff81ea7000 - ffffffff81eae000)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.018966] ftrace: allocating 30981 entries in 122 pages
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.028222] x2apic enabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.028416] Switched APIC routing to physical x2apic.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.029290] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (fam: 06, model: 06, stepping: 03)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] Performance Events: AMD PMU driver.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] ... version:                0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] ... bit width:              48
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] ... generic registers:      4
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] ... value mask:             0000ffffffffffff
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] ... max period:             00007fffffffffff
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] ... fixed-purpose events:   0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] ... event mask:             000000000000000f
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] x86: Booted up 1 node, 1 CPUs
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] smpboot: Total of 1 processors activated (6400.35 BogoMIPS)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] devtmpfs: initialized
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] evm: security.selinux
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] evm: security.SMACK64
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] evm: security.SMACK64EXEC
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] evm: security.SMACK64TRANSMUTE
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] evm: security.SMACK64MMAP
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] evm: security.ima
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] evm: security.capability
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] pinctrl core: initialized pinctrl subsystem
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] RTC time:  9:29:04, date: 04/08/16
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032000] NET: Registered protocol family 16
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032082] cpuidle: using governor ladder
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032084] cpuidle: using governor menu
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032177] ACPI: bus type PCI registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032179] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.032265] PCI: Using configuration type 1 for base access
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.033316] ACPI: Added _OSI(Module Device)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.033318] ACPI: Added _OSI(Processor Device)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.033319] ACPI: Added _OSI(3.0 _SCP Extensions)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.033320] ACPI: Added _OSI(Processor Aggregator Device)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.034106] ACPI: Interpreter enabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.034110] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S1_] (20150619/hwxface-580)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.034113] ACPI Exception: AE_NOT_FOUND, While evaluating Sleep State [\_S2_] (20150619/hwxface-580)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.034122] ACPI: (supports S0 S3 S4 S5)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.034123] ACPI: Using IOAPIC for interrupt routing
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.034133] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037244] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037251] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037255] acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037267] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037473] acpiphp: Slot [3] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037487] acpiphp: Slot [4] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037501] acpiphp: Slot [5] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037515] acpiphp: Slot [6] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037529] acpiphp: Slot [7] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.037543] acpiphp: Slot [8] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040014] acpiphp: Slot [9] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040029] acpiphp: Slot [10] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040043] acpiphp: Slot [11] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040056] acpiphp: Slot [12] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040069] acpiphp: Slot [13] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040083] acpiphp: Slot [14] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040097] acpiphp: Slot [15] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040110] acpiphp: Slot [16] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040123] acpiphp: Slot [17] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040137] acpiphp: Slot [18] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040150] acpiphp: Slot [19] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040163] acpiphp: Slot [20] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040177] acpiphp: Slot [21] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040191] acpiphp: Slot [22] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040204] acpiphp: Slot [23] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040218] acpiphp: Slot [24] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040231] acpiphp: Slot [25] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040244] acpiphp: Slot [26] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040258] acpiphp: Slot [27] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040271] acpiphp: Slot [28] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040285] acpiphp: Slot [29] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040299] acpiphp: Slot [30] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040312] acpiphp: Slot [31] registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040321] PCI host bridge to bus 0000:00
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040323] pci_bus 0000:00: root bus resource [bus 00-ff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040325] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040327] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040329] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040330] pci_bus 0000:00: root bus resource [mem 0x40000000-0xfebfffff window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040355] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040622] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.040944] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.044460] pci 0000:00:01.1: reg 0x20: [io  0xc040-0xc04f]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046134] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046137] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046138] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046140] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046265] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046513] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046520] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.046655] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.048971] pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.052660] pci 0000:00:02.0: reg 0x18: [mem 0xfebf0000-0xfebf0fff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.058708] pci 0000:00:02.0: reg 0x30: [mem 0xfebe0000-0xfebeffff pref]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.058871] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.060746] pci 0000:00:03.0: reg 0x10: [mem 0xfebc0000-0xfebdffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.062305] pci 0000:00:03.0: reg 0x14: [io  0xc000-0xc03f]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.070766] pci 0000:00:03.0: reg 0x30: [mem 0xfeb80000-0xfebbffff pref]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072110] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072212] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072295] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072372] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072412] ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072667] ACPI: Enabled 16 GPEs in block 00 to 0F
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072804] vgaarb: setting as boot device: PCI:0000:00:02.0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072807] vgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072809] vgaarb: loaded
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.072810] vgaarb: bridge control possible 0000:00:02.0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073067] SCSI subsystem initialized
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073123] libata version 3.00 loaded.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073148] ACPI: bus type USB registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073166] usbcore: registered new interface driver usbfs
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073176] usbcore: registered new interface driver hub
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073186] usbcore: registered new device driver usb
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073324] PCI: Using ACPI for IRQ routing
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073327] PCI: pci_cache_line_size set to 64 bytes
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073412] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073414] e820: reserve RAM buffer [mem 0x3ffe0000-0x3fffffff]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073529] NetLabel: Initializing
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073530] NetLabel:  domain hash size = 128
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073531] NetLabel:  protocols = UNLABELED CIPSOv4
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073543] NetLabel:  unlabeled traffic allowed by default
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073627] HPET: 3 timers in total, 0 timers will be used for per-cpu timer
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073643] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.073647] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.076064] clocksource: Switched to clocksource kvm-clock
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087421] AppArmor: AppArmor Filesystem Enabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087488] pnp: PnP ACPI init
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087543] pnp 00:00: Plug and Play ACPI device, IDs PNP0b00 (active)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087577] pnp 00:01: Plug and Play ACPI device, IDs PNP0303 (active)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087599] pnp 00:02: Plug and Play ACPI device, IDs PNP0f13 (active)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087623] pnp 00:03: [dma 2]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087636] pnp 00:03: Plug and Play ACPI device, IDs PNP0700 (active)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087699] pnp 00:04: Plug and Play ACPI device, IDs PNP0400 (active)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087733] pnp 00:05: Plug and Play ACPI device, IDs PNP0501 (active)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.087884] pnp: PnP ACPI: found 6 devices
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093540] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093553] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093555] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093557] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093558] pci_bus 0000:00: resource 7 [mem 0x40000000-0xfebfffff window]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093588] NET: Registered protocol family 2
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093729] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093752] TCP bind hash table entries: 8192 (order: 5, 131072 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093783] TCP: Hash tables configured (established 8192 bind 8192)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093817] UDP hash table entries: 512 (order: 2, 16384 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093825] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093858] NET: Registered protocol family 1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093868] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093887] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093901] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093925] pci 0000:00:02.0: Video device with shadowed ROM
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093937] PCI: CLS 0 bytes, default 64
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.093993] Trying to unpack rootfs image as initramfs...
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.454683] Freeing initrd memory: 19432K (ffff8800359fc000 - ffff880036cf6000)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.454784] microcode: AMD CPU family 0x6 not supported
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.454937] Scanning for low memory corruption every 60 seconds
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.455209] futex hash table entries: 256 (order: 2, 16384 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.455219] Initialise system trusted keyring
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.455236] audit: initializing netlink subsys (disabled)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.455254] audit: type=2000 audit(1460107746.140:1): initialized
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.455490] HugeTLB registered 2 MB page size, pre-allocated 0 pages
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.456704] zpool: loaded
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.456706] zbud: loaded
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.456861] VFS: Disk quotas dquot_6.6.0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.456891] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457253] fuse init (API version 7.23)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457353] Key type big_key registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457512] Key type asymmetric registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457515] Asymmetric key parser 'x509' registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457527] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457547] io scheduler noop registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457550] io scheduler deadline registered (default)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457574] io scheduler cfq registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457633] pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457638] pciehp: PCI Express Hot Plug Controller Driver version: 0.4
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457716] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457719] ACPI: Power Button [PWRF]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457832] GHES: HEST is not enabled!
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.457910] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.480850] 00:05: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.481856] Linux agpgart interface v0.103
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.483302] brd: module loaded
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.483934] loop: module loaded
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.484069] ata_piix 0000:00:01.1: version 2.13
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.484848] scsi host0: ata_piix
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.484904] scsi host1: ata_piix
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.484931] ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc040 irq 14
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.484940] ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc048 irq 15
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485005] libphy: Fixed MDIO Bus: probed
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485008] tun: Universal TUN/TAP device driver, 1.6
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485009] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485218] PPP generic driver version 2.4.2
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485269] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485273] ehci-pci: EHCI PCI platform driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485281] ehci-platform: EHCI generic platform driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485288] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485291] ohci-pci: OHCI PCI platform driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485299] ohci-platform: OHCI generic platform driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485306] uhci_hcd: USB Universal Host Controller Interface driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.485347] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486177] serio: i8042 KBD port at 0x60,0x64 irq 1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486184] serio: i8042 AUX port at 0x60,0x64 irq 12
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486284] mousedev: PS/2 mouse device common for all mice
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486489] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486675] rtc_cmos 00:00: RTC can wake from S4
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486852] rtc_cmos 00:00: rtc core: registered rtc_cmos as rtc0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486944] rtc_cmos 00:00: alarms up to one day, 114 bytes nvram, hpet irqs
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.486952] i2c /dev entries driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487009] device-mapper: uevent: version 1.0.3
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487063] device-mapper: ioctl: 4.33.0-ioctl (2015-8-18) initialised: dm-devel@redhat.com
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487074] ledtrig-cpu: registered to indicate activity on CPUs
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487295] PCCT header not found.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487456] NET: Registered protocol family 10
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487586] NET: Registered protocol family 17
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487595] Key type dns_resolver registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.487770] Loading compiled-in X.509 certificates
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.488630] Loaded X.509 cert 'Build time autogenerated kernel key: 736e2f9ea1b4728a15ac169b1869267e1128d6e8'
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.488642] registered taskstats version 1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.488657] zswap: loading zswap
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.488659] zswap: using zbud pool
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.488662] zswap: using lzo compressor
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.490159] Key type trusted registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492631] Key type encrypted registered
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492637] AppArmor: AppArmor sha1 policy hashing enabled
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492641] ima: No TPM chip found, activating TPM-bypass!
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492659] evm: HMAC attrs: 0x1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492782]   Magic number: 12:466:474
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492879] rtc_cmos 00:00: setting system clock to 2016-04-08 09:29:05 UTC (1460107745)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492931] BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492932] EDD information not available.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.492966] PM: Hibernation image not present or could not be loaded.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.641722] ata1.01: NODEV after polling detection
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.642290] ata2.01: NODEV after polling detection
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.643097] ata1.00: ATA-7: QEMU HARDDISK, 2.5+, max UDMA/100
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.643105] ata1.00: 83886080 sectors, multi 16: LBA48 
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.643401] ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.644725] ata1.00: configured for MWDMA2
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.644941] scsi 0:0:0:0: Direct-Access     ATA      QEMU HARDDISK    2.5+ PQ: 0 ANSI: 5
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.645480] sd 0:0:0:0: [sda] 83886080 512-byte logical blocks: (42.9 GB/40.0 GiB)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.645617] sd 0:0:0:0: [sda] Write Protect is off
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.645625] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.645672] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.646446] sd 0:0:0:0: Attached scsi generic sg0 type 0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.647380]  sda: sda1 sda2 < sda5 >
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.647558] sd 0:0:0:0: [sda] Attached SCSI disk
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.647669] ata2.00: configured for MWDMA2
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.647984] scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.656389] sr 1:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.656392] cdrom: Uniform CD-ROM driver Revision: 3.20
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.656463] sr 1:0:0:0: Attached scsi CD-ROM sr0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.656567] sr 1:0:0:0: Attached scsi generic sg1 type 5
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.656993] Freeing unused kernel memory: 1468K (ffffffff81d38000 - ffffffff81ea7000)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.656995] Write protecting the kernel read-only data: 12288k
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.657193] Freeing unused kernel memory: 240K (ffff8800017c4000 - ffff880001800000)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.657306] Freeing unused kernel memory: 280K (ffff880001bba000 - ffff880001c00000)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.672127] systemd-udevd[99]: starting version 204
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.690982] Floppy drive(s): fd0 is 1.44M
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.701452] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.701455] e1000: Copyright (c) 1999-2006 Intel Corporation.
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.704315] FDC 0 is a S82078B
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.714981] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input4
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.715164] input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input3
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.797541] ACPI: PCI Interrupt Link [LNKC] enabled at IRQ 11
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.813117] EXT4-fs (sda1): INFO: recovery required on readonly filesystem
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    0.813127] EXT4-fs (sda1): write access will be enabled during recovery
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.122011] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 52:54:00:12:34:56
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.122018] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.146442] EXT4-fs (sda1): recovery complete
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.166585] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.254324] random: init urandom read with 42 bits of entropy available
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.301083] init: plymouth-upstart-bridge main process (148) terminated with status 1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.301091] init: plymouth-upstart-bridge main process ended, respawning
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.319127] init: plymouth-upstart-bridge main process (158) terminated with status 1
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.319138] init: plymouth-upstart-bridge main process ended, respawning
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.452034] tsc: Refined TSC clocksource calibration: 3200.154 MHz
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.452039] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x2e20db25cbe, max_idle_ns: 440795215743 ns
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.595090] Adding 1046524k swap on /dev/sda5.  Priority:-1 extents:1 across:1046524k FS
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.744014] EXT4-fs (sda1): re-mounted. Opts: errors=remount-ro
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.784897] systemd-udevd[284]: starting version 204
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    1.986135] lp: driver loaded but no devices found
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    2.083433] ppdev: user-space parallel port driver
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    2.118219] parport_pc 00:04: reported by Plug and Play ACPI
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    2.118346] parport0: PC-style at 0x378, irq 7 [PCSPP,TRISTATE]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    2.212247] lp0: using parport0 (interrupt-driven).
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    2.687266] random: nonblocking pool is initialized
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 rsyslogd-2039: Could no open output pipe '/dev/xconsole': No such file or directory [try http://www.rsyslog.com/e/2039 ]
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 kernel: [    3.628528] piix4_smbus 0000:00:01.3: SMBus Host Controller at 0x700, revision 0
+Apr  8 11:29:08 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] AppArmor D-Bus mediation is enabled
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Bluetooth daemon 4.101
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Starting SDP server
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.268641] audit: type=1400 audit(1460107749.271:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/sbin/dhclient" pid=436 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.268646] audit: type=1400 audit(1460107749.271:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=436 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.268648] audit: type=1400 audit(1460107749.271:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=436 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.269159] audit: type=1400 audit(1460107749.271:5): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=436 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.269164] audit: type=1400 audit(1460107749.271:6): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=436 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.269368] audit: type=1400 audit(1460107749.271:7): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=436 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.270581] audit: type=1400 audit(1460107749.271:8): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/sbin/dhclient" pid=426 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.270586] audit: type=1400 audit(1460107749.271:9): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=426 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.270588] audit: type=1400 audit(1460107749.271:10): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=426 comm="apparmor_parser"
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Found user 'avahi' (UID 111) and group 'avahi' (GID 117).
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Successfully dropped root privileges.
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: avahi-daemon 0.6.31 starting up.
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.817582] Bluetooth: Core ver 2.20
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.817618] NET: Registered protocol family 31
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.817619] Bluetooth: HCI device and connection manager initialized
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.817817] Bluetooth: HCI socket layer initialized
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.817820] Bluetooth: L2CAP socket layer initialized
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.817828] Bluetooth: SCO socket layer initialized
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Successfully called chroot().
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Successfully dropped remaining capabilities.
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 failsafe: Failsafe of 120 seconds reached.
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: No service file found in /etc/avahi/services.
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.911333] init: cups main process (485) killed by HUP signal
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.911343] init: cups main process ended, respawning
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: DIS cannot start: GATT is disabled
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Failed to init deviceinfo plugin
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Failed to init proximity plugin
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Failed to init time plugin
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Failed to init alert plugin
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Failed to init thermometer plugin
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.925879] Bluetooth: RFCOMM TTY layer initialized
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.925886] Bluetooth: RFCOMM socket layer initialized
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.925891] Bluetooth: RFCOMM ver 1.11
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Network interface enumeration completed.
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Registering HINFO record with values 'X86_64'/'LINUX'.
+Apr  8 11:29:09 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Server startup complete. Host name is user-Standard-PC-i440FX-PIIX-1996.local. Local service cookie is 414344234.
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Failed to init gatt_example plugin
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 bluetoothd[453]: Bluetooth Management interface initialized
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.996179] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.996183] Bluetooth: BNEP filters: protocol multicast
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    4.996188] Bluetooth: BNEP socket layer initialized
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.208272] init: failsafe main process (501) killed by TERM signal
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 ModemManager[584]: <info>  ModemManager (version 1.0.0) starting...
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.965293] audit_printk_skb: 18 callbacks suppressed
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.965304] audit: type=1400 audit(1460107750.967:17): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/lightdm/lightdm-guest-session" pid=655 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.965323] audit: type=1400 audit(1460107750.967:18): apparmor="STATUS" operation="profile_load" profile="unconfined" name="chromium" pid=655 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.966980] audit: type=1400 audit(1460107750.967:19): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="chromium" pid=655 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.976309] audit: type=1400 audit(1460107750.979:20): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/sbin/dhclient" pid=660 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.976317] audit: type=1400 audit(1460107750.979:21): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=660 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.976321] audit: type=1400 audit(1460107750.979:22): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=660 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.976713] audit: type=1400 audit(1460107750.979:23): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=660 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.976716] audit: type=1400 audit(1460107750.979:24): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=660 comm="apparmor_parser"
+Apr  8 11:29:10 user-Standard-PC-i440FX-PIIX-1996 kernel: [    5.977315] audit: type=1400 audit(1460107750.979:25): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=660 comm="apparmor_parser"
+Apr  8 11:29:11 user-Standard-PC-i440FX-PIIX-1996 kernel: [    6.239189] audit: type=1400 audit(1460107751.239:26): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/evince" pid=661 comm="apparmor_parser"
+Apr  8 11:29:11 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> NetworkManager (version 0.9.8.8) is starting...
+Apr  8 11:29:11 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Read config file /etc/NetworkManager/NetworkManager.conf
+Apr  8 11:29:11 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> WEXT support is enabled
+Apr  8 11:29:11 user-Standard-PC-i440FX-PIIX-1996 ntpdate[724]: Can't find host ntp.ubuntu.com: Name or service not known (-2)
+Apr  8 11:29:11 user-Standard-PC-i440FX-PIIX-1996 ntpdate[724]: no servers can be used, exiting
+Apr  8 11:29:12 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> VPN: loaded org.freedesktop.NetworkManager.pptp
+Apr  8 11:29:12 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> DNS: loaded plugin dnsmasq
+Apr  8 11:29:12 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.PolicyKit1' (using servicehelper)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 polkitd[786]: started daemon version 0.105 using authority implementation `local' version `0.105'
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.PolicyKit1'
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: init!
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: update_system_hostname
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:       interface-parser: parsing file /etc/network/interfaces
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:       interface-parser: finished parsing file /etc/network/interfaces
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPluginIfupdown: management mode: unmanaged
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: devices added (path: /sys/devices/pci0000:00/0000:00:03.0/net/eth0, iface: eth0)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: device added (path: /sys/devices/pci0000:00/0000:00:03.0/net/eth0, iface: eth0): no ifupdown configuration found.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: devices added (path: /sys/devices/virtual/net/lo, iface: lo)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: device added (path: /sys/devices/virtual/net/lo, iface: lo): no ifupdown configuration found.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: end _init.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Loaded plugin ifupdown: (C) 2008 Canonical Ltd.  To report bugs please use the NetworkManager mailing list.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Loaded plugin keyfile: (c) 2007 - 2010 Red Hat, Inc.  To report bugs please use the NetworkManager mailing list.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ofono: Acquired D-Bus service com.canonical.NMOfono
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ofono: init!
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ofono: end _init.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Loaded plugin (null): (null)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    Ifupdown: get unmanaged devices count: 0
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: (31990544) ... get_connections.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ifupdown: (31990544) ... get_connections (managed=false): return empty list.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ofono: (31776192) ... get_connections.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    SCPlugin-Ofono: (31776192) connections count: 0
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]:    Ifupdown: get unmanaged devices count: 0
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> monitoring kernel firmware directory '/lib/firmware'.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> WiFi enabled by radio killswitch; enabled by state file
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> WWAN enabled by radio killswitch; enabled by state file
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> WiMAX enabled by radio killswitch; enabled by state file
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Networking is enabled by state file
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <warn> failed to allocate link cache: (-12) Object not found
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): carrier is OFF
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): new Ethernet device (driver: 'e1000' ifindex: 2)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): exported as /org/freedesktop/NetworkManager/Devices/0
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): device state change: unmanaged -> unavailable (reason 'managed') [10 20 2]
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): bringing up device.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 kernel: [    8.348459] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 kernel: [    8.358873] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 kernel: [    8.358894] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): carrier now ON (device state 20)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): preparing device.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): deactivating device (reason 'managed') [2]
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Added default wired connection 'Wired connection 1' for /sys/devices/pci0000:00/0000:00:03.0/net/eth0
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <warn> /sys/devices/virtual/net/lo: couldn't determine device driver; ignoring...
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <warn> /sys/devices/virtual/net/lo: couldn't determine device driver; ignoring...
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): carrier now OFF (device state 20)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): carrier now ON (device state 20)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> urfkill disappeared from the bus
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): device state change: unavailable -> disconnected (reason 'carrier-changed') [20 30 40]
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> ModemManager available in the bus
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Auto-activating connection 'Wired connection 1'.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) starting connection 'Wired connection 1'
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): device state change: disconnected -> prepare (reason 'none') [30 40 0]
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> NetworkManager state is now CONNECTING
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 1 of 5 (Device Prepare) scheduled...
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 1 of 5 (Device Prepare) started...
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 2 of 5 (Device Configure) scheduled...
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 1 of 5 (Device Prepare) complete.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 2 of 5 (Device Configure) starting...
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): device state change: prepare -> config (reason 'none') [40 50 0]
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 2 of 5 (Device Configure) successful.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 3 of 5 (IP Configure Start) scheduled.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 2 of 5 (Device Configure) complete.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 3 of 5 (IP Configure Start) started...
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): device state change: config -> ip-config (reason 'none') [50 70 0]
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Beginning DHCPv4 transaction (timeout in 45 seconds)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 acpid: starting up with netlink and the input layer
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 anacron[872]: Anacron 2.3 started on 2016-04-08
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 anacron[872]: Will run job `cron.daily' in 5 min.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 anacron[872]: Will run job `cron.weekly' in 10 min.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 anacron[872]: Will run job `cron.monthly' in 15 min.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 anacron[872]: Jobs will be executed sequentially
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 cron[816]: (CRON) INFO (pidfile fd = 3)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 cron[903]: (CRON) STARTUP (fork ok)
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> dhclient started with pid 880
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Beginning IP6 addrconf.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 3 of 5 (IP Configure Start) complete.
+Apr  8 11:29:13 user-Standard-PC-i440FX-PIIX-1996 /usr/sbin/irqbalance: Balancing is ineffective on systems with a single cache domain.  Shutting down
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 ModemManager[584]: <warn>  Couldn't find support for device at '/sys/devices/pci0000:00/0000:00:03.0': not supported by any plugin
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 cron[903]: (CRON) INFO (Running @reboot jobs)
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 acpid: 9 rules loaded
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 acpid: waiting for events: event logging is off
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: Internet Systems Consortium DHCP Client 4.2.4
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: Copyright 2004-2012 Internet Systems Consortium.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: All rights reserved.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: For info, please visit https://www.isc.org/software/dhcp/
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: 
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: Listening on LPF/eth0/52:54:00:12:34:56
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): DHCPv4 state changed nbi -> preinit
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: Sending on   LPF/eth0/52:54:00:12:34:56
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: Sending on   Socket/fallback
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3 (xid=0xe3fe6d36)
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: DHCPREQUEST of 10.0.2.15 on eth0 to 255.255.255.255 port 67 (xid=0x366dfee3)
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: DHCPOFFER of 10.0.2.15 from 10.0.2.2
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: DHCPACK of 10.0.2.15 from 10.0.2.2
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): DHCPv4 state changed preinit -> bound
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info>   address 10.0.2.15
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info>   prefix 24 (255.255.255.0)
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info>   gateway 10.0.2.2
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info>   nameserver '10.0.2.3'
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 5 of 5 (IPv4 Configure Commit) scheduled...
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 5 of 5 (IPv4 Commit) started...
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Joining mDNS multicast group on interface eth0.IPv4 with address 10.0.2.15.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: New relevant interface eth0.IPv4 for mDNS.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Registering new address record for 10.0.2.15 on eth0.IPv4.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 dhclient: bound to 10.0.2.15 -- renewal in 37381 seconds.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Joining mDNS multicast group on interface eth0.IPv6 with address fe80::5054:ff:fe12:3456.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: New relevant interface eth0.IPv6 for mDNS.
+Apr  8 11:29:14 user-Standard-PC-i440FX-PIIX-1996 avahi-daemon[491]: Registering new address record for fe80::5054:ff:fe12:3456 on eth0.*.
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 whoopsie[873]: whoopsie 0.2.24.6ubuntu2 starting up.
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 whoopsie[873]: Using lock path: /var/lock/whoopsie/lock
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): device state change: ip-config -> secondaries (reason 'none') [70 90 0]
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 5 of 5 (IPv4 Commit) complete.
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): device state change: secondaries -> activated (reason 'none') [90 100 0]
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> NetworkManager state is now CONNECTED_GLOBAL
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Policy set 'Wired connection 1' (eth0) as default for IPv4 routing and DNS.
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> DNS: starting dnsmasq...
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <warn> dnsmasq not available on the bus, can't update servers.
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <error> [1460107755.346485] [nm-dns-dnsmasq.c:396] update(): dnsmasq owner not found on bus: Could not get owner of name 'org.freedesktop.NetworkManager.dnsmasq': no such name
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <warn> DNS: plugin dnsmasq update failed
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Writing DNS information to /sbin/resolvconf
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dnsmasq[979]: started, version 2.68 cache disabled
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dnsmasq[979]: compile time options: IPv6 GNU-getopt DBus i18n IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset auth
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dnsmasq[979]: DBus support enabled: connected to system bus
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dnsmasq[979]: warning: no upstream servers configured
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) successful, device activated.
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.nm_dispatcher' (using servicehelper)
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <warn> dnsmasq appeared on DBus: :1.13
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dnsmasq[979]: setting upstream servers from DBus
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dnsmasq[979]: using nameserver 10.0.2.3#53
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Writing DNS information to /sbin/resolvconf
+Apr  8 11:29:15 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Apr  8 11:29:16 user-Standard-PC-i440FX-PIIX-1996 whoopsie[976]: offline
+Apr  8 11:29:16 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.Accounts' (using servicehelper)
+Apr  8 11:29:16 user-Standard-PC-i440FX-PIIX-1996 accounts-daemon[1134]: started daemon version 0.6.35
+Apr  8 11:29:16 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.Accounts'
+Apr  8 11:29:17 user-Standard-PC-i440FX-PIIX-1996 whoopsie[976]: online
+Apr  8 11:29:21 user-Standard-PC-i440FX-PIIX-1996 kernel: [   16.651552] init: plymouth-upstart-bridge main process (167) killed by TERM signal
+Apr  8 11:29:23 user-Standard-PC-i440FX-PIIX-1996 ntpdate[1101]: step time server 91.189.94.4 offset 0.827851 sec
+Apr  8 11:29:24 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> WiFi hardware radio set enabled
+Apr  8 11:29:34 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> (eth0): IP6 addrconf timed out or failed.
+Apr  8 11:29:34 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 4 of 5 (IPv6 Configure Timeout) scheduled...
+Apr  8 11:29:34 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 4 of 5 (IPv6 Configure Timeout) started...
+Apr  8 11:29:34 user-Standard-PC-i440FX-PIIX-1996 NetworkManager[728]: <info> Activation (eth0) Stage 4 of 5 (IPv6 Configure Timeout) complete.
+Apr  8 11:29:38 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.UPower' (using servicehelper)
+Apr  8 11:29:38 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.UPower'
+Apr  8 11:29:40 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Apr  8 11:29:40 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Apr  8 11:29:40 user-Standard-PC-i440FX-PIIX-1996 kernel: [   35.029473] audit_printk_skb: 123 callbacks suppressed
+Apr  8 11:29:40 user-Standard-PC-i440FX-PIIX-1996 kernel: [   35.029477] audit: type=1400 audit(1460107780.861:68): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/lib/cups/backend/cups-pdf" pid=1685 comm="apparmor_parser"
+Apr  8 11:29:40 user-Standard-PC-i440FX-PIIX-1996 kernel: [   35.029485] audit: type=1400 audit(1460107780.861:69): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=1685 comm="apparmor_parser"
+Apr  8 11:29:40 user-Standard-PC-i440FX-PIIX-1996 kernel: [   35.029963] audit: type=1400 audit(1460107780.861:70): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="/usr/sbin/cupsd" pid=1685 comm="apparmor_parser"
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.RealtimeKit1' (using servicehelper)
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.RealtimeKit1'
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Successfully called chroot.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Successfully dropped privileges.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Successfully limited resources.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Running.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Watchdog thread running.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Canary thread running.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Successfully made thread 1729 of process 1729 (n/a) owned by '1000' high priority at nice level -11.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Supervising 1 threads of 1 processes of 1 users.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Successfully made thread 1749 of process 1749 (n/a) owned by '1000' high priority at nice level -11.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 rtkit-daemon[1732]: Supervising 2 threads of 2 processes of 1 users.
+Apr  8 11:29:41 user-Standard-PC-i440FX-PIIX-1996 pulseaudio[1749]: [pulseaudio] pid.c: Daemon already running.
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.ColorManager' (using servicehelper)
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.locale1' (using servicehelper)
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 colord: Using config file /etc/colord.conf
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.locale1'
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 colord: Using mapping database file /var/lib/colord/mapping.db
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 colord: Using device database file /var/lib/colord/storage.db
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 colord: loaded plugin libcd_plugin_scanner.so
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 colord: plugin /usr/lib/x86_64-linux-gnu/colord-plugins/libcd_plugin_sane.so not loaded: plugin refused to load
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 colord: loaded plugin libcd_plugin_camera.so
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 colord: Daemon ready for requests
+Apr  8 11:29:46 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.ColorManager'
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-c227f46f246694ba9971f270cb61a0c1
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-654b99c87e67edb1c1cfb0dcb7fa9d04
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-d4a7a2bd8ddaacf10e275e3db31d72b8
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-3bd2261b1125a0fd9ebf827a2d1bed84
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-57f0d896250f6f98f77ca1b0d19019c0
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-2f1f11ecd613fe5551420fcaf5b11ff8
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-c3e6382fa9b2d31b01b736f6f97aac3a
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-523e494bc2f53c53d51d0758b07f4879
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-6ad6d63767ce0393245528ada92f1cb2
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-a1d13bd5309e0f06ceda6f0d75367823
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-0720e7cdbc792b77c0740c39f325ef9e
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-3a34aa6c3d1fb1ef63ff41e04ee00979
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-d6490883a866e4059370e1de1d840283
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-526fbc9bdf0d7156c553998d47a3b5fc
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-0383c34650771ce95ef93fe916867725
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-f64a1f19ce07290b35a752b00217b684
+Apr  8 11:29:47 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.UDisks2' (using servicehelper)
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-fb0ac62618f016ed9b92ce239258efa8
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-b0701c2ccf059287d0b067464df8bda9
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-72f5b1cba915b68ea75cc843e270df5a
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-df7c0067b1eb9bcc9fc9b33bc3a797eb
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-ea421e3a65cfa796e2732ce36086e327
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-353a6bcabda00f04b6988f89126ce6f5
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-a10be98be58460669fcdc6946939b7cf
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Profile added: icc-6a245ab2d8892e2e56232af93cd48b81
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 udisksd[1816]: udisks daemon version 2.1.3 starting
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 colord: Device added: xrandr-default
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.UDisks2'
+Apr  8 11:29:48 user-Standard-PC-i440FX-PIIX-1996 udisksd[1816]: Acquired the name org.freedesktop.UDisks2 on the system message bus
+Apr  8 11:30:15 user-Standard-PC-i440FX-PIIX-1996 colord: device removed: xrandr-default
+Apr  8 11:30:15 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Apr  8 11:30:15 user-Standard-PC-i440FX-PIIX-1996 dbus[408]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Apr  8 11:30:15 user-Standard-PC-i440FX-PIIX-1996 rsyslogd: [origin software="rsyslogd" swVersion="7.4.4" x-pid="366" x-info="http://www.rsyslog.com"] exiting on signal 15.
