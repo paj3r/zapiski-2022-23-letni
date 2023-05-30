@@ -873,3 +873,245 @@ $\forall u, v \in V: (u, v) \in E' \iff \nexists w \in V: d(u, w)^2 \lt d(u, v^2
     - identifikacija paketa
     
     - števec korakov (TTL)
+
+### LoRaWAN
+
+lahko oddajamo samo 1% dneva.
+
+Omrežje sestavljajo 3 osnovni gradniki:
+
+- LoRa senzorji (End Nodes)...
+
+
+
+###### Protokolni sklad
+
+Pogovarjajo se na fizičnem nivoju med napravami, transportni do strežnika in aplikacijski do naprave.
+
+### Sigfox
+
+- Je komercialno omrežje, ki ga trži podjetje SigFox. Podjetje ima svoje partnerje  večih državah
+
+- Komunikacija deluje na ISM področju
+
+- Uporablja modulacijo z zelo oszkim spektrom (Utra Narrowband)
+
+- Napenjen napravam z majhno porabo energije in majhnimi zahtevami po prenosu podatkov
+
+- Domet je do 30 km na odprtem prostoru
+
+###### Ultra-narrow band
+
+- Zelo ozka pasovna širina - 100Hz
+
+- Zelo kratki paketi (12 bajtov)
+
+- Zelo nizka hitrost prenosa
+
+###### Pošiljanje
+
+Naprava pošlje paket trikrat na različnih frekvencah in ob različnih časih.
+
+### Načini povezovanja naprav
+
+Naprave se lahko povezujejo
+
+- Na strežnik
+
+- Na drugo napravo
+
+### Načini komunikacije
+
+- Naprave običajno komunicirajo zelo redko in prenašajo zelo malo podatkov
+
+- V običajnih mobilnih omrežjih bi signalizacija presegla količino koristnih informacij
+
+- Težava je, ker še ni uveljavljenih novih protokolov za komunikacijo med napravami in strežnikom
+
+- Še vedno se uporabja protokol IP
+
+### Zahteve
+
+- Zahteve, ki jih mora omrežje zadovoljevati lahko razdelimo na:
+  
+  - Količina podatkov
+  
+  - Zahteve QoS
+  
+  - Časovna občutljivost (zakasnitev pri prenosu podatkov)
+  
+  - Začetek komunikacije (naprava ali strežnik)
+
+### Pomanjkljivosti obstoječih mobilnih omrežij
+
+- Relativno dog čas prijave v omrežje
+
+- Omrežje zahteva aktivni terminal (keep alive)
+
+- Po prekinitvi (time out) je zahtevana nova prijava v omrežje
+
+- Če je podatkovnega prometa malo, predstavlja signalizacija večji delež prometa po mobilnem omrežju
+
+- Ni optimalno za zelo majhno porabo energije
+
+### Optimizacija omrežij
+
+Zahteve:
+
+- Omogočitev zelo velikega števila naprav na eno celico
+
+- Zniževanje cene
+
+- Možnost začetka zveze (triggering)
+
+- Izogibanje preobremenitvi prometa
+
+- Naslavljanje (neodvisno od tel. št.)
+
+- Skupinsko dodeljevanje pravic določenemu tipu naročnika (npr. električni števec)
+
+### Zmanjševanje potrebe po resursih
+
+- Uporaba resursov zaradi ohranjanja zveze, mobilnosti
+
+- Ohranjanje ali prekinitev zveze (trenutna meja 3 min)
+
+- Signalizacija generira promet, ki ej lahko bistveno večji od podatkovnega prometa
+
+- Zmanjševanje konic v prometu
+
+### Standardi za prenos mobilnih omrežij
+
+- LTE CAT 1 - LTE standard za mobilno telefonijo, ki ni optimiran za IoT
+
+- ...
+
+###### LTE Cat M1
+
+posebnosti:
+
+- Dolga življenjska doba baterije - okoli 10 let
+
+- Nizka cena terminala (v razredu GSM, GPRS terminalov)
+
+- Povečan doseg (> 155.7 dB izgub na poti)
+
+- Spremenljiva hitrost prenosa podatkov med 10kbps in 1Mbps glede na potrebe naprave
+
+Uvajanje:
+
+- Uporablja LTE spekter
+
+- Sobivanje z ostalimi LTE standardi
+
+- Omogoča FDD, TDD in HF način delovanja
+
+- Uporablja se lahko obstojea LTE oprema s programsko nadgradnjo
+
+Posebnosti radijskega dela
+
+- deluje s pasovno itino 1.08MHz
+
+- ahko menja kanale
+
+- Omogoča TTI bundling/repetition
+
+- Nov razred moči za terminale: 20dBm
+
+- Dodatne poenostavitve
+
+###### EC-GSM-IOT
+
+se ne uporablja več, brez razloga so ga uvedli baje
+
+### Poraba energije
+
+Uvajajo se metode manjšanja porabe energije:
+
+- "Deep sleep mode", kjer lahko naprava v načinu mirovanja.
+
+- ...
+
+# Satelitska komunikacija
+
+### Posebnosti
+
+Prednosti satelitske komunikacije:
+
+- Pokritost velikih področij
+
+- Omogoča komunikacijo na težko dostopnih krajih
+
+- Omogoča komunikacijo z letali
+
+Slabosti:
+
+- Mobilne naprave podpirajo samo govorno komunikacijo in majhne hitrosti
+
+- Za večje hitrosti je potrebna večja usmerjena antena
+
+- Komunikacijski sateliti so dragi
+
+- Ni možnosti popravila in vzdrževanja satelitov
+
+### Orbite
+
+- Sateliti se lahko nahajajo na različnih orbitah
+
+- Geostacionarna orbita
+
+- Ne geostacionarna orbita
+  
+  - Srednja zemeljska orbita
+  
+  - Nizka zemeljska orbita
+
+### Zakasnitve
+
+- Zakasnitve so odvisne od orbite, ki predstavlja oddaljenost od satelita od zemlje:
+  
+  - Geostacionarna orbita 260ms
+  
+  - Nizka zemeljska orbita 10ms
+
+- V primeru, ko poteka komunikacija preko sateiltskega omrežja, se zakasnitev še poveča
+
+- Velika zakasnitev povzroča težave pri protokolih, kot so TCP
+
+### Cubesats
+
+- Cubesats je naziv za majhne satelite velikosti npr 10x10x10cm, kjer masa ne presega 2KG
+
+- Običajno so sateliti te vrste nekoliko večji
+
+- Majhna teža pomeni nizko ceno postavitve v orbito
+
+- Zaradi majhne dimenzije je satelite težko slediti, zato predstavljajo nevarnost za druge satelite
+
+###### Swarms
+
+- Sateliti so v nizki orbiti
+
+- Pokrivajo celotno zemeljsko površino
+
+- Zaradi majhnega števila satelitov je komunikacija periodična
+
+- Podjetje je kupil SpaceX za 85 Miljonov dolarjev.
+
+- Deluje v VHF frek. območju (izjemno nizke frekvence)
+
+- Klasična naročnina obsega do 750 paketov in skupno 150kB na napravo na mesec proti satelitu.
+
+###### Orbicom
+
+Večji sateliti .....
+
+### Iridium
+
+Cena modula okoli 300\$, odklepanje 60\$, mesečna naročnina 12\$. Modul lahko priklopimo v arduino ali Raspberry Pi.
+
+### Totum
+
+### orca systems
+
+KONC PREDAVANJ

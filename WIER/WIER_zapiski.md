@@ -421,3 +421,143 @@ preko teorije grafov
   - pageRank
   
   - HITS
+
+### Luščenje
+
+1. Čiščenje HTML
+
+2. zgradimo DOM drevo
+
+3. Analiza strani
+   
+   - Identificikacija seznamov
+   
+   - identifikacija objektov
+   
+   - Ovojnica, luščenje
+
+#### Tehnika
+
+1. Primerjava nizov (stringov)
+
+2. primerjava dreves: Simple Tree Matching:
+   
+   - $NSTM= \frac{STM(A, B)}{(nodes(A) + nodes(B))/2}$ - Metrika podobnosti
+   
+   - Obiskujemo drevo v pre-order načinu
+   
+   - upoštevamo pravila:
+     
+     - Vsako vozlišče iz A lahko poravnamo samo enkrat
+     
+     - ohranimo zaporedje vozlišč
+     
+     - ohranimo hierarhije
+
+kaj bomo obravnaval:
+
+1. Kako iz poravnanih dreves izračunat podobnost
+
+2. Večkratna poravnava
+   
+   - Center star metoda - na stringih
+   
+   - Delno poravnana drevesa - na drevesih
+
+3. Gradnja DOM
+
+4. Zajem podatkov s strani
+   
+   - Identifikacija seznamov
+   
+   - Segmentacija zapisov na objekte
+   
+   - poravnava objektov
+
+## Večkratno usklajevanje
+
+Iskanje ponavljajočih se vzorcev iz HTML
+
+- Optimal multiple allignment - Ne uporabljamo
+
+- Center star method
+
+- Partial tree alignment
+
+#### Center star method
+
+Angoritem je nekje
+
+Levensteinva razdalja izberemo $S_c$ -> seštevek razdalj, ki jih ima do drugih stringov je minimalen.
+
+k - št. stringov, n - povp.dolžina stringov
+
+$d(s_1, s_2) -> O(n^2)$
+
+Izbor $S_e -> O(n^2 k^2)$
+
+primerjava/poravnanje stringov $O(kn^2)$
+
+Primer:
+
+$S = \{ABC, XBC, XAB\}$
+
+$S_c = ABC$
+
+Iteracija 1
+
+$c^* = s_c = ABC, S = XBC$
+
+$align(ABC, XBC)$ -> Največji allignment ABC, XBC je 2
+
+$M = \{ABC, XBC\}$
+
+Iteracija 2
+
+$c^* = ABC, S = XAB$
+
+$align(c^*, s)$ dobimo $\_ABC, XAB\_$
+
+$M = \{\_ABC, XAB\_, \_XBC\}$
+
+#### Delna poravnava dreves
+
+Naj bodo $v_j...v_k$ zaporedna vozlišča v drevesu, ki ga primerjamo s centralnim
+
+Vozlišča $v_j...v_k$ lahko vstavimo v $T_s$, če imajo v $T_s$ enolično mesto:
+
+1. Levo od $v_j..v_k$ sta vozlišči, ki sta v $T_s$ skupaj.
+
+2. Če imajo $v_j...v_k$ samo eno vozlišče na levi in če je to vozlišče najbolj desno v $T_s$, potem jih lahko dodamo v $T_s$ desno od tega vozlišča.
+
+3. Če imajo $v_j...v_k$ samo eno vozlišče na desni in če je to vozlišče najbolj levo v T_s, potem jih lahko dodamo v T_s levo od tega vozlišča.
+
+#### Izzivi pri poravnavi
+
+- seznam je v splošnem poljuben
+
+- podatkovni zapisi se ne začnejo nujno s prvim elementom na nivoju
+
+- vmes se lahko prekinejo
+
+#### Definicije
+
+- **Posplošena vozlišča** so kombinacija $r \geq 1$ vozlišč, ki so zaporedna in imajo istega očeta
+
+- **Podatkovni seznam** je seznam $n \geq 2$ posplošenih vozlišč z naslednjimi lastnostmi:
+  
+  - poslpošena vozlišča imajo istega očeta
+  
+  - posplošena vozlišča imajo iste dolžine
+  
+  - posplošena vozlišča so zaporedna
+  
+  - podobnost posplošenih vozlišč $\gt \tau$
+  
+  - Kje se začne prvo pospl. vozl.
+
+- Želimo ugotoviti za pospl. vozl.:
+  
+  1. Kje se začne pospl. vozlišče?
+  
+  2. Koliko vozlišč zajema
