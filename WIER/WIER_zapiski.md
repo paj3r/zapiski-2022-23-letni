@@ -415,7 +415,45 @@ Značilke:
 
 - Relevantni kocitati
 
-# Predavanje 5?
+### Tematski pajek, ki uporablja spodbujevalno učenje
+
+Cilj:
+
+- Izbrati čim več relevantnih strani in se izogibati irelevantnim
+
+- Izbrati mora povezavo, ki bo pripeljala do relevantne strani na dolgi rok
+
+##### Problemi:
+
+- Spletnih strani je zelo veliko, zato strani, ki imajo podobne lastnosti grupiramo v skupna stanja
+
+- Povezav je tudi veliko iz vsake strani, zato jih več skupaj povežemo v isto akcijo
+
+###### Značilnosti strani in povezav:
+
+- Strani in povezave:
+  
+  - Relevantnost strani za ciljno temo in izbrane kategorije
+  
+  - Relevantnost, glede na spremembo kategorije
+  
+  - Povprečna ustreznost nadrejenih strani
+    
+    - Vsaka neobiskana povezava mora hraniti informacije o prejšnjih straneh
+  
+  - Oddaljenost od zadnje ustretne strani
+
+###### Priotiziranje
+
+Prioritetno spreminjamo vrednosti stanj (množic strani).
+
+Pajek vedno izbere najboljšo stran v frontierju, zato skače po spletu, ni tuneliranja.
+
+###### Linearna aproksimacija
+
+Ker je q-tabela prevelika, te vrednosti ocenjujemo s pomočjo gradientnega spusta.
+
+
 
 zadnjič -> kako naredit pajka, ki uporablja spdbujavalno učenje, da se premika po spletu, ima boljše rezultate-> boljše se premika po relevantnih straneh
 
