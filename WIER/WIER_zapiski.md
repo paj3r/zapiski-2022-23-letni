@@ -1,10 +1,154 @@
 # SPLETNI PAJKI
 
-# Predavanje 2
+## Arhitektura
+
+### Osnovna arhitektura
+
+Vsak spletni pajek vsebuje:
+
+- Frontier (frontier) -  vanj se zapisujejo URL-ji, ki so naslednje na vrsti za obdelavo
+
+- Semenske strani - strani iz katerih izvira naš pajek
+
+- Repozitorij -  vanj se shranjujejo informacije, ki jih je pajek pridobil
+
+- Implementacija:
+  
+  - Shranjevanje URL-jev
+  
+  - Strategija izbire URL-jev
+  
+  - Strategija, če je Frontier poln
+
+- Izzive in omejitve
+
+### Pajki z iskanjem v širino
+
+- Frontier se polni na podlagi FIFO principa - prvi notri prvi ven
+
+- Zaradi tega mora Frontier imeti omejeno velikost
+
+### Zgodovina pajka
+
+- Razlogi, zakaj mora pajek imeti zgodovino:
+  
+  - Ne želimo obistaki isto stran večkrat
+  
+  - Poveča učinkovitost, ker se iz zgodovine lahko učimo
+
+- Implementacija v RAM-u ker potrebujemo veliko hitrost - Uporabljamo razpršene tabele (hash table)
+
+- Potrebujemo tudi iskanje duplikatov
+
+### Preferenčni pajki
+
+- Ti pajki gredo preferenčno rajši v nekatere strani kot druge
+
+- Pomembno je, da se zavedamo:
+  
+  - Okolice preference: topologija spleta, vsebina strani
+  
+  - Izbira semenskih strani
+
+- Pajek mora imeti možnost sortiranja:
+  
+  - Sortiran dinamični seznam in Hash table
+
+- Časovna kompleksnost je večja kot pri osnovnih pajkih
+
+- Imenujemo jih tudi **Best-first** pajki
+
+## Implementacija
+
+Implementacija pajka vsebuje:
+
+- Zajem strani (fetching)
+
+- razčlenjevanje (parsing)
+
+- odstranjevanje stopwordov in stemming
+
+- Ekstrakcija linkov in kaknonizacija (canonicalization)
+
+- Izogibanje zankam
+
+- Realizacija repozitorija
+
+- Sočasnost
+
+### Zajem strani
+
+- Spletni pajek se obnaša kot spletni odjemalec.
+
+- Omejimo čas čakanja na odgovor in velikost.
+
+- Pomagamo si lahko z HTTP glavami, ki nam dajo lahko pomembne podatke
+
+- Detekcija in odprava napak
+
+- Vodenje statistike
+
+### Razčlenjevanje
+
+- Pomembno je, da izluščimo povezave in naredimo analizo vsebine
+
+- Pri razčlenjevanju si pomagamo s tem da pretvorimo dokument v DOM
+  
+  - Najprej pošistimo HTML in naredimo DOM
+  
+  - Notri poiščemo značke in odstranimo vse dele, ki se ne nanašajo na vsebino
+
+- Datoteke ne bodo vedno v HTML formatu.
+  
+  - Ponavadi to vidimo v HTML headerju
+
+### Odstranjevanje stopwordov in stemming
+
+- Eliminacija besed brez pomena, dodane vrednosti
+
+- Stemming - Besede spravimo v določeno obliko:
+  
+  - Pretvorimo besedo v koren besede: running, runs -> run
+  
+  - Boljša je lematizacija, ki pretvori besedo v svojo korensko obliko.
+
+- POS tagging - Oblikoslovno označevanje
+  
+  - Classla -> stanza
+  
+  - NLP -> procesiranje naravnega jezika
+  
+  - primer: dan->sme1, Martin->IOme1
+  
+  - besedne vrste:
+    
+    - S, I - samostalniki
+    
+    - G - glagoli
+    
+    - P - pridevniki
+    
+    - Z - zaimki, ...
+  
+  - Oblikoslovne kategorije:
+    
+    - spol(m, ž, s), število(e, d, m), sklon(i, r, d, t, m, o), oseba(1., 2., 3.), stopnjevanje, določnost in razmerje
+
+### Ekstrakcija povezav in kanonizacija
+
+HTML je možno spraviti v hierarhično DOM obliko, ki omogoči lažjo ekstrakcijo povezav.
+
+Filtriranje: Moramo vedeti, katere povezave so spletne strani, ne pa drugi dokumenti. Tega ne moremo zanesljivo vedno vedeti samo iz povezave.
+
+Avtonomno poizvedovanje: Brska po skritem spletu prek queryjev
+
+URL naslove moramo normalizirati, zato, da se izognemo duplikatom
 
 ### Pajkove zanke
 
 Zanka: Pajek se vedno giblje po istih straneh.
+
+Zgodi se takrat, ko se strani avtomatsko generirajo.
 
 Reševanje:
 
@@ -14,49 +158,133 @@ Reševanje:
 
 - Omejimo število strani iz določene domene
 
-POS tagging - Oblikoslovno označevanje
+### Repozitorij
 
-- Classla -> stanza
+Ko enkrat strani zajamemo, moramo strani shraniti v
 
-- NLP -> procesiranje naravnega jezika
+- Bazo:
+  
+  - Vse v eni datoteki, lahko poizvedovanje
 
-- primer: dan->sme1, Martin->IOme1
+- V svojo datoteko:
+  
+  - Hashiramo strani -  da nimamo dupoliaktov:
+    
+    - Velik overhead za OS
+  
+  - Veliko strani v eni datoteki:
+    
+    - Potrebujemo mapiranje
 
-- besedne vrste: 
-  
-  - S, I - samostalniki
-  
-  - G - glagoli
-  
-  - P - pridevniki
-  
-  - Z - zaimki, ...
+### Paralelno delovanje
 
-- Oblikoslovne kategorije:
-  
-  - spol(m, ž, s), število(e, d, m), sklon(i, r, d, t, m, o), oseba(1., 2., 3.), stopnjevanje, določnost in razmerje
+Izkorišča računalnišče vire do polne zmogljivosti:
 
-# TODO od prejšnjič
+- Uporabimo več-procesorsko delovanje
 
-- fokusirani pajki:
-  
-  - kategorije -> drevo kategorij
-  
-  - učna množica
-  
-  - klasifikator ( p, c∈C) -> bayesov klasifikator
-  
-  - šibka in stroga strategija
+- Uporabimo več-nitno delovanje
 
-- Kontekstualni pajki:
+Potrebujemo Frontier managerja, ki poskrbi, da bo en proces bral ali pisal iz Froneiterja naenkrat.
 
-# Predavanje 3
+## Univerzalni pajki
+
+Univerzalni pajki morajo obiskati več sto tisoč strani na sekundo
+
+Zaradi tega potrebujemo visoko skalabilnost v vse strani.
+
+Cilj univerzalnega pajka je:
+
+- Zajeti čim več strani
+
+- Ne pozabiti pomembnih strani
+
+- Imeti čim bolj sveže podatke
+
+#### Zajemanje vs. svežina vs pomembnost
+
+Indeksirati hočemo celoten splet
+
+Moramo imeti pomembnostne metrike - (in-degree, PageRank)
+
+Do nothing approach: Če merimo pomembnost z količino vhodnih povezav, bomo slej kot prej prišli v to stran
+
+Če hočemo imeti statistično pravilen vzorec spleta:
+
+- Ne sme biti odvisna samo od vhodnih povezav
+
+- $P_r(accept(p)|crawl(p)) * P_r(crawl(p))$
+
+- $Pr(accept(p)|crawl(p)) = \frac{1}{PageRank(p)} = \frac{1}{f(p)}$
+
+### Skalabilnost
+
+Uporabljajo množico izboljšav pred običajnimi pajki:
+
+- Asinhrona vrata - ne blokirajo komunikacije, več vrat odprtih na vsaki niti
+
+- Več URL vrst, ne potrebujemo še enkrat opravljati TLS handshake
+
+- Uporaba DNS:
+  
+  - Uporaba UDP - ni varen, a ne potrebujemo
+  
+  - Uporabljamo hiter predpomnilnik
+  
+  - Uporabimo predpomnenje
+
+- Uporaba več povezav hkrati
+
+- Uporaba SAN (Storage switch)
+
+## Fokusirani pajki
+
+- ODP shranjuje dobre spletne strani izbranih kategorij
+
+- Fokusirani pajek išče strani, ki ustrezajo izbranim kategorijam in dopolnjuje indeks
+
+- Fokusirani pajki imajo za razliko od Tematskih pajkov že velik kontekst dobrih spletnih strani, ki so kategorizirane.
+
+#### Klasifikacija fokusnega pajka
+
+- Za vsako kategorijo bi lahko izdelali klasifikator:
+  
+  - Vsaki strani izračunamo vrjetnost da spada v nekatero kategorijo - Relevance Score
+  
+  - V frontierju imamo strani razvrščene po seštevku vrjetnosti da spada v katero kategorijo
+
+- Šibka strategija:
+  
+  - Analiziramo stran in te URLje napišemo v frontier z Relevance scori.
+
+- Stroga strategija:
+  
+  - Najprej poišče kategorijo, ki je v listu in izračuna verjetnost, ter izbere list z največjo vrjetnostjo
+  
+  - Pogledamo, če je list sam ali njegov prednik v kategoriji, ki jo iščemo, ga dodamo, drugače pa ne.
+
+#### Klasifikacija z naivnim bayesom
+
+- $P_r(c|d) = \frac{P_r(d|c)*P_r(c)}{P_R(d)}$, kjer je **$c \in C$** kategorija iz množice kategorij **$C$** in **$d$** predstavlja stran, ki smo jo obiskali.
+
+Za potrebe poizvedovanja po dokumentu imamo naslednjo enačbo:
+
+- $P_r(c|d) \approx P_r(c) \prod_{i=1}^{|V|} P_r(w_i|c_k)^{f_{w_i}}$, kjer je $V$ slovar posameznih besed **$w_i$** in dokument **$d$**, ki ga hočemo klasificirati, **$f_{w_i}$** je frekvenca besed $w_i$ v $d$
+
+### Kontkekstualni fokusirani pajki
+
+Zaradi nerelevantnosti trenutne strani nehamo iskati po tej poti.
+
+Pomaga si s sklepanjem z uporabo kontekstnega grafa - hranimo povezave med stranmi. Procedura:
+
+- Za vsak nivo kontekstnega grafa želimo klasifikator, ki pove vrjetnost, da stran spada na določen nivo
 
 ## Tuneliranje
 
 Izhajamo iz omejitev Best-first pajkov.
 
 vprašanja:
+
+- Katerim stranem slediti?
 
 - Do kdaj slediti neki poti (na kateri bodo vmes tudi slabe strani)?
 
@@ -68,11 +296,13 @@ vprašanja:
 
 - Slabe strani (nerelevantne strani) - x
 
-- meja podobnosti (threshold)
+- Pot  - je sekvenca od ene dobre strani do druge dobre strani (oxxxxo)
 
-- cutoff (max dožina)
+- meja podobnosti (threshold) - minimalna podobnost z kategorijo, da je dobra stran
 
-- dolžina
+- cutoff (max dožina poti)
+
+- dolžina - od zadnje dobre strani
 
 dolžina(p) = 0 if p relevantna; 1 + dolžina(parent(p))
 
@@ -85,7 +315,7 @@ Ugotovtve raziskave:
 - Zaporedje dobrih strani je dober indikator, da je stran perspektivna - če so 3 dobre strani zapored in nato ena slaba, je dober indikator, da nadaljujemo po tej poti.
 
 - Predlagali so formulo:
-  dolžina(p) = 0 if p relevantna; min(1, 1-(c*e^(2dp/c))), kjer c - podobnost s kategorijo
+  dolžina(p) = 0 if p relevantna;$min(1, (1-c)e^{\frac{2d_p}{C}})$ , kjer $d_p$ razdalja starša, $c$ - trenutna korelacija, $C$ - cutoff
 
 ## Tematski pajki
 
@@ -159,7 +389,7 @@ Kako deluje?
 
 ## Adaptivni pajki
 
-Značilnost: prilagajajo ali spreminjajo strategijo
+Značilnost: prilagajajo ali spreminjajo strategijo, gre se za inkrementalno učenje.
 
 Algoritem:
 
