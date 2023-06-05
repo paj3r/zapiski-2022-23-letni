@@ -453,13 +453,15 @@ Pajek vedno izbere najboljšo stran v frontierju, zato skače po spletu, ni tune
 
 Ker je q-tabela prevelika, te vrednosti ocenjujemo s pomočjo gradientnega spusta.
 
-
-
 zadnjič -> kako naredit pajka, ki uporablja spdbujavalno učenje, da se premika po spletu, ima boljše rezultate-> boljše se premika po relevantnih straneh
 
 ### Evalvacija pajkov
 
-- Evalvacija prek aaplikacij -> ključna aplikacija je iskalnik
+- Evalvacija prek 
+  
+  - aplikacij -> ključna aplikacija je iskalnik
+  
+  - algoritmov
 
 - Predpogoji:
   
@@ -473,7 +475,7 @@ zadnjič -> kako naredit pajka, ki uporablja spdbujavalno učenje, da se premika
   
   - Nimamo splošno priznanih množic za evalvacijo -> Relevantnost zato ocenjujemo. Kako?
     
-    - Število ključnih besed, ki se pjavijo v dokumentu.
+    - Število ključnih besed, ki se pojavijo v dokumentu.
     
     - Frekvenca ključnih besed na strani
     
@@ -483,25 +485,33 @@ zadnjič -> kako naredit pajka, ki uporablja spdbujavalno učenje, da se premika
     
     - N-pajkov
     
-    - Metrike na osnovi prestiža
+    - Metrike na osnovi prestiža - PageRank, HITS
 
-### Metrike
+#### Metrike
 
-Natančnost: $P = {TP \over TP + FN}$, TP = true positive, FN = false negative
+Natančnost: $P = {TP \over TP + FP}$, TP = true positive, FP = false positive
 
-Priklic: ...
+Priklic: $P = \frac{TP}{TP+FN}$, TP = true positive, FN = false negative
 
 ###### Metrike na osnovi natančnosti
 
 - Harvest rate: $št. relevantnih \over št. obiskanih$
 
-- Dolžina zajema: Koliko korakov moramo narediti za N relevantnih strani
+- Povprečna relevantnost
+
+###### Dolžina zajema
+
+ Koliko korakov moramo narediti za N relevantnih strani
 
 ###### Metrike na osnovi priklica
 
-1. Štejemo relevantne strani (omejimo se s časom ali številom korakov)
+1. Štejemo relevantne strani (omejimo se s časom ali številom korakov), brez normalizacije
 
-2. Kot izhodišče vsamemo klasificirane strani npr. ODP -> pomaknemo se N korakov proč.
+2. Kot izhodišče vzamemo klasificirane strani npr. ODP -> pomaknemo se N korakov proč.
+
+###### Kritični resursi
+
+Katere kritične resurse (CPU, pomnilnik, ...) uporablja in v kolikšni meri
 
 ### Etika pajkov
 
@@ -515,232 +525,277 @@ Priklic: ...
 
 3- Robots.txt - Administrator pove, do kje lahko kakšen pajek dostopa.
 
-# INFORMACIJSKO POIZVEDOVANJE
+# Strukturirana ekstrakcija podatkov
 
-Komponente:
+Vsebina spletnih strani ni natančno strukturirana in urejena. Računalniki težko razberejo kje je naslov, tekst, ...
 
-- Obdelava poizvedbe
+Ovojnica (wrapper) - algoritem, postopek, ki definira kako se prenese naslov, vsebina, avtorji, linki, ...
 
-- Iskalnik
+Luščenje (screen scraping) - Proces ekstrakcije podatkov, ki uporablja ovojnico.
 
-- Indeks 
+Pristopi:
 
-- Kolekcija
+- Neka množica pravil
 
-- Indeksirnik -> Podatke iz kolekcije daje v indeks
+- Avtomatizirani pristopi
 
-Dodatni izzivi:
+- Pristopi, ki uporabljajo strojno učenje
 
-- Velikost, hitrost
+Za vsak blok iz spletne strani hočemo pridobiti podatke in vedeti, kateri podatki izmed teh so pomembni.
 
-- Vsebina
+Obdelavo naravnega jezika delamo, da dobimo dodatne informacije iz teksta, ne samo tekst.
 
-- SPAM
+#### Sheme
 
-### Modeli informacijskega poiizvedodanja
+Sheme je težko razviti za vsako domeno. Če bi bili vsi dokumeti v XML shemi, ne bi potrebovali avtomatske ekstrakcije podatkov.
 
-1. Logični model
+###### Problemi:
 
-2. Vektorski model
+- Anotacije
 
-3. Jezikovni model
+- Uporabniki, ki e upoštevajo predpisov
 
-4. Verjetnostni modeli
+Ekstrakcija informacij omogoča način ekstrahiranja podatkov iz nestrukturiranih ali delno strukturiranih fivov v strukturiran format.
 
-1., 2., 3., Uporabljajo "Vrečo besed" ali bag of words. -> ne zanima nas vrstni red besed.
+#### DOM a
 
-### Formalizacija
+DOM (Document Object Model) definira posamezne oznake, funkcionalnosti posameznih oznak, ...
 
-**D** - Kolekcija dokumentov $\{d_1, d_2, ... d_n\}$ - dokumenti
+Po DOM modelu je vsak HTML tag objekt. Ti tagi so otroci tagov, ki jih zapirajo.
 
-**V** - Slovar besed $\{t_1, t_2, ... t_n\}$ - termini, |**V**|- velikost slovarja
+Pri ekstrakciji pomaga, če splčetno stran najprej pretvorimo v DOM drevo.
 
-$d_j$  = $(w_1, w_2, w_3 ..., w_i)$ dokument z indeksom j, $w_n$ - utež besede (termina) v dokumentu
+Vzorci za ekstrahiranje se lahko specificirajo kot poti iz korena DOM drevesa, do lista, i vsebuje informacije:
 
-## Logični model
+- Primeri teh so xPath in xQuery.
 
-Uteži terminov v dokumentu predstavljene z 1 ali 0, če termin je v dokumentu ali ni.
+Nadaljno procesiranje besedila je lahko potrebno za dejansko ekstrahiranje besedila.
 
-Predstavljeno je kot vektor, med poizvedbo in dokumentom se izvede vektorski produkt, da se izve, ali ej dokuente relevanten ali ne.
+###### Kaj DOM je:
 
-## Vektorski model
-
-Dokument je predstavljen z vektorjem, ki za vsak termin iz slovarja pove nekaj o tem terminu.
-
-Možnosti uteži:
-
-- TF (Term Frequency) - pojavnost termina
-
-- Normaliziran TF :
+- Objektni model za HTML.
   
-  - Evklidova normalizacija: $f_{ij} \over \sqrt{f_{1j}^2+f_{2j}^2+ ... f_{nj}^2}$ 
+  - Za vsak HTML objekt definira lastnosti, metode, dogodke (events)
+
+- Obstaja API za Javascript:
   
-  - Neka druga: $f_{ij} \over max(f_{ij})$
+  - Dodajamo, brišemo, spreminjamo HTML elemente in dodajamo ali reagiramo dogodke (events)
 
-- TF IDF (Term Frequency, inverse document frequency): $w_i = TF \ log {N \over d_{fi}}$
+#### Aplikacije avtomatske ekstrakcije
 
-###### Izračun relevantnosti
+Primerjava cen izdelkov v različnih trgovinah:
 
-Koliko je relevantnost našega dokumenta j, pri poizvedbi q -> $relevance(d_j, q)$ 
+- Ceneje.si
 
-Če sta $d_j$ in $q$ vektorja, lahko naredimo skalarni produkt in dobimo skalar.
+- Uporabnik na eni strani lahko vidi cene v večih trgovinah in vidi, kje je najceneje.
 
-Lahko uporabimo tudi kosinusno razdaljo: $cosine(d_j, q) = {d_j * q \over |d_j| *|q|}$ 
-
-Ali kosinusno podobnost: $1- cosine(d_j, q)$
-
-### Jezikovni model
-
-Lahko jih predstavimo kot avtomate, kjer zmnožimo vrjetnosti povezav med seboj.
-
-Namesto n-gramskega modela (besede povezane med seboj) imamo unigramskega, z namenom pospešitve.
-
-unigramski model: za vsak termin $t_i$ imamo vrjetnost.
-
-Če vse verjetnosti med seboj seštejemo, je rezultat enak ena.-> verjetnostna disribucija čez termine.
-
-S tem dobimo verjetnostno distribucijo za poljubno razporeditev besed.
-
-Verjetnost: $P_r(q | d_j) = \prod_{i=1}^{|V|} p(t_i | d_j)^{f_{iq}}$
-
-Z unigramom ni več zaporedja besed, besede so med seboj neodvisne.
-
-### Upoštevanje povratne informacije
-
-$D = R_R \ \cup \ R_{IR}$
-
-###### Rocchio metoda
-
-$q$ - naša poizvedba
-
-Rocchio metoda poizkša ugtoviti, kje je težišče relevantnih in irelevantnih dokumentov, premakne poizvedbo bližje relevantnim dokumentom. Vse dokumente predstavimo z vektorji.
-
-$q_e = \alpha q + {\beta \over |D_r|} \sum_{d_r \in D_r}d_r - {\gamma \over |D_{IR}|} \sum_{d_{ir} \in D_{IR}} d_{ir}$
-
-Z uporabo tega lahko uporabimo Rocchio metodo za klasifikator
-
-###### Rocchio kasifikator
-
-$c_i = {\alpha \over |D_i|} \sum_{d \in d_i} {d \over |d|} - {\beta \over |D - D_i|} \sum_{d \in D-D_i} {d \over |d|}$
-
-###### LU learning
-
-Labeled and Unlabeled learning
-
-- Sopojavnost besed -> kjer se pojavlja nogomet, se pojavlja tudi šport
-
-###### PU learning
-
-positive and unlabled learning
-
-- zgradimo klasifikator na podlagi množice P ali relevantnih
-
-###### Pseudo feedback
-
-$q$ - osnovna poizvedba
-
-$q_e$ - razširjena poizvedba na osnovi rezultatov prejšnje poizvedbe
-
-Lahko naredimo več ciklov.
-
-# Invertni indeks
-
-Najbolj učinkovit indeks za poizvedovanje.
-
-Sestavljen iz:
-
-- Slovarja V unikatnih terminov iz množice dokumentov $D = \{d_1, d_2, ..., d_n\}$
-
-- Za vsak termin $t_i$ invertni indeks postingov
-  $t_i = <{posting}_1>, <{posting}_2>, ...$
-
-V postingih imamo oznako termina, frekvenco termina, in offsete, kje od začetka se pojavlja ta beseda v dokumentu
-
-$<id_j, f_{ij}, [o_1, o_2, ...,o_{|f_{ij}|}]>$
-
-### Latentna semantična analiza - LSI
-
-Namestu, da dokumente predstavimo v vektorskem prostoru, vzpostavimo koncepte, na katere bi dokumente boljše razločili med seboj.
-
-Naredimo razcep na singularne vrednosti.
-
-$A = U \ \Sigma \ V^T$
-
-$U = AA^T$ - kateri termini nastopajo v skupnih dokumentih
-
-$\Sigma = diagonalna \ martika$
-
-$V^T = Singularni \ vektorji \ A^TA$ - kateri dokumetnti imajo skupne termine
-
-# Spletno iskanje
-
-Crawling -> parsing -> indexing -> search & rank
-
-#### Prestiž
-
-preko teorije grafov
-
-- Prestiž povezanosti
-
-- Prestiž okolice
-
-- Prestiž ranga
+- Dva pristopa:
   
-  - pageRank
+  - Online pristop: za vsako trgovino imamo definirano ovojnico, ko nek uporabnik napiše poizvedbo jo preberemo in gremo čez vsako trgovino, izvedemo poizvedbo in vrnemo podatke uporabniku
   
-  - HITS
+  - Offline pristop: Spletni pajek prenaša podatke v našo bazo in jih vrne uporabnikom
 
-### Luščenje
+#### Sistem za ekstrakcijo
 
-1. Čiščenje HTML
+Ni pomembno samo da zna podatke ekstrahirati, ampak da zna avtomatsko, občasno dobiti podatke iz strani, ki se spreminjajo in te podatke shraniti v bazo.
 
-2. zgradimo DOM drevo
+Mora znati komunicirati s spletnimi strani in znati generirati in posodabljati spletno ovojnico:
 
-3. Analiza strani
-   
-   - Identificikacija seznamov
-   
-   - identifikacija objektov
-   
-   - Ovojnica, luščenje
+- Avtomatsko in periodično posodabljanje
 
-#### Tehnika
+- Transformacija podatkov
 
-1. Primerjava nizov (stringov)
+- Podatke mora uporabiti
 
-2. primerjava dreves: Simple Tree Matching:
-   
-   - $NSTM= \frac{STM(A, B)}{(nodes(A) + nodes(B))/2}$ - Metrika podobnosti
-   
-   - Obiskujemo drevo v pre-order načinu
-   
-   - upoštevamo pravila:
-     
-     - Vsako vozlišče iz A lahko poravnamo samo enkrat
-     
-     - ohranimo zaporedje vozlišč
-     
-     - ohranimo hierarhije
+###### Vidiki sistemov za ekstrakcijo
 
-kaj bomo obravnaval:
+- Kako je sistem enostaven od najtežjega do najenostavnejšega:
+  
+  1. Programski jeziki (C, Python)
+  
+  2. Posebni jeziki za poizvedobanje (Jeoli)
+  
+  3. Sistemi, ki nudijo čarovnike, ki generirajo ovojnico
+  
+  4. Sistemi ki imajo bolj generiran GUI
+  
+  5. IDE sistemi (Mozenda)
 
-1. Kako iz poravnanih dreves izračunat podobnost
+- Kako zgradimo ovojnico od najtežjega do najenostavnejšega
+  
+  1. Sami napišemo poizvedbe, pravila
+  
+  2. Lahko uoporabljamo pomočnike, kjer se sitem prilagodi
+  
+  3. Uporabljamo strojno učenje
 
-2. Večkratna poravnava
-   
-   - Center star metoda - na stringih
-   
-   - Delno poravnana drevesa - na drevesih
+- Kakšne so lastnosti iskanja po globokem spletu:
+  
+  1. Podamo zaporedje povezav
+  
+  2. Podamo primere zahtevkov in odgovorov
+  
+  3. Poskušamo primere podati sami in jih podati stroju
 
-3. Gradnja DOM
+- Zmnožnosti ekstrakcije:
+  
+  1. Normalno besedilo
+  
+  2. HTML drevo
+  
+  3. Izrisavanje strani, interaktivno DOM drevo
+  
+  4. Logičen potek aplikacije
 
-4. Zajem podatkov s strani
-   
-   - Identifikacija seznamov
-   
-   - Segmentacija zapisov na objekte
-   
-   - poravnava objektov
+- Možnost, da je v sistemu zgrajen brskalnik
+  
+  1. Razčlenjevanje teksta
+  
+  2. Razčlenjevanje DOM drevesa
+  
+  3. Posebni iskalniki za ekstrakcijo
+
+- Kompleksnost odprtih operacij
+  
+  1. Podaja notificatione
+  
+  2. Podaja spletne makrote
+  
+  3. Podaja informacije tretjim strankam
+  
+  4. Omogočajo procesiranje v skupinah
+  
+  5. Sistem se da integrirati v sistem enterprise
+
+###### Aplikacije sistemov za ekstrakcijo:
+
+Buisness:
+
+- Oglaševanje za podlagi konteksta uporabnika
+
+- Odnosi s strankami
+
+- Gradnja podatkovnih baz
+
+- Sowtware inženirsvo
+
+- Podpora poslovne logike
+
+- integracije spletnega procesa,...
+
+- Citati baz
+
+- Identifikacija glavnih blokov
+
+## Tehnike ekstrakcije vsebine
+
+Najprej moramo stran predprocesirati:
+
+- Identificiramo posamezna tekstovna polja
+
+- Identificiramo povezave
+
+- Moramo odstraniti HTML oznake, ki nas motijo
+
+- Identificiramo glavne vsebinske bloke na 2 načina:
+  
+  - S pomočjo vizualnih tehnik
+  
+  - Uporabimo vzklajevanje dreves (Tree matching)
+
+### Vzklajevanje dreves in stringov
+
+#### String edit distance
+
+Imenije se tudi Leventeinova razdalja.
+
+Namen je kakšna je razdalja med dvema nizoma:
+
+- Zamenjava znaka
+
+- vstavljanje znaka
+
+- izbris znaka
+
+$d(\epsilon, \epsilon) = 0$
+
+$d(s, \epsilon) = d(\epsilon, s) = |s|$
+
+$d(s_{1-} + c_1, s{2-} + c_2) = min\{(d(s{1-}, s{2-}) + p (c_1, c_2), (d(s_{1-}+c_1, s_{2-})+1), (d(s_{1-}, s_{2-}+c_1)+1)\}$
+
+Časovna in prostorska zahtevnost je $O(|s_1||s_2|)$
+
+Normalizirana razdalja: $ND(s_1, s_2) = \frac{d(s_1, s_2)}{(|s_1||s_2|) /2}$
+
+#### Jaro podobnost
+
+$sim_j = \{ 0\ if\ m=0; \frac{1}{3}(\frac{m}{|s_1|} + \frac{m}{s_2}+ \frac{m-t}{m})\, drugače\}$, kjer
+
+$m$ - istih znakov, če ni dlje kot $\lfloor \frac{max(|s_1|, |s_2|)}{2} \rfloor - 1$
+
+$t$ - polovica števila transpozicij, ki ni dlje kot $\lfloor \frac{max(|s_1|, |s_2|)}{2} \rfloor - 1$
+
+#### Jaro winkler podobnost
+
+Uporablja metriko jaro, a preferira nize, ki se ujemajo na začetku.
+
+$sim_w = sim_j + l \cdot p \cdot (1-sim_j)$, kjer je
+
+$l$ - dolžina istega prefixa, ponavadi 4
+
+$p$ - faktor skaliranja, ponavadi 0.1
+
+#### Tree edit razdalja
+
+Variacija klasičnega problema razdalje stringov.
+
+Če imamo A in B dva ordered drevesa, gledamo najkrajšo zaporedje opecarij, da pretvorimo A v B.
+
+Minimizirati moramo (uravnotežene) cene operacij:
+
+- Izbris lista
+
+- Dodajanje lista
+
+- Nadomestilo lista
+
+Če imamo drevesa A in B v pre-order obliki:
+
+Bo mapiranje M med A in B množica urejenih parov $(i, j)$, $i \in A, j \in b$, da bo $\forall(i_1, j_1), (i_2, j_2) \in M$ veljalo:
+
+- $i_1 = i_2$ samo če $j_1 = j_2$
+
+- $A[i_1]$ je na levi $A[i_2]$, če in samo če je $B[j_1]$ na levi od $B[j_2]$
+
+- $A[i_1]$ je prednik $A[i_2]$, če in samo če je $B[j_1]$ na prednik $B[j_2]$
+  
+  - Vsak node ja največ enkrat v M
+  
+  - Vrstni red sorojencev je ohranjen
+  
+  - Hierarhija je nespremenjena
+
+Časovna zahtevnost $O(nodes(A), nodes(B))$
+
+Pomanjkljivosti:
+
+- Ne more uskladiti permutacij vozlišč
+
+- Ni dovoljedo, da posamezna vozlišča nastopajo posamezna voizlišča na drugih novojih
+
+Prednosti:
+
+- Zelo učinkovit na DOM drevesih
+
+- Široko uporabljen
+
+- Enostaven za uporabo
+
+Obstaja tudi normalizirana verzija algoritma
+
+$NSTM(A, B) = \frac{SimpleTreeMatching(A, B)}{(nodes(A)+nodes(B))/2}$
+
+Ta algoritem lahko prilagodimo tudi, da imamo operacije utežene.
 
 ## Večkratno usklajevanje
 
@@ -754,7 +809,20 @@ Iskanje ponavljajočih se vzorcev iz HTML
 
 #### Center star method
 
-Angoritem je nekje
+Tehnika, ki se lahko posploši na drevesa.
+
+```
+CenterStar(S)
+choose the center star s_c
+M = List(s_c)
+for each s in S - {s_c} do:
+    c* = aligned version of s_c \in e
+    s', c*' = optimally aligned strings of s and c*
+    Update the strings in M with spaces where added to c*
+    M.add(s')
+    M.add(c*')
+return multiple string alignment M
+```
 
 Levensteinva razdalja izberemo $S_c$ -> seštevek razdalj, ki jih ima do drugih stringov je minimalen.
 
@@ -800,7 +868,29 @@ Vozlišča $v_j...v_k$ lahko vstavimo v $T_s$, če imajo v $T_s$ enolično mesto
 
 3. Če imajo $v_j...v_k$ samo eno vozlišče na desni in če je to vozlišče najbolj levo v T_s, potem jih lahko dodamo v T_s levo od tega vozlišča.
 
-#### Izzivi pri poravnavi
+#### Grajenje DOM dreves
+
+Potrebni za veluiko elgoritev za ekstrakcijo podatkov.
+
+Pristopi:
+
+- Z uporabo samo oznak
+
+- Z uporabo oznak in vizualnih znakov
+
+### Ekstrakcija podatkov
+
+Podatkovni seznam vsebuje podatke
+
+Proces:
+
+- Identificiramo podatkovne sezname ki nastopajo na strani
+
+- Seznam poizkušamo segmentirati, da ugotovima, kateri objekti tvorijo ta seznam
+
+- Ko imamo deinirane objekte, hočemo ugotoviti podobnosti med objekti.
+
+#### Izzivi pri ekstrakciji
 
 - seznam je v splošnem poljuben
 
@@ -808,9 +898,17 @@ Vozlišča $v_j...v_k$ lahko vstavimo v $T_s$, če imajo v $T_s$ enolično mesto
 
 - vmes se lahko prekinejo
 
+- Omejitve, ki izboljšajo učinkovitost:
+  
+  - Iščemo sezname samo znotraj regij ki so sosedne
+  
+  - Vsi seznami imajo skupnega starša
+
+## Iskanje podatkovnih seznamov
+
 #### Definicije
 
-- **Posplošena vozlišča** so kombinacija $r \geq 1$ vozlišč, ki so zaporedna in imajo istega očeta
+- **Posplošena vozlišča** so kombinacija $r \geq 1$ vozlišč, ki so zaporedna in imajo istega očeta (div-i, ki imajo iste starše)
 
 - **Podatkovni seznam** je seznam $n \geq 2$ posplošenih vozlišč z naslednjimi lastnostmi:
   
@@ -828,4 +926,721 @@ Vozlišča $v_j...v_k$ lahko vstavimo v $T_s$, če imajo v $T_s$ enolično mesto
   
   1. Kje se začne pospl. vozlišče?
   
-  2. Koliko vozlišč zajema
+  2. Koliko zaporednih vozlišč zajema
+
+![posplvozl.png](C:\Users\ivopa\OneDrive\Dokumente\GitHub\zapiski-2022-23-zimski\WIER\posplvozl.png)
+
+### Vsebinski elementi v podatkovnih seznamih
+
+Če posplošen seznam vsebuje dva ali več vsebinski element, morata biti ta elementa podobna v strukturi.
+
+Identifikacija elementov:
+
+- Za vsak posplošen seznam naredimo eno-korensko drevo
+
+- Poženemo MDR da dobimo elemente
+
+#### Povežemo vsebinske elemente med seboj
+
+Izdelati moramo vzorec ekstrakcije znotraj podatkovnega seznama:
+
+- Naredimo korensko drevo za vsak podatkovni seznam
+
+- Ta drevesa med seboj poravnamo
+
+### Ekstrakcija večih spletnih strani
+
+Iščemo podobnobnostne vzorce za ekstrakcijo večih strani:
+
+- Seznami strani
+
+- Detajli strani
+
+**RoadRunner** algoritem:
+
+- Generira union-free regularni izraz za ekstrahiranje vsebine iz množice podobnih strani
+
+**Union free regularni izrazi** - regularni izrazi brez disjunkcij (unija)
+
+##### RoadRunner algoritem
+
+Pristop:
+
+1. Vzamemo naključno stran $p_i \in P$ kot ovojnico regularnega izraza $W$
+
+2. Za vsako $p_j \in P |i \neq j$ do:
+   
+   1. Generaliziramo $W$ z reševanjem neenakosti z $p_j$
+
+Tipi neujemanj:
+
+- Tekstovna neujemanja
+
+- Neujemanja v oznaki (opcijski elementi, iteratorji/seznami)
+
+### Slabosti z avtomatsko ekstrakcijo
+
+- Na tip strani moramo narediti predlogo na podlagi:
+  
+  - Avtomatov
+  
+  - Ujemanja vzorcev
+  
+  - ekstrakcija podobnih strani
+
+- Detekcija nove ovojnice
+
+- Ekstrakcija opcijskih ali disjunktnih elementov (akcijska cena, ni na zalogi, ...)
+
+- Ali so atributi objektov tipa množica (blue, yellow, ...) ali vrednost (150cm) 
+
+- Označevanje in integracija podatkov (isto ime za artikel, produkt, izdelek)
+
+- Ekstrakcija nepotrebnih podatkov
+
+## Spletne ovojnice
+
+### xPath - XML Path language
+
+Poizvedovalni jezik s katerim lahko enostavno naslavljamo elemente v drevesu.
+
+Podprta z W3C.
+
+Slabost je, da ni fleksibilen (če se stran malo spremeni, lahko povozi).
+
+Robustnost ovojnice je definirana s pomočjo XPatha.
+
+Ovojnica lahgko uporabi kakršni koli tip algoritma, ki:
+
+- Algoritem mora znati najti vsebino, ki nas zanima iz strukturirane, polstrukturirane ali nestrukturirane vsebine na spletu
+
+- Jo pretvoriti v format, ki nas zanima
+
+- Algoritem se mora izvajati čim bolj avtomatsko
+
+Življanjski cikel ovojnice:
+
+- Grajenje ovojnice
+
+- Ekstrakcija z ovojnico
+
+- Vzdrževanje ovojnice
+
+Pristopi:
+
+- Logični pristop (Lixto - na podlagi jezika ELOG, ki je jezik za izdelovanje ovojnic)
+
+- Pristop z strojnim učenjem - STALKER
+
+##### Problemi z vzdrževanjem ovojnice
+
+Ovojnica mora biti robustna in zanesljiva. Je kritičen korak v ekstrakciji s spleta, ki ni dobila dovolj pozornosti v literaturi. 
+
+Glavni izzivi:
+
+- Avtomatska verifikacija ovojnice
+
+- Avtomatsko ponovno grajenje ovojnice
+
+Pristopi:
+
+- Vzdrževanje na podlagi shem (RoadRunner)
+  
+  - Uporablja xQuery na HTML in XML
+  
+  - Avtomatska podpora na podlagi predvidevanj o ohranjanju:
+    
+    - Sintaktičnih funkcija
+    
+    - Hiperpovezav
+    
+    - Anotacij
+
+- Avtomatska adaptacija ovojnice
+  
+  - Uporablja xPath in Elog
+  
+  - Pristop:
+    
+    - Elementi so identificirani kot DOM pod-drevesa
+    
+    - Primerjava strani glede na kandidatne elemente
+    
+    - Poravnava med HTML dokumenti z uteženim tree matching
+    
+    - Detektiranje večih podonih elementov z originalno stranjo
+
+- Hibridni sistemi
+
+#### Visual box model
+
+Deluje preko dejanskega vizualnega pristopa
+
+Bazira na X-Y cut OCR algoritmu, ki renderirane strani razdeli na gride, ki se rekurzivno "režejo"
+
+# INFORMACIJSKO POIZVEDOVANJE
+
+Komponente:
+
+- Obdelava poizvedbe - Logični operatorji, tekst, fraza, ...
+
+- Iskalnik - dobiva poizvedbe, vrača rangirane dokumente
+
+- Indeks dokumentov
+
+- Kolekcija dokumentov
+
+- Indeksirnik -> Podatke iz kolekcije daje v indeks
+
+<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/ir_arhitektura.png" title="" alt="ir_arhitektura.png" width="379">
+
+Dodatni izzivi poizvedovanja:
+
+- Velikost, hitrost poizvedbe
+
+- Vsebina poizvedbe
+
+- SPAM
+
+### Modeli informacijskega poizvedodanja
+
+1. Logični model
+
+2. Vektorski model
+
+3. Jezikovni model
+
+4. Verjetnostni modeli
+
+1., 2., 3., Uporabljajo "Vrečo besed" ali bag of words. -> ne zanima nas vrstni red besed.
+
+### Formalizacija
+
+**D** - Kolekcija dokumentov $\{d_1, d_2, ... d_n\}$ - dokumenti
+
+**V** - Slovar besed $\{t_1, t_2, ... t_n\}$ - termini, |**V**|- velikost slovarja
+
+$d_j$  = $(w_1, w_2, w_3 ..., w_i)$ dokument z indeksom j, $w_n$ - utež besede (termina) v dokumentu
+
+## Logični model
+
+Uteži terminov v dokumentu predstavljene z 1 ali 0, če termin je v dokumentu ali ni.
+
+Predstavljeno je kot vektor, med poizvedbo in dokumentom se izvede vektorski produkt, da se izve, ali ej dokuente relevanten ali ne.
+
+## Vektorski model
+
+Dokument je predstavljen z vektorjem, ki za vsak termin iz slovarja pove nekaj o tem terminu.
+
+Možnosti uteži:
+
+- TF (Term Frequency) - pojavnost termina
+
+- Normaliziran TF :
+  
+  - Evklidova normalizacija: $tf_{ij} = \frac{f_{ij}}{\sqrt{f_{1j}^2+f_{2j}^2+ ... f_{nj}^2}}$ 
+  
+  - Neka druga: $f_{ij} \over max(f_{ij})$
+
+- TF (Term frequency) - število pojavitev besede i v dokumentu j
+
+- TF IDF (Term Frequency, inverse document frequency): $w_{i} = TF \ log {N \over d_{f_{i}}}$, kjer $N$ - število vseh dokumentov, $d_{f_i}$ - število dokumentov s terminom $t_i$
+
+###### Izračun relevantnosti
+
+Koliko je relevantnost našega dokumenta j, pri poizvedbi q -> $relevance(d_j, q)$ 
+
+Če sta $d_j$ in $q$ vektorja, lahko naredimo skalarni produkt in dobimo skalar $sim(d_j, q) = d_j \cdot q$.
+
+Lahko uporabimo tudi kosinusno razdaljo: $cosine(d_j, q) = {d_j \cdot q \over |d_j| *|q|}$ 
+
+Ali kosinusno podobnost: $1- cosine(d_j, q)$
+
+### Statistični jezikovni model
+
+Lahko jih predstavimo kot avtomate, kjer zmnožimo vrjetnosti povezav med seboj.
+
+Namesto n-gramskega modela (besede povezane med seboj) imamo unigramskega, z namenom pospešitve.
+
+Unigramski model: za vsak termin $t_i$ imamo vrjetnost.
+
+Če vse verjetnosti med seboj seštejemo, je rezultat enak ena.-> verjetnostna disribucija čez termine.
+
+S tem dobimo verjetnostno distribucijo za poljubno razporeditev besed.
+
+Verjetnost: $P_r(q | d_j) = \prod_{i=1}^{|V|} P_r(t_i | d_j)^{f_{iq}}$
+
+Z unigramom ni več zaporedja besed, besede so med seboj neodvisne.
+
+##### Glajenje
+
+Laplacovo in Lindstoneovo glajenje.
+
+S tem se izognemo množenju z 0.
+
+Aditivno glajenje: $P_{r_{add}}(t_i|d_j) = \frac{\lambda + f_{ij}}{\lambda |V| + |d_j|}$
+
+Laplaceovo glajenje: $\lambda = 1$
+
+Lindstonovo glajenje: $0 < \lambda < 1$
+
+### Upoštevanje povratne informacije
+
+$D = R_R \ \cup \ R_{IR}$ , kjer so $R_R$ relavantni dokumenti, $R_{IR}$ pa nerelevantni dokumenti.
+
+###### Rocchio metoda
+
+$q$ - naša poizvedba
+
+Rocchio metoda poizkša ugtoviti, kje je težišče relevantnih in irelevantnih dokumentov, premakne poizvedbo bližje relevantnim dokumentom. Vse dokumente predstavimo z vektorji.
+
+$q_e = \alpha q + {\beta \over |D_r|} \sum_{d_r \in D_r}d_r - {\gamma \over |D_{IR}|} \sum_{d_{ir} \in D_{IR}} d_{ir}$
+
+Z uporabo tega lahko uporabimo Rocchio metodo za klasifikator
+
+###### Rocchio kasifikator
+
+$c_i = {\alpha \over |D_i|} \sum_{d \in d_i} {d \over |d|} - {\beta \over |D - D_i|} \sum_{d \in D-D_i} {d \over |d|}$, kjer $D$ - vsi dokumenti, $D_i$ - dokumenti tipa i (relevantni ali nerelevantni)
+
+###### LU learning
+
+Labeled and Unlabeled learning
+
+- Sopojavnost besed -> kjer se pojavlja nogomet, se pojavlja tudi šport
+
+###### PU learning
+
+positive and unlabled learning
+
+- Zgradimo klasifikator na podlagi množice P ali relevantnih
+
+###### Pseudo feedback
+
+$q$ - osnovna poizvedba
+
+$q_e$ - razširjena poizvedba na osnovi rezultatov prejšnje poizvedbe
+
+Lahko naredimo več ciklov.
+
+## Vektorske vložitve besed
+
+Besede predstavljamo v visoko-dimenzionalnem svetu.
+
+Koristne, ko ne vemo s kakšnimi besedami opisati problem. Dobro bi bilo, če bi iskali tudi po podobnih besedah. Upošteva vse kar je pomensko podobno.
+
+Vektorske vložitve nam besede, ki so podobne med seboj pokažejo bližje skupaj.
+
+##### One hot encoding
+
+Način kako predstavimo različne podatke računalniku.
+
+Enični vektor. Ima enico v natančno tisti celici, ki jo predstavlja beseda v slovarju.
+
+Slovar izgleda kot Identitetna martika $I$. Vse besede so ortagonalne med seboj.
+
+Na začetku so besede predstavljene z One Hot encoding, nato pa jih z uporabo nevronskih mrež naučimo, da bo si podobne besede blizu.
+
+#### Word2Vec
+
+Konvertira besede v vektorje z uporabo CBOW ai SKIP-GRAM in implementira plitko nevronsko mrežo.
+
+##### Kako vektorske vložitve uporabljamo v informacijskem poizvedovanju?
+
+Vektorske vložitve besed so uporabne za pridobivanj podobnih besed.
+
+Imamo več pristopov:
+
+- Uteženo povprečje vektorskih vložitev besed, ki nastopajo v dokumentu.
+
+- Word Mover's Distance (WMD) - kmakšno pot morajo prepotocati besede, iz enega queryja v drugega
+
+- Doc2Vec
+
+# Invertni indeks
+
+Najbolj učinkovit indeks za poizvedovanje.
+
+Sestavljen iz:
+
+- Slovarja V unikatnih terminov iz množice dokumentov $D = \{d_1, d_2, ..., d_n\}$
+
+- Za vsak termin $t_i$ invertni indeks postingov
+  $t_i = <{posting}_1>, <{posting}_2>, ...$
+
+V postingih imamo oznako termina, frekvenco termina, in offsete, kje od začetka se pojavlja ta beseda v dokumentu
+
+$<id_j, f_{ij}, [o_1, o_2, ...,o_{|f_{ij}|}]>$
+
+Po invertnem indeksu so polj relevantni dokumenti, ki imajoBližje besede, ki jih išče naša poizvedba
+
+#### Trie podatkovna struktura
+
+Predponsko drevo, ki vzdržuje vsebino v urejenem vrstnem redu.
+
+<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/trie.png" title="" alt="trie.png" width="271"><img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/true_usage.png" title="" alt="true_usage.png" width="312">
+
+Trie struktura je veliko hitrejša kot običajna tabela.
+
+Časovno kompleksnost konstrukcije ima linearno $O(T)$, kjer je $T$ število terminov.
+
+Časovno kompleksnost iskanja po drevesu pa je $O(n)$, kjer je $n$ dolžina termina, ki ga iščemo.
+
+##### Trie konstrukcija za splet
+
+V spletu Trie drevo lahko postane zelo veliko. Hočemo ga še vedno hraniti v spominu.
+
+Spremembe algoritma:
+
+- Vpeljemo delni indeks $I_i$
+
+- Ko je spomin pol, zapišemo del indeksa na disk
+
+- Nadaljujemo z novim delnim indeksom
+
+- Ko so vsi dokumenti procesirani, indekse združimo
+
+Nov algoritem je $O(n\ logn)$. Kar je vredu, ker indeksa ne gradimo pogosto.
+
+### Dodatni indeksi
+
+Posledica dinamičnosti spleda je da potrebujemo dodatne indekse.
+
+Dodatni indeksi za:
+
+- indekse dodanih strani
+
+- indekse izbrisanih strani
+
+### Kompresija indeksa
+
+Večina podatkov v indeksu je predstavljena s celimi števili.
+
+Osnovna ideja:
+
+- Integerji predstavljeni z 4 bajti
+
+- Zelo veliko je integerjev manjših od 4 bytov - uporabimo integer coding
+
+- ID-ji dokumentov so lahko velike številke. Če uporabimo razmak med dokumenti lahko prihranimo s prostorom.
+
+#### Kompresiranje celih števil
+
+Unarno kodiranje:
+
+- za int x, 1 prefiksiramo z x-1 ničlami (4  -> 0001)
+
+Elias Gamma kodiranje
+
+- za int x, prefiksiramo 1 z $\lfloor log_2x \rfloor$ ničel in dodamo x v binarni predstavitvi, s tem da najbolj pomemben bit umaknemo (5 -> 00101) 
+
+Elias Delta kodiranje
+
+- za int x predstavimo 1 + $\lfloor log_2 x\rfloor$ v Gama kodiranju in dodamo x brez najpomembnejšega bita (5 -> 01101)
+
+- Je učinkovit za večja števila
+
+Golombovo kodiranje
+
+- za int x, predstavimo $q = \lfloor \frac{x}{b} \rfloor + 1$ v unarnem kodiranju in dodamo binarno predstavo $r = x - qb$, z uporabo kodirnega drevesa.
+
+- Bolj učinkovit za velika števila
+  
+  <img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/golomb.png" title="" alt="golomb.png" width="487">
+
+Variably-byte kodiranje
+
+- Uporabimo 7 bitov v vsakem bytu da zakodiramo x, z najmanj pomembnim bitom v 1 v zadnjem bytu ali 0 če pride še bytov.
+
+###### Dekodiranje
+
+Elias Gamma
+
+- Preštejemo ničle $K$ do prve enice
+
+- Od enke naprej preberemo še naslednjik $K$ bitov
+
+Elias Delta
+
+- Preštejemo ničle $L$ do prve enice
+
+- Od enke naprej preberemo še $L$ bitov da dobimo število v binarni obliki $M$
+
+- Damo enko spredaj in od začetka preberemo $M - 1$ bitov.
+
+Golombovo
+
+- Dekodiramo unirano kodiran q
+
+- izračunamo $i = \lfloor log_2b \rfloor$ in $d = 2^{i+1} -b$
+
+- dobimo naslednjih i bitov in assignamo r
+
+- če $e \geq d$, potem:
+  
+  - preberemo še en bit in dodamo r na konec
+  
+  - r = r - d
+
+- Vrnemo x = qb + r
+
+##### Empirično testiranje
+
+- Unarno je neučinkovito za velika pštevila
+
+- Parametrizirano Golombovo kodiranje je bolj činkovito in hitrejše od ne-parametriziranega Elias kodiranja
+
+- Variable-byte kodiranje je velikokrat hitrejše od variable bit kodiranja.
+
+- Z ustreznim kodiranjem lahko dosežemo do 2-krat hitrejše hitrosti.
+
+### Latentna semantična analiza - LSI
+
+Namesto, da dokumente predstavimo v vektorskem prostoru, vzpostavimo koncepte, na katere bi dokumente boljše razločili med seboj.
+
+S tem lahko tudi odstranimo dimenzije po katerih se dokumenti med seboj ne razlikujejo.
+
+Naredimo razcep na singularne vrednosti.
+
+##### Formalizacia
+
+- Kolekcija dokumentov $D$, z $m$ različnimi besedami in velikostjo $|D = m$
+
+- Velikost terminske dokumentne matrike $A$ je $m \times n$
+
+- $A_{ij}$ je izračunan kot TF - število pojavitev termina $w_i$ v dokumentu $d_j$
+
+$A = U \ \Sigma \ V^T$
+
+$U = AA^T$ - kateri termini nastopajo v skupnih dokumentih - velikost $m \times r$, kjer je $r$ število ne-singularnih vrednosti
+
+$\Sigma = diagonalna \ martika$  velikosti $r \times r$, ki vsebuje singularne vrednosti.
+
+$V^T = Singularni \ vektorji \ A^TA$ - kateri dokumetnti imajo skupne termine - veliksot $n \times r$
+
+##### Zmanjšanje konceptnega postora
+
+Matrika $\Sigma$ se lahko zmanjša z odstranitvijo najmanjših singularnih vrednosti (na desno dnu matrike).
+
+Če uporabimo samo $k$ nejvečjih singularnih rednosti v $\Sigma$, dobimo k-konceptni prostor: $A_k = U_k\Sigma_k V_k^T$
+
+<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/singular.png" title="" alt="singular.png" width="550">
+
+#### Poizvedovanje in iskanje v LSI
+
+- $q$ - naša poizvedba, obnaša se kot dokument v k konceptnem prostoru
+
+- Transformirani dokumenti so predstavljeni z $V_k$.
+  
+      $q = U_k \Sigma_k q_k^T$
+
+- $q_k$ postane nov stolpec/dokument v $V_k^T$, zato je q:
+
+- $q_k$ je potem:
+  
+     $q_k = q^T U_k \Sigma_k^{-1}$
+
+- Za pridobivanje $q_k$ primerjamo z dokumenti v $V_k$
+
+#### Primerjava LSI in drugih metod
+
+- LSI se izkaže za boljše rezultate
+
+- Slabosti:
+  
+  - Časovna komplekstnost LSI je $O(m^2n)$, ker je preveliko za velike kolekcije
+  
+  - Konceptni prostor ni možno interpretirati
+  
+  - Iskanje optimalnega števila $k$ za redukcijo dimenzije je težek problem.
+
+## Spletno iskanje
+
+Spletno iskanje v večini temelji na vektorskem prostorskem modelu in term matchingom.
+
+Glavni koraki v spletnem iskanju so:
+
+    Zajem strani s spleta -> parsanje -> indeksiranje -> iskanje in rangiranje
+
+### Rangiranje
+
+Rangiranje je najbolj pomembna lastnost iskalnikov.
+
+Tradicionalne metode, kot so kosinusna natančnost niso zadovoljive.
+
+Za splet je kvaliteta strani tudi pomemben faktor:
+
+- Kvaliteta strani an spletu se zelo razlikuje
+
+- Hiperpovezave se lahko izkoristijo, da se zveča pomembnost strani
+
+Vsebina strani in ugled strani se oba ponavadi tudi upoštevata pri rangiranju strani.
+
+#### Rangiranje na oslovi vsebine
+
+Termini poizvedbe se lahko med seboj zelo razlikujejo. Veliko različnih informacij se gleda:
+
+- Tip pojavitve(v naslovu, v URL, v telesu, ...) - če se pojavi v naslovu sklepamo da je bolj pomemben
+
+- Število pojavitev - za vsak tip pojavitve
+
+- Lokacija - za vsak tip pojavitve - na katerem mestu v naslovu, kako blizu so si termini poizvedbe med seboj.
+
+Za vsak tip pojavitve in število pojavitev imamo lahko uteži:
+
+- Vektor pojavitve tipa: $\overrightarrow{otv} = [tw_{title}, tw_{anchor}, tw_{url}, tw_{body}]$
+
+- Vektor števila pojavitev: $\overrightarrow{cv} = [cw_{title}, cw_{anchor}, cw_{url}, cw_{body}]$
+
+##### Enobesedne poizvedbe
+
+- Definiramo vektor pojavitve tipov $\overrightarrow{otv}$
+  
+  - Izračunamo vektor pojavitve $\overrightarrow{cv}$
+  
+  - Izračunamo vsebinsko vrednost strani (IR score): $\overrightarrow{ct} \circ \overrightarrow{otv}$
+  
+  - Izračunamo Reputation score
+  
+  - Končni score je $f(IR \ score, reputation \ score)$
+
+##### Večbesedne poizvedbe
+
+Moramo upoštevati tudi:
+
+- Bližino terminov
+
+- Vrstni red besed
+
+Postopek
+
+- Definiramo vektor bližine tipov $\overrightarrow{tpv}$
+
+- za vsako stran $p$, ki jo dobimo iz invertega indeksa:
+  
+  - Za vsak par iz poizvedbe izračunamo bližinsko vrednost (proximity value) $pv$
+  
+  - izračunamo vektor pojavitve $\overrightarrow{cv}$ za vsak tip, ki se pojavi in bližinsko vrednost
+  
+  - Izračunamo vsebnsko vrednost strani (IR score): $\overrightarrow{ct} \circ \overrightarrow{otv}$
+  
+  - Izračunamo Reputation score
+  
+  - Končni score je $f(IR \ score, reputation \ score)$
+
+#### Reputation score
+
+Upoštevati moramo, kako kvalitetna je neka stran. Ugled strani temelji na strukturi linkov strani.
+
+Dva algoritma sta zelo pomembna: PageRank in HITS.
+
+Oba temeljita na osnovi prestiža
+
+#### Prestiž
+
+Preko teorije grafov
+
+- Prestiž povezanosti (degree prestige) - Akter je tako prestižen, kolikor je drugih akterjev, ki so z njim povezani: $P_D(i) = \frac{d_l(i)}{n-1}$, kjer je $d_l(i)$ število povezav v vozl. $i$ in $n$ število vseh povezav
+
+- Prestiž okolice (proximity prestige) - Samo akterji, ki so direktno ali nedirektno povezani z $i$ se štejejo (inflience domain): $P_P(i) = \frac{|I_i|/(n-1)}{\Sigma_{j\in I_i} d(j, i)/|I_i|}$
+
+- Prestiž ranga (rank prestige): - Upošteva se tudi kako pomembni so tisti akterj, ki kažejo nanj.
+  
+  - Uporabljata ga PageRank in HITS
+  
+  - Prestiž ranga $PR(i)$ je definitan kot linearna kombinacija povezav, ki kažejo na $i$: $P_R(i) = \Sigma_j P_r(j)$, kjer $j$ kaže na $i$.
+  
+  - Naj bo $P$ vektor, ki predstavlja prestiž ranga za vse akterje: $P = (P_R(1), P_R(2), ..., P_R(n))^T$ in matrika $A$, ki ima $A_{ij} = 1$, kjer $i$ kaže na $j$ in $0$ drugje.
+  
+  - Nato imamo $P = A^TP$, kjer je $P$ lastni vektor $A^T$ in se lahko računa z Power iteration (Potenčno enačbo) metodo.
+
+#### PageRank
+
+Osnovna ideja PageRank sledi ideji prestižu ranga, z nekaj razlikami:
+
+- Ker stran lahko kaže an več strani, se score prestige razdeli med strani $P(i) = \Sigma_{(i,j) \in E} \frac{P(j)}{o_j}$, kjer je splet graf $G = (V, E)$, kjer so $V$ strani in $E$ povezave, in $0_j$ število izhodnih povezav iz $j$. Naj bo $n$ število vseh strani $n = |V|$
+
+##### Modeliranje spleta z markovskimi verigami
+
+Markovske verige modelirajo surfanje kot stohastičen proces, kjer se gibamo naključno kam gremo naprej.
+
+Izračunamo lahko kolikšna je vrjetnost da je surfe v stanju $j$ po enem koraku: $p_1(j) = \Sigma_{i=1}^n A_{ij}(1)p_0(i)$, kjer je $A_{ij}(1)$ vrjetnost da gremo iz $i$ v $j$ v enem koraku in $A_{ij}(1) = A_{ij}$. V matrični obliki: $p_1 = A^T p_0$
+
+Vrjetnostna distribucija po k korakih je: $p_k = A^T p_{k-1}$
+
+#### Ergodijev teorem za markovske verige
+
+Po ergodijevem teremu markovskih verig, je končna markovska veriga definitana kot stohastična matrika prehodov $A$, ki ima unikatno stacionarno vrjetnostno distribucijo, če je $A$ polnopovezana in periodična.
+
+###### Stacionarna vrjetnostna distibucija
+
+Matrika $A$ mora biti:
+
+- **Stohastična**: Matrika mora imeti v vseh vrsticah nenegativne frednosti in seštevek vrstice mora biti 1
+
+- **Polnopovezana**: Graf mora biti močno povezan
+
+- **Aperiodična**: Če so vsa stanja aperiodična (ni ciklov)
+
+Kako to rešimo?
+
+Če je prazna vrstica lahko stran umaknemo iz matrike, ali na tej strani damo povezave na vse strani z enako vrjetnostjo.
+
+<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/stoh1.png" title="" alt="stoh1.png" width="284"><img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/stoh2.png" title="" alt="stoh2.png" width="267">
+
+Iz vsake strani na vsako drugo stran damo povezavo, z zelo majhno vrjetnostjo, ki jo kontroloira parameter $d$.
+
+Nova pravila za suirferja:
+
+- z vrjetnostjo $d$, naključno izberemo povezavo, ki ji sledimo
+
+- z vrjetnostjo $1-d$, skočimo na naključno stran brez povezave
+  
+     $P = ((1-d)\frac{E}{n} + dA^T)P$, kjer je
+  
+  $e$ vektor enic in $E = ee^T$ je $n\times n$ matrika samih enic.
+
+#### Prednosti in slabosti PageRank
+
+Prednosti:
+
+- Neodvisnost poizvedbe
+
+- Težko ga je "goljufati"
+
+Slabosti:
+
+- Prestiž po navadi nima povezave z poizvedbo
+
+- Čas se ne upošteva
+
+### Luščenje
+
+1. Čiščenje HTML
+
+2. zgradimo DOM drevo
+
+3. Analiza strani
+   
+   - Identificikacija seznamov
+   
+   - identifikacija objektov
+   
+   - Ovojnica, luščenje
+
+#### Tehnika
+
+1. Primerjava nizov (stringov)
+
+2. primerjava dreves: Simple Tree Matching:
+   
+   - $NSTM= \frac{STM(A, B)}{(nodes(A) + nodes(B))/2}$ - Metrika podobnosti
+   
+   - Obiskujemo drevo v pre-order načinu
+   
+   - upoštevamo pravila:
+     
+     - Vsako vozlišče iz A lahko poravnamo samo enkrat
+     
+     - ohranimo zaporedje vozlišč
+     
+     - ohranimo hierarhije
