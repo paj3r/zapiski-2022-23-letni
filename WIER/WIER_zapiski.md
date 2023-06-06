@@ -1,3 +1,122 @@
+- [SPLETNI PAJKI](#spletni-pajki)
+  - [Arhitektura](#arhitektura)
+    - [Osnovna arhitektura](#osnovna-arhitektura)
+    - [Pajki z iskanjem v širino](#pajki-z-iskanjem-v-širino)
+    - [Zgodovina pajka](#zgodovina-pajka)
+    - [Preferenčni pajki](#preferenčni-pajki)
+  - [Implementacija](#implementacija)
+    - [Zajem strani](#zajem-strani)
+    - [Razčlenjevanje](#razčlenjevanje)
+    - [Odstranjevanje stopwordov in stemming](#odstranjevanje-stopwordov-in-stemming)
+    - [Ekstrakcija povezav in kanonizacija](#ekstrakcija-povezav-in-kanonizacija)
+    - [Pajkove zanke](#pajkove-zanke)
+    - [Repozitorij](#repozitorij)
+    - [Paralelno delovanje](#paralelno-delovanje)
+  - [Univerzalni pajki](#univerzalni-pajki)
+    - [Zajemanje vs. svežina vs pomembnost](#zajemanje-vs-svežina-vs-pomembnost)
+      - [Skalabilnost](#skalabilnost)
+  - [Fokusirani pajki](#fokusirani-pajki)
+    - [Klasifikacija fokusnega pajka](#klasifikacija-fokusnega-pajka)
+    - [Klasifikacija z naivnim bayesom](#klasifikacija-z-naivnim-bayesom)
+      - [Kontkekstualni fokusirani pajki](#kontkekstualni-fokusirani-pajki)
+  - [Tuneliranje](#tuneliranje)
+  - [Tematski pajki](#tematski-pajki)
+    - [Leksikalna podobnost](#leksikalna-podobnost)
+    - [Podobnost povezav](#podobnost-povezav)
+    - [Načini izračuna](#načini-izračuna)
+    - [Best n-first pajek](#best-n-first-pajek)
+  - [Adaptivni pajki](#adaptivni-pajki)
+    - [Inteligentni pajek](#inteligentni-pajek)
+    - [Tematski pajek, ki uporablja spodbujevalno učenje](#tematski-pajek-ki-uporablja-spodbujevalno-učenje)
+      - [Problemi:](#problemi)
+        - [Značilnosti strani in povezav:](#značilnosti-strani-in-povezav)
+        - [Priotiziranje](#priotiziranje)
+        - [Linearna aproksimacija](#linearna-aproksimacija)
+    - [Evalvacija pajkov](#evalvacija-pajkov)
+      - [Metrike](#metrike)
+        - [Metrike na osnovi natančnosti](#metrike-na-osnovi-natančnosti)
+        - [Dolžina zajema](#dolžina-zajema)
+        - [Metrike na osnovi priklica](#metrike-na-osnovi-priklica)
+        - [Kritični resursi](#kritični-resursi)
+    - [Etika pajkov](#etika-pajkov)
+- [Strukturirana ekstrakcija podatkov](#strukturirana-ekstrakcija-podatkov)
+  - [Sheme](#sheme)
+    - [Problemi:](#problemi-1)
+  - [DOM](#dom)
+    - [Kaj DOM je:](#kaj-dom-je)
+  - [Aplikacije avtomatske ekstrakcije](#aplikacije-avtomatske-ekstrakcije)
+    - [Sistem za ekstrakcijo](#sistem-za-ekstrakcijo)
+      - [Vidiki sistemov za ekstrakcijo](#vidiki-sistemov-za-ekstrakcijo)
+      - [Aplikacije sistemov za ekstrakcijo:](#aplikacije-sistemov-za-ekstrakcijo)
+  - [Tehnike ekstrakcije vsebine](#tehnike-ekstrakcije-vsebine)
+    - [Vzklajevanje dreves in stringov](#vzklajevanje-dreves-in-stringov)
+      - [String edit distance](#string-edit-distance)
+      - [Jaro podobnost](#jaro-podobnost)
+      - [Jaro winkler podobnost](#jaro-winkler-podobnost)
+      - [Tree edit razdalja](#tree-edit-razdalja)
+  - [Večkratno usklajevanje](#večkratno-usklajevanje)
+    - [Center star method](#center-star-method)
+    - [Delna poravnava dreves](#delna-poravnava-dreves)
+    - [Grajenje DOM dreves](#grajenje-dom-dreves)
+      - [Ekstrakcija podatkov](#ekstrakcija-podatkov)
+    - [Izzivi pri ekstrakciji](#izzivi-pri-ekstrakciji)
+  - [Iskanje podatkovnih seznamov](#iskanje-podatkovnih-seznamov)
+    - [Definicije](#definicije)
+      - [Vsebinski elementi v podatkovnih seznamih](#vsebinski-elementi-v-podatkovnih-seznamih)
+    - [Povežemo vsebinske elemente med seboj](#povežemo-vsebinske-elemente-med-seboj)
+      - [Ekstrakcija večih spletnih strani](#ekstrakcija-večih-spletnih-strani)
+      - [RoadRunner algoritem](#roadrunner-algoritem)
+      - [Slabosti z avtomatsko ekstrakcijo](#slabosti-z-avtomatsko-ekstrakcijo)
+  - [Spletne ovojnice](#spletne-ovojnice)
+    - [xPath - XML Path language](#xpath---xml-path-language)
+      - [Problemi z vzdrževanjem ovojnice](#problemi-z-vzdrževanjem-ovojnice)
+        - [Visual box model](#visual-box-model)
+- [INFORMACIJSKO POIZVEDOVANJE](#informacijsko-poizvedovanje)
+  - [Modeli informacijskega poizvedodanja](#modeli-informacijskega-poizvedodanja)
+  - [Formalizacija](#formalizacija)
+    - [Logični model](#logični-model)
+    - [Vektorski model](#vektorski-model)
+      - [Izračun relevantnosti](#izračun-relevantnosti)
+  - [Statistični jezikovni model](#statistični-jezikovni-model)
+    - [Glajenje](#glajenje)
+  - [Upoštevanje povratne informacije](#upoštevanje-povratne-informacije)
+    - [Rocchio metoda](#rocchio-metoda)
+    - [Rocchio kasifikator](#rocchio-kasifikator)
+    - [LU learning](#lu-learning)
+    - [PU learning](#pu-learning)
+    - [Pseudo feedback](#pseudo-feedback)
+    - [Vektorske vložitve besed](#vektorske-vložitve-besed)
+      - [One hot encoding](#one-hot-encoding)
+    - [Word2Vec](#word2vec)
+      - [Kako vektorske vložitve uporabljamo v informacijskem poizvedovanju?](#kako-vektorske-vložitve-uporabljamo-v-informacijskem-poizvedovanju)
+    - [Invertni indeks](#invertni-indeks)
+    - [Trie podatkovna struktura](#trie-podatkovna-struktura)
+      - [Trie konstrukcija za splet](#trie-konstrukcija-za-splet)
+  - [Dodatni indeksi](#dodatni-indeksi)
+  - [Kompresija indeksa](#kompresija-indeksa)
+    - [Kompresiranje celih števil](#kompresiranje-celih-števil)
+      - [Dekodiranje](#dekodiranje)
+        - [Empirično testiranje](#empirično-testiranje)
+  - [Latentna semantična analiza - LSI](#latentna-semantična-analiza---lsi)
+    - [Formalizacia](#formalizacia)
+    - [Zmanjšanje konceptnega postora](#zmanjšanje-konceptnega-postora)
+      - [Poizvedovanje in iskanje v LSI](#poizvedovanje-in-iskanje-v-lsi)
+      - [Primerjava LSI in drugih metod](#primerjava-lsi-in-drugih-metod)
+      - [Spletno iskanje](#spletno-iskanje)
+  - [Rangiranje](#rangiranje)
+    - [Rangiranje na oslovi vsebine](#rangiranje-na-oslovi-vsebine)
+      - [Enobesedne poizvedbe](#enobesedne-poizvedbe)
+      - [Večbesedne poizvedbe](#večbesedne-poizvedbe)
+    - [Reputation score](#reputation-score)
+    - [Prestiž](#prestiž)
+    - [PageRank](#pagerank)
+      - [Modeliranje spleta z markovskimi verigami](#modeliranje-spleta-z-markovskimi-verigami)
+    - [Ergodijev teorem za markovske verige](#ergodijev-teorem-za-markovske-verige)
+      - [Stacionarna vrjetnostna distibucija](#stacionarna-vrjetnostna-distibucija)
+    - [Prednosti in slabosti PageRank](#prednosti-in-slabosti-pagerank)
+  - [Luščenje](#luščenje)
+    - [Tehnika](#tehnika)
+
 # SPLETNI PAJKI
 
 ## Arhitektura
@@ -268,7 +387,7 @@ Uporabljajo množico izboljšav pred običajnimi pajki:
 
 Za potrebe poizvedovanja po dokumentu imamo naslednjo enačbo:
 
-- $P_r(c|d) \approx P_r(c) \prod_{i=1}^{|V|} P_r(w_i|c_k)^{f_{w_i}}$, kjer je $V$ slovar posameznih besed **$w_i$** in dokument **$d$**, ki ga hočemo klasificirati, **$f_{w_i}$** je frekvenca besed $w_i$ v $d$
+- $P_r(c|d) \approx P_r(c) \prod_{i=1}^{|V|} P_r(w_i|c)^{f_{w_i}}$, kjer je $V$ slovar posameznih besed **$w_i$** in dokument **$d$**, ki ga hočemo klasificirati, **$f_{w_i}$** je frekvenca besed $w_i$ v $d$
 
 ### Kontkekstualni fokusirani pajki
 
@@ -337,13 +456,13 @@ Ugotovtve raziskave:
 
 - Semantična podobnost
 
-##### Leksikalna podobnost
+### Leksikalna podobnost
 
 p1 in p2 sta podobni, če imata podobno vsebino.
 
 Če je p1 relevantna, in je p1 podoben p2 => velika vrjetnost, da je p2 relevantna.
 
-##### Podobnost povezav
+### Podobnost povezav
 
 Če sta p1 in p2 podobni po povezavah, potem sta si blizu:
 
@@ -361,7 +480,7 @@ p1 in p2 sta podobni, če imata podobno vsebino.
 
 3. Bibliografska podobnost - če stran kaže na iste strani kot dobra stran, sklepamo da je dobra (obratno od kocitiranosti)
 
-##### Načini izračuna
+### Načini izračuna
 
 1. Leksikalna podobnost: TF/IDF + kosinusna podobnost
 
@@ -375,7 +494,7 @@ Variacije princiap gibanja BEST-first:
 
 - Infospider, Clevercrawler, Sharksearch: tekst URL, pozicija besed v DOM, tagi, ...
 
-##### Best n-first pajek
+### Best n-first pajek
 
 Eksploracija - raziskovanje
 
@@ -401,7 +520,7 @@ Algoritem:
 
 4. ponovno razvrsti URL-je v frontierju
 
-##### Inteligentni pajek
+### Inteligentni pajek
 
 primer pajka z adaptivno strategijo
 
@@ -545,11 +664,11 @@ Za vsak blok iz spletne strani hočemo pridobiti podatke in vedeti, kateri podat
 
 Obdelavo naravnega jezika delamo, da dobimo dodatne informacije iz teksta, ne samo tekst.
 
-#### Sheme
+## Sheme
 
 Sheme je težko razviti za vsako domeno. Če bi bili vsi dokumeti v XML shemi, ne bi potrebovali avtomatske ekstrakcije podatkov.
 
-###### Problemi:
+### Problemi:
 
 - Anotacije
 
@@ -557,7 +676,7 @@ Sheme je težko razviti za vsako domeno. Če bi bili vsi dokumeti v XML shemi, n
 
 Ekstrakcija informacij omogoča način ekstrahiranja podatkov iz nestrukturiranih ali delno strukturiranih fivov v strukturiran format.
 
-#### DOM a
+## DOM
 
 DOM (Document Object Model) definira posamezne oznake, funkcionalnosti posameznih oznak, ...
 
@@ -571,7 +690,7 @@ Vzorci za ekstrahiranje se lahko specificirajo kot poti iz korena DOM drevesa, d
 
 Nadaljno procesiranje besedila je lahko potrebno za dejansko ekstrahiranje besedila.
 
-###### Kaj DOM je:
+### Kaj DOM je:
 
 - Objektni model za HTML.
   
@@ -581,7 +700,7 @@ Nadaljno procesiranje besedila je lahko potrebno za dejansko ekstrahiranje besed
   
   - Dodajamo, brišemo, spreminjamo HTML elemente in dodajamo ali reagiramo dogodke (events)
 
-#### Aplikacije avtomatske ekstrakcije
+## Aplikacije avtomatske ekstrakcije
 
 Primerjava cen izdelkov v različnih trgovinah:
 
@@ -595,7 +714,7 @@ Primerjava cen izdelkov v različnih trgovinah:
   
   - Offline pristop: Spletni pajek prenaša podatke v našo bazo in jih vrne uporabnikom
 
-#### Sistem za ekstrakcijo
+### Sistem za ekstrakcijo
 
 Ni pomembno samo da zna podatke ekstrahirati, ampak da zna avtomatsko, občasno dobiti podatke iz strani, ki se spreminjajo in te podatke shraniti v bazo.
 
@@ -607,7 +726,7 @@ Mora znati komunicirati s spletnimi strani in znati generirati in posodabljati s
 
 - Podatke mora uporabiti
 
-###### Vidiki sistemov za ekstrakcijo
+#### Vidiki sistemov za ekstrakcijo
 
 - Kako je sistem enostaven od najtežjega do najenostavnejšega:
   
@@ -667,7 +786,7 @@ Mora znati komunicirati s spletnimi strani in znati generirati in posodabljati s
   
   5. Sistem se da integrirati v sistem enterprise
 
-###### Aplikacije sistemov za ekstrakcijo:
+#### Aplikacije sistemov za ekstrakcijo:
 
 Buisness:
 
@@ -868,6 +987,8 @@ Vozlišča $v_j...v_k$ lahko vstavimo v $T_s$, če imajo v $T_s$ enolično mesto
 
 3. Če imajo $v_j...v_k$ samo eno vozlišče na desni in če je to vozlišče najbolj levo v T_s, potem jih lahko dodamo v T_s levo od tega vozlišča.
 
+![partial_alogn.png](./partial_alogn.png)
+
 #### Grajenje DOM dreves
 
 Potrebni za veluiko elgoritev za ekstrakcijo podatkov.
@@ -928,7 +1049,7 @@ Proces:
   
   2. Koliko zaporednih vozlišč zajema
 
-![posplvozl.png](C:\Users\ivopa\OneDrive\Dokumente\GitHub\zapiski-2022-23-zimski\WIER\posplvozl.png)
+![posplvozl.png](.\posplvozl.png)
 
 ### Vsebinski elementi v podatkovnih seznamih
 
@@ -1092,7 +1213,7 @@ Komponente:
 
 - Indeksirnik -> Podatke iz kolekcije daje v indeks
 
-<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/ir_arhitektura.png" title="" alt="ir_arhitektura.png" width="379">
+<img title="" src=".\ir_arhitektura.png" alt="ir_arhitektura.png" width="379">
 
 Dodatni izzivi poizvedovanja:
 
@@ -1188,7 +1309,7 @@ Lindstonovo glajenje: $0 < \lambda < 1$
 
 $D = R_R \ \cup \ R_{IR}$ , kjer so $R_R$ relavantni dokumenti, $R_{IR}$ pa nerelevantni dokumenti.
 
-###### Rocchio metoda
+#### Rocchio metoda
 
 $q$ - naša poizvedba
 
@@ -1198,23 +1319,23 @@ $q_e = \alpha q + {\beta \over |D_r|} \sum_{d_r \in D_r}d_r - {\gamma \over |D_{
 
 Z uporabo tega lahko uporabimo Rocchio metodo za klasifikator
 
-###### Rocchio kasifikator
+#### Rocchio kasifikator
 
 $c_i = {\alpha \over |D_i|} \sum_{d \in d_i} {d \over |d|} - {\beta \over |D - D_i|} \sum_{d \in D-D_i} {d \over |d|}$, kjer $D$ - vsi dokumenti, $D_i$ - dokumenti tipa i (relevantni ali nerelevantni)
 
-###### LU learning
+#### LU learning
 
 Labeled and Unlabeled learning
 
 - Sopojavnost besed -> kjer se pojavlja nogomet, se pojavlja tudi šport
 
-###### PU learning
+#### PU learning
 
 positive and unlabled learning
 
 - Zgradimo klasifikator na podlagi množice P ali relevantnih
 
-###### Pseudo feedback
+#### Pseudo feedback
 
 $q$ - osnovna poizvedba
 
@@ -1256,7 +1377,7 @@ Imamo več pristopov:
 
 - Doc2Vec
 
-# Invertni indeks
+## Invertni indeks
 
 Najbolj učinkovit indeks za poizvedovanje.
 
@@ -1277,7 +1398,7 @@ Po invertnem indeksu so polj relevantni dokumenti, ki imajoBližje besede, ki ji
 
 Predponsko drevo, ki vzdržuje vsebino v urejenem vrstnem redu.
 
-<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/trie.png" title="" alt="trie.png" width="271"><img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/true_usage.png" title="" alt="true_usage.png" width="312">
+<img title="" src=".\trie.png" alt="trie.png" width="271"><img title="" src=".\true_usage.png" alt="true_usage.png" width="312">
 
 Trie struktura je veliko hitrejša kot običajna tabela.
 
@@ -1345,7 +1466,7 @@ Golombovo kodiranje
 
 - Bolj učinkovit za velika števila
   
-  <img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/golomb.png" title="" alt="golomb.png" width="487">
+  <img title="" src=".\golomb.png" alt="golomb.png" width="487">
 
 Variably-byte kodiranje
 
@@ -1423,7 +1544,7 @@ Matrika $\Sigma$ se lahko zmanjša z odstranitvijo najmanjših singularnih vredn
 
 Če uporabimo samo $k$ nejvečjih singularnih rednosti v $\Sigma$, dobimo k-konceptni prostor: $A_k = U_k\Sigma_k V_k^T$
 
-<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/singular.png" title="" alt="singular.png" width="550">
+<img title="" src=".\singular.png" alt="singular.png" width="550">
 
 #### Poizvedovanje in iskanje v LSI
 
@@ -1585,7 +1706,7 @@ Kako to rešimo?
 
 Če je prazna vrstica lahko stran umaknemo iz matrike, ali na tej strani damo povezave na vse strani z enako vrjetnostjo.
 
-<img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/stoh1.png" title="" alt="stoh1.png" width="284"><img src="file:///C:/Users/ivopa/OneDrive/Dokumente/GitHub/zapiski-2022-23-zimski/WIER/stoh2.png" title="" alt="stoh2.png" width="267">
+<img title="" src=".\stoh1.png" alt="stoh1.png" width="284"><img title="" src=".\stoh2.png" alt="stoh2.png" width="267">
 
 Iz vsake strani na vsako drugo stran damo povezavo, z zelo majhno vrjetnostjo, ki jo kontroloira parameter $d$.
 
