@@ -347,3 +347,125 @@ Največja pomanjkljivost je, da pot, ki jo bomo izbrali ni nujno optimalna, saj 
 ### Zakaj se pri komunikacijah senzorjev uporablja nizka orbita satelitov? kakšne so prednosti in slabosti nizke orbite?
 
 Uporablja se za hitro komunikacijo na nedostopnih krajih npr. vrh hriba z strežnikom, ki je lahko na drugi strani sveta.Prednosti so, da so zakasnitve relativno majhne, slabosti pa so, da so po navadi dražji in orbita sma zaseda manjši prostor, zato je neposredna komunikacija med elementi možna samo na določenem območju.
+
+### Kakšne so prednosti in slabosti ad-hoc omrežij?
+
+Ad- hoc omrežja niso vezana na infrastrukturo:
+
+Prednosti:
+
+- Ne potrebujemo infrastrukture in posledično ni skupne administracije
+
+- Večja robustnost, ker ni odvisnosti od centralnega sistema
+
+- Admionistracija posameznega elementa ni potrebna
+
+- Omrežje se samo postavi in je takoj pripravljeno za uporabo
+
+- Hitra postavitev omrežja
+
+Slabosti:
+
+- Samoorganizacija naprav je lahko zelo zahtevna
+
+- Omejen domet
+
+- Težave pri mobilnosti
+
+- Težave pri dostopu do medija
+
+- Težave pri usmerjanju / posredovanju podatkov
+
+- Težave pri varnosti sporočil (težavno dodeljevanje in preklic certifikatov / ključev)
+
+### Zakaj ima FreeRTOS posebne funkcije, ki se lahko kličejo iz prekinitvenih rutin?
+
+Te funkcije so posebno prirejene za uporabo v prekinitvenih rutinah, ki lahko prekinejo tudi pisanje ali branje čakalne vrste v opravilih, ki so se izvajala pred prekinitvijo.
+
+### Kaj je razlika med točnostjo in natančnostjo pri merjanju fizikalnih veličin?
+
+Točnost je stopnja verodostojnosti (ali je izmerjena vrednost ista dejanski fizilčni vrednosti), natančnost pa stopnja ponovljivosti (ali se meritve med seboj razlikujejo).
+
+### Kaj je potrebno nastaviti na MQTT srežniku, da lahko nanj priključimo nov odjemalec?
+
+Najprej je potrebno konfigurirati strežnik, da sprejme nove odlejalce. To naredimo tako, da bodisi dovolimo vsem napravem, da se povežejo (allow-anonymous = true), ali pa definiramo uporabniška imena in gesla, s katerimi se lahko naprave povežejo na strežnik. Če se želimo stopnjo varnosti moramo definirati tudi varnostne nastavitve, kot na primer šifriranje prenosa z SSL/TLS.Nato se odjemalec lahko poveže na strežnik.
+
+### Kako se rešuje težava skritih omrežij?
+
+Težava skritih omrežij se rešuje z vpeljavo detektije kolizij - CSMA/CD, ali pa vpeljavo drugih protokolov za dostop do skupnega medija - token ring, TDMA.
+
+### Kakšne so 3 vrste naprav, ki jih omogoča BLE?
+
+Vrste naprav ki jih podpira BLE so:
+
+- Naprave, ki omogočajo BR/EBR funkcionalnosti (Navadne BT naprave)
+
+- Naprave, ki omogočajo LE (LE only devices)
+
+- Naprave, ki omogočajo BR/EBR ali LE (dual mode devices)
+
+### Kako dolžina bloka vpliva na uspešnost prenosa podatkov, če uporabljamo bločno kodiranje (na primer BCH)?
+
+Večja dolžina bloka po navadi pomeni večjo možnost odkrivanja in popravljanja napak. Lahko se poveča učinkovitost prenosa, saj je prenesenih več podatkov naenkrat. Kodiranje in dekodiranje zahteva več časa, zaho je lahko večja bločna velikost neprimerna za naprave, z omejenimi resursi.
+
+### Kaj pomeni izraz časovna sinhronizacija za nazaj?
+
+To pomeni, da se sinhronizacija izvaja po potrebi. Ko pride do dogodka, se zabeleži lokalni čas, element se sinhronizira in preračuna zabeležen čas v realni čas.
+
+### Kje nastopijo težave pri pošiljanju paketa na osnovi naključnega sprehoda?
+
+Težave so pri naključnem sprehodu so:
+
+- Verjetnost, da prispe na cilj je majhna
+
+- Lahko trči na že prehojeno pot in preide v cikel
+
+### Kakšne omejitve imamo pri uporabi Iridium omrežja za prenost majhne količine podatkov?
+
+Težave so, da mora biti oddajnik in sprejemnik teh signalov precej močen, kar lahko porabi dosti energije, prenosne hitrosti so majhne, zato je čas oddajanja dolg. Komunikacija je draga.
+
+### Opiši CoAP protokol
+
+
+
+### Opiši algoritem S-MAC
+
+
+
+### Opiši protokol IEEE 802.15.4
+
+
+
+### Katere vloge imajo lahko naprave v IEEE 802.15.4
+
+
+
+### Opiši Bluetooth mesh
+
+
+
+### Katere naloge imajo lahko naprave v Bluetooth Mesh?
+
+
+
+### Opiši protokol ANT+
+
+
+
+### Katere so osnovne naloge prenosnega nivoja?
+
+Osnovne naloge so:
+
+- Uokvirjenje
+
+- Odpravljanje in popravljanje napak
+
+- Nadzor prenosa paketov
+
+- Upravljanje s prenosnim nivojem
+
+### Zakaj uporabljamo prepletanje?
+
+
+
+### 

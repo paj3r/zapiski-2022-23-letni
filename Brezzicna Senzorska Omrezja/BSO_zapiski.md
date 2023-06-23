@@ -106,7 +106,7 @@
   
   - **Povezovalni element**: deluje kot prehod med senzorskim omrežjem in zunanjim svetom (na primer komunikacija s pametnim telefonom)
 
-- Senzorski elementi so lahko popolnoma enaki (težave pri naslavljanju)ž
+- Senzorski elementi so lahko popolnoma enaki (težave pri naslavljanju)
 
 ##### Način delovanja
 
@@ -136,7 +136,7 @@
   
   - Omejen čas delovanja
   
-  - Možnosti pridobivanja elergije iz okolice
+  - Možnosti pridobivanja energije iz okolice
   
   - Različne strategije pri varčevanju z energijo (posamezen element, omrežje kot celota, ...)
   
@@ -146,7 +146,7 @@
   
   - Senzorski element je lahko nedostopen (ni možnosti menjave baterije in popravila)
   
-  - Cenovno popravilo ni smiselno
+  - Popravilo cenovno ni smiselno
 
 ##### Izzivi
 
@@ -172,7 +172,7 @@
 
 ###### Pogosto uporabljene metode
 
-- Samoorganizacija ormežja, saj zaradi velikega števila elementov ročna postavitev ni smiselna
+- Samoorganizacija omrežja, saj zaradi velikega števila elementov ročna postavitev ni smiselna
 
 - Komunikacija s posredovanjem sporočil (multi-hop network)
   
@@ -182,7 +182,7 @@
 
 - Medsebojno sodelovanje senzorskih elementov in delno procesiranje podatkov
 
-- Senzorski elementi niso vedno naslavnjali glede na naslov. Pomembni so podatki, ne pa posamezen element (data centric network)
+- Senzorski elementi niso vedno naslavljani glede na naslov. Pomembni so podatki, ne pa posamezen element (data centric network)
 
 - Lokalnost (čim več akcij se izvede s sosednjimi elementi)
 
@@ -414,7 +414,7 @@ Sodobni kinrokontrolerji vsebujejo:
 
 ![i2c.jpg](./i2c.jpg)
 
-- Podatek je prisoten nalin9iji, ko ej urin signal visok. Izjema sta začetek (S) in konec sporočila (P)
+- Podatek je prisoten na liniji, ko je urin signal visok. Izjema sta začetek (S) in konec sporočila (P)
 
 - Poenostavljen opis protokola:
   
@@ -482,7 +482,7 @@ Mikroprocesor se aktivira vsakih 30 sekund:
 
 Povprečna poraba elementov pri meritvi: $17.104 \ mA$
 
-Povprečna poraba elementov pri nekaitnosti: $9.1 \ \mu A$
+Povprečna poraba elementov pri nekaitvnosti: $9.1 \ \mu A$
 
 Celotna povprečna poraba okrog $13.09 \ \mu A$
 
@@ -534,7 +534,7 @@ Za digitalno zajemanje podatkov je potrebno dodati ojačevalec in A/D pretvornik
   
   - resolucija
   
-  - ptevilo bitov
+  - število bitov
   
   - čas pretvorbe
   
@@ -598,7 +598,7 @@ Kalibracija je relacija med fizikalno vrednostjo **X** in signalno vrednostjo **
 
 Message Queueing Telemety Transport
 
-Sporočillni sistem, ki ga je razvil IBM
+Sporočilni sistem, ki ga je razvil IBM
 
 Sedaj je standard ISO/IEC PRF 20922
 
@@ -612,7 +612,7 @@ Enostaven in primeren za rešitve z omejenimi resursi
 
 Odjemalec pošilja podatke na posrednika (broker), ki nato pošilja podatke strežnikom.
 
-- Prostorska neodvisnost: napravi, ki si pošiljata podatke ne ptrebujeta informacij, kot so na primer IP številka in številka vrat
+- Prostorska neodvisnost: napravi, ki si pošiljata podatke ne potrebujeta informacij, kot so na primer IP številka in številka vrat
 
 - Časovna neodvisnost: izvorna in ponorna naprava sta časovno popolnoma neodvisni
 
@@ -648,17 +648,17 @@ Pomembnejše posodobitve:
 
 - Pri ponavljajočih sporočilih se lahko izpusti naslov. Prazen naslov pomeni naslov prejšnjega sporočila
 
-- Definirana je žicljenjska doba sporočlila
+- Definirana je življenjska doba sporočlila
 
 - Sporoča se razlog prekinitve povezave
 
-- Pri QoS 1 in 2 se javlja tudi tazlog v primeru napake
+- Pri QoS 1 in 2 se javlja tudi razlog v primeru napake
 
 ##### Varnost
 
 - Varnost:
   
-  - Za prijavo na strežnik se lahko uporablja uporabnišško ime in geslo
+  - Za prijavo na strežnik se lahko uporablja uporabniško ime in geslo
   
   - Uporablja se lahko šifrirana povezava TLS
   
@@ -674,7 +674,7 @@ MQTT omogoča komunikaciji preko tehnologije webSocket
 
 Neposredna komunikacija je samo med posrednikom in brskalnikom
 
-Posrednik je obilajno monejpi račinalnik, zato nima težav z resursi
+Posrednik je obilajno močnejši računalnik, zato nima težav z resursi
 
 Povezava je lahko šifrirana (https)
 
@@ -690,7 +690,7 @@ Povezava je lahko šifrirana (https)
 
 - Odlike
   
-  - Web protokol, ki ej prilagojen za M2M okolje    
+  - Web protokol, ki je prilagojen za M2M okolje    
   
   - Asinhrono prenašanje podatkov
   
@@ -836,7 +836,7 @@ Težave:
 
 ##### Določanje začetka okvirja
 
-- Oddajanje se začne s sekvenco, ki ej potrebna za prilagoditev sprejemnika
+- Oddajanje se začne s sekvenco, ki je potrebna za prilagoditev sprejemnika
 
 - Iz zaporedja prejetih bitov je potrebno določiti začetek okvirja
   
@@ -1028,7 +1028,7 @@ Težave lahko nastanejo zaradi skritih vozlišč:
 
 - Čas trajanja spanja se določi z NAV vektorjem
 
-- Možna težava pri komunikaciji: C žali poslati napravi D, vendar A že pošilja napravi B.
+- Možna težava pri komunikaciji: C želi poslati napravi D, vendar A že pošilja napravi B.
 
 ### Brez sinhronizacije
 
@@ -1056,7 +1056,7 @@ Težave lahko nastanejo zaradi skritih vozlišč:
   
   - Spremenljiva dolžina podatkov v paketu (0-32 zlogov)
   
-  - Lahko deluje v načinu avtomatskega potrjevanja in ponovnega ošiljanja paketov
+  - Lahko deluje v načinu avtomatskega potrjevanja in ponovnega pošiljanja paketov
   
   - Deluje na področju ISM 2.4 GHz
   
@@ -1066,7 +1066,7 @@ Težave lahko nastanejo zaradi skritih vozlišč:
 
 ###### Oblika paketa
 
-- Preamble: sekvenca, ki ej potrebna za sinhronizacijo sprejemnika
+- Preamble: sekvenca, ki je potrebna za sinhronizacijo sprejemnika
 
 - Address: naslov prejemnika
 
@@ -1204,7 +1204,7 @@ Standard IEEE opredeljuje sapodnja dva sloja:
 
 #### Pregled značilnosti MAC plasti
 
-- Uporablja 64 bitni IEEE ali kratni 16 bitni naslov
+- Uporablja 64 bitni IEEE ali kratki 16 bitni naslov
 
 - Naprava je lahko v vlogi:
   
@@ -1240,7 +1240,7 @@ Standard IEEE opredeljuje sapodnja dva sloja:
 
 - Napravi se lahko dodeli krajši 16 bitni naslov
 
-- Načini naslavnljanja:
+- Načini naslavljanja:
   
   - Omrežje + naslov naprave v omrežju zvezde
   
@@ -1324,7 +1324,7 @@ Standard omogoča tri vrste naprav:
 
 Poenostavitve LE v primerjavi z BR/EBR:
 
--  Lahko je implementiran samo oddajnik, samo sprejemnik ali oba,
+- Lahko je implementiran samo oddajnik, samo sprejemnik ali oba,
 
 - Ne podpira prenosa zvoka
 
@@ -1368,11 +1368,11 @@ Optimizirana poraba električne energije:
   
   $f_{n+1} = (f_n + hopIncrement) mod 37$
 
-- GFSK (Gaussian Frequency Shift keying) način podulacije
+- GFSK (Gaussian Frequency Shift keying) način modulacije
 
 - Moč oddajnika v razponu od 0.01mW (-20 dBm) do 10mW (+10dBm)
 
-- Načrtovani dosegi med 30 in 100m
+- Načrtovani dosegi med 30m in 100m
 
 #### Povezovalna plast
 
@@ -1480,7 +1480,7 @@ Plast L2CAP(Logical Link Control and Adaptation Protocol) posreduje pakete višj
 
 - Trije načini komunikacije:
   
-  - prejverjena MITM (man in the middle) zaščita
+  - preverjena MITM (man in the middle) zaščita
   
   - Brez MITM zaščite
   
@@ -1492,9 +1492,9 @@ Atribut je opisan s tremi značilnostmi:
 
 - Attribute type - kaj atribut opisuje. iz tega je tudi razvidna dolžina podatkov
 
-- Attribute Handle - enolična številka ateibuta med 0x0000 in 0xffff
+- Attribute Handle - enolična številka atributa med 0x0000 in 0xffff
 
-- Attribute Permissions - pravize za dostop do atributa (branje, pisanje, branje in pisanje). Poleg tega lahko zahteva še preverjanje pristnosti in avtorizacijo.
+- Attribute Permissions - pravice za dostop do atributa (branje, pisanje, branje in pisanje). Poleg tega lahko zahteva še preverjanje pristnosti in avtorizacijo.
 
 Atribut je lahko fiksne ali spremenljive dolžine.
 
@@ -1508,7 +1508,7 @@ Različni načini dostopa do atributov:
 
 #### Splošni profil GATT
 
-Splošči profil GATT (Generic Attribute Profile) uvaja hierarhijo med atribute
+Splošni profil GATT (Generic Attribute Profile) uvaja hierarhijo med atribute
 
 Hierarhijo sestavljajo:
 
@@ -1548,9 +1548,9 @@ GAP definira naslednje tipe:
 
 - GATT profil omogoča preko servisov dostop do karakteristik, to je do podatkov
 
-- Profili, ki slonijo na GATT, to je GATT-based profiles, določajo tisti del profila, ki ej vezan na napravo, npr. zajem vrednosti baterije.
+- Profili, ki slonijo na GATT, to je GATT-based profiles, določajo tisti del profila, ki je vezan na napravo, npr. zajem vrednosti baterije.
 
-- Postavljenih je že veliko standardnih profilov, ki definirajo posamezne fonkcionalnosti. Tak primer je spremnjanje EKG signalov. Standardni profili so zanimivi predvsem zaradi enakega dostopa do istih funkcionalnosti na različnih napravah.
+- Postavljenih je že veliko standardnih profilov, ki definirajo posamezne funkcionalnosti. Tak primer je spremnjanje EKG signalov. Standardni profili so zanimivi predvsem zaradi enakega dostopa do istih funkcionalnosti na različnih napravah.
 
 #### Različica v4.1
 
@@ -1658,21 +1658,21 @@ Prinaša:
 
 - Za komunikacijo uporablja samo pakete za obveščanje(advertising packets)
 
-- V napravi je lahko več elementv, kjer se lahko vsak element samostojno naslovi
+- V napravi je lahko več elementov, kjer se lahko vsak element samostojno naslovi
 
 ###### Sklad
 
-- Models: Skupek osnovnih funbkcionalnosti elementa
+- Models: Skupek osnovnih funkcionalnosti elementa
 
 - Foundation Models: osnovne funkcionalnosti elementa (npr. nastavitve elementa)
 
 - Access Layer: skrbi, da so podatki pravilno posredovani višjim plastem
 
-- Upper transport layer: Definira šifriranje paketov na storitveni plasti. Upravlja elemente z majhno porab energije (Friendship)
+- Upper transport layer: Definira šifriranje paketov na storitveni plasti. Upravlja elemente z majhno porabo energije (Friendship)
 
-- Lower Transport Layer: Zagotavlja zanesljiv prenos paketo Po potrebi pakete pretvori v serijo manjših paketov, ki se na drugi strani združijo
+- Lower Transport Layer: Zagotavlja zanesljiv prenos paketov, po potrebi pakete pretvori v serijo manjših paketov, ki se na drugi strani združijo
 
-- Network layer: Mrežni nivo, ki določa naslavljanje in moreitno porepošiljanje paketa. Upravlja tudi s šifriranjem povezave.
+- Network layer: Mrežni nivo, ki določa naslavljanje in morebitno prepošiljanje paketa. Upravlja tudi s šifriranjem povezave.
 
 - Barer layer: Prenosni nivo, ki določa kako se bodo paketi prenašali preko omrežja
 
@@ -1692,11 +1692,11 @@ Naprave v omrežju lahko imajo različne naloge:
 
 Paketi se v omrežju pšiljajo z nadzorovanim poplavljanjem:
 
-- Pakete posredujejo nprej samo naprave, ki imajo funkcionalnost releja
+- Pakete posredujejo naprej samo naprave, ki imajo funkcionalnost releja
 
-- Ko naprava prejme paket, preveri v tabeli prejetih paketov, ali ej prejet paket predhodno sprejet. Naprej posreduje le eno kopijo paketa.
+- Ko naprava prejme paket, preveri v tabeli prejetih paketov, ali je prejet paket predhodno sprejet. Naprej posreduje le eno kopijo paketa.
 
-- Vsak paket ima števec korakov TTL (Time to live), ki se pri vsakem koraku zmanjšpa za ena. Ko je vrednost 0 se paket zavrže.
+- Vsak paket ima števec korakov TTL (Time to live), ki se pri vsakem koraku zmanjša za ena. Ko je vrednost 0 se paket zavrže.
 
 ###### Grupe
 
@@ -1706,7 +1706,7 @@ V omrežju se postavijo grupe z enakimi značilnostimi, ki delujejo na načinu n
 
 - Vsaka naprava se mora pred uporabo dodati v omrežje (Provisioning) npr. dodamo novo sijalko
 
-- Naprava, kis e želi dodati v omrežje začne oddajati pakete za oznanjanje (*beacon*)
+- Naprava, ki se želi dodati v omrežje začne oddajati pakete za oznanjanje (*beacon*)
 
 - V fazi dodajanja v omrežje se namestijo kriprografski ključi
 
@@ -1824,7 +1824,7 @@ Primer: 1/2 konvolucijski kodirnik:
 
 - Vhodno zaporedje 011100
 
-- Izhodno zaporedje 00 11 091 10 01 11
+- Izhodno zaporedje 00 11 001 10 01 11
 
 Poraba energije z uporabo rezličnih kodnih razmerij, če večamo manjšamo porabo bo potrebovala več energije, a še vedno manj kot nekodirano za visoko zanesljivost.
 
@@ -1892,7 +1892,7 @@ Pridobivanje informacij o prenosnem kanalu:
 
 - MAX naslov
 
-- Omrežni naslov je naslov ki je bičajno povezan z usmerjanjem
+- Omrežni naslov je naslov ki je običajno povezan z usmerjanjem
 
 - Oznaka omrežja služi za ločevanje omrežij med seboj
 
@@ -2751,8 +2751,6 @@ Na ta način se prihrani med 40% in 50% energije.
     - števec korakov (TTL)
 
 - Poplavljanje je neučinkovito, zato vmesni elemti pošiljajo paket točno določenemu naslovniku, prek usmerjevalnih tabel.
-
-
 
 Gradnja usmerjevalne tabele je lahko:
 
