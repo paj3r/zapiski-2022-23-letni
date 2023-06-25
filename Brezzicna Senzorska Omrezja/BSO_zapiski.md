@@ -1906,7 +1906,7 @@ Pridobivanje informacij o prenosnem kanalu:
 
 - Detekcija in reševanje konfliktov (coflict detection/resolution)
 
-- Povezovanje naslovov na rezličnih plasteh
+- Povezovanje naslovov na različnih plasteh
 
 - Format naslova
 
@@ -2084,7 +2084,7 @@ Pri sinhronizaciji se uporablja naslednje metrike:
   
   - deterministični algoritmi: največja napaka
   
-  - stohastični algoristmi: poveprečna napaka, standardni odklon, kvartli
+  - stohastični algoritmi: poveprečna napaka, standardni odklon, kvartli
 
 - zahteve po pomnilniku
 
@@ -2138,9 +2138,9 @@ Network time protocol
 
 - Sinhronizacija časa odjemalca s strežnikom
 
-- Iztačuna se čas med zahtevo in odgovorom. Predpostavimo, da je polovica izraunanega časa, čas ki ga v omrežju potrebuje odgovor povprečje med časi.
+- Izračuna se čas med zahtevo in odgovorom. Predpostavimo, da je polovica izračunanega časa, čas ki ga v omrežju potrebuje odgovor povprečje med časi.
   
-  ![ntp.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Brezzicna%20Senzorska%20Omrezja\ntp.jpg)
+  ![ntp.jpg](./ntp.jpg)
 
 ### Protokol LTS
 
@@ -2200,7 +2200,7 @@ Protokol RBS (Reference Broadcast Synchronisation) ima dva gradnika:
 
 - sinhronizacijo različnih domen
 
-Protokol ne popravlja lokalne ure, temčev računa odmike.
+Protokol ne popravlja lokalne ure, temveč računa odmike.
 
 Protokol temelji na sinhronizaciji za nazaj.
 
@@ -2368,7 +2368,7 @@ Posebnosti:
 
 Razdaljo lahko merimo s pomočjo ultrazvoka:
 
-- Meri se čas odboja ultrazvoja od ovice
+- Meri se čas odboja ultrazvoka od ovire
 
 - Natančnost pod 1mm
 
@@ -2382,7 +2382,7 @@ Laserski merilniki:
 
 - visoka natančnost meritve (lahko tudi v rangu $\mu$m)
 
-Komercialno dostopni sistemi za merjenje časa:
+Komercialno dostopni sistemi za merjenje razdalje:
 
 - Delujejo na principu merjenja časa potovanja radijskega signala
 
@@ -2454,7 +2454,7 @@ Bluetooth low energy:
 
 ### Nadzor topologije
 
-![topologija.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Brezzicna%20Senzorska%20Omrezja\topologija.jpg)
+![topologija.jpg](./topologija.jpg)
 
 - Omrežjee lahko zapišemo kot graf:
   
@@ -2485,7 +2485,7 @@ Bluetooth low energy:
 
 - Hrbtenica:
   
-  $D \subset V - $ Točke hrbtenice  dominantoan množica
+  $D \subset V - $ Točke hrbtenice so dominantna množica
   
   $\forall v \in V:v \in D \ \vee \ \exists D \in (v, e)...$
 
@@ -2584,7 +2584,7 @@ $\forall u, v \in V: (u, v) \in E' \iff \nexists w \in V: d(u, w)^2 \lt d(u, v^2
 - Prvi korak:
   
   - Začenja z najmanjšo močjo in si za vsako napravo beleži kot naprave
-  - Moč povečuje, dokler ni v vsakem stožcu s koto $\alpha$ dovolj naprav ali dokler ni dosežena maksimalna moč. Sredina stožca je kot zadnje najdene naprave.
+  - Moč povečuje, dokler ni v vsakem stožcu s kotom $\alpha$ dovolj naprav ali dokler ni dosežena maksimalna moč. Sredina stožca je kot zadnje najdene naprave.
 
 - Drugi korak:
   
@@ -2602,7 +2602,7 @@ $\forall u, v \in V: (u, v) \in E' \iff \nexists w \in V: d(u, w)^2 \lt d(u, v^2
 
 - Enostavne dvosmerne naprave
 
-- Znane so vse potrebne moči oddajanja za doseg drugego elementa
+- Znane so vse potrebne moči oddajanja za doseg drugega elementa
 
 - Uporabljen je požrešen algoritem
   
@@ -2688,7 +2688,7 @@ Algoritem lahko izvajamo porazdeljeno, ker privede do množic, ki niso povezane.
   
   - LEACH - znano število točk na znanem področju
     
-    - Določi se procent P točlk, ki postanejo vodje gruč
+    - Določi se procent P točk, ki postanejo vodje gruč
     
     - Iz množice točk, ki še niso bile vodje gruče, se izbere vodje gruč
     
@@ -2822,7 +2822,7 @@ Slabosti algoritma:
 
 #### Usmerjevalni algoritem DSDV
 
-Temelji na DVR algoritmui.
+Temelji na DVR algoritmu.
 
 DSDV (Destination sequenced distance vector)
 
@@ -2862,7 +2862,7 @@ Algoritem ribje oko (Fish Eye State Routing - FSR) združuje algoritme na osnovi
 
 - Natančno poznavanje povezav do bližnjih sosedov (2 koraka)
 
-- grobo poznavanje oddaljenih elementov. V tem primeru celotna pot ni poembna, ampak samo prvi koraki.
+- grobo poznavanje oddaljenih elementov. V tem primeru celotna pot ni pomembna, ampak samo prvi koraki.
 
 #### Algoritem DSR
 
@@ -3134,9 +3134,9 @@ Ideja:
 
 Težava: kako preprečiti več posredovanj naprej:
 
-- element, ki ej bližje cilju hitreje posreduje paket naprej (manjša zakasnitev)
+- element, ki je bližje cilju hitreje posreduje paket naprej (manjša zakasnitev)
 
-- upšorablja se standardne metode za preprečevanje trkov
+- uporablja se standardne metode za preprečevanje trkov
 
 - če ni posredovanja, ponorni element ponovi oddajanje
 
@@ -3238,7 +3238,7 @@ Primer implementacij, kjer vsak element na poti deluje kot posrednik glede na na
 
 ### Enkratno zajemanje podatkov
 
-- SPIN (Sensor ptorocol for Information via Negotioation) je primer protokola za zajemanje podatkov na zahtevo
+- SPIN (Sensor protocol for Information via Negotioation) je primer protokola za zajemanje podatkov na zahtevo
 
 - Protokol je smeseln v primeru, ko je velikost podatkov bistveno večja od kontrolnega prometa (objavljanje in naročanje)
 
@@ -3268,7 +3268,7 @@ Težave se pojavijo v primeru, ko elementi nimajo enoličnih naslovov in je zato
 
 - V tem primeru se opusti prva faza, to je oglaševanje virov
 
-- Ponori se naročijo an vire tako, da pošljejo zahtevo vsem elementom
+- Ponori se naročijo na vire tako, da pošljejo zahtevo vsem elementom
 
 ##### Združevanje podatkov
 
@@ -3276,7 +3276,7 @@ Težave se pojavijo v primeru, ko elementi nimajo enoličnih naslovov in je zato
 
 - Pri združevanju je potrebno paziti na:
   
-  - natančnost: vsi poratki se ne prenesejo do naročnika, kar lahko vpliva na natančnost
+  - natančnost: vsi podatki se ne prenesejo do naročnika, kar lahko vpliva na natančnost
   
   - celovitost podatkov
   
@@ -3284,7 +3284,7 @@ Težave se pojavijo v primeru, ko elementi nimajo enoličnih naslovov in je zato
   
   - dodatna obremenitev
 
-- Značlilnosti združevanja podatkov:
+- Značilnosti združevanja podatkov:
   
   - občutljivost na ponovitev podatkov
   
@@ -3342,7 +3342,7 @@ Težave se pojavijo v primeru, ko elementi nimajo enoličnih naslovov in je zato
 
 - Medicina
 
-- pametna mesta, pametne stavb
+- pametna mesta, pametne stavbe
 
 - Široka potrošnja
 
@@ -3350,7 +3350,7 @@ Težave se pojavijo v primeru, ko elementi nimajo enoličnih naslovov in je zato
 
 - Tip 1: spremljanje lokacije osebe ali objekta
 
-- Tip 2: spremnjanje lokacije za indurstrijske pšotrebe, spremljanje v realnem času
+- Tip 2: spremnjanje lokacije za indurstrijske potrebe, spremljanje v realnem času
 
 - Tip 3: zajemanje podatkov v objektih (Tip 3a) in izven objektov (Tip 3b)
 
@@ -3420,7 +3420,7 @@ Značilnosti:
 
 ### Zakaj LPWA?
 
-- Omražja so učinkovitejša od žičnih omrežij ker ne potrebujemo kablov
+- Omrežja so učinkovitejša od žičnih omrežij ker ne potrebujemo kablov
 
 - Učinkovitejša kot lokalna omrežja v domu, ker se prenašajo manjšpe količine podatkov.
 
@@ -3438,11 +3438,11 @@ Značilnosti:
 
 - Primer:
   
-  ![LoRa.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Brezzicna%20Senzorska%20Omrezja\LoRa.jpg)
+  ![LoRa.jpg](./LoRa.jpg)
   
-  ![LoRa2.jpg](C:\Users\Pajer\Documents\GitHub\zapiski-2022-23-letni\Brezzicna%20Senzorska%20Omrezja\LoRa2.jpg)
+  ![LoRa2.jpg](./LoRa2.jpg)
 
-ŠLoRa uporablja izredno širok spekter - uporablja Chirp Spread Spectrum modulation (CSS)
+LoRa uporablja izredno širok spekter - uporablja Chirp Spread Spectrum modulation (CSS)
 
 ### LoRaWAN
 
@@ -3536,7 +3536,7 @@ Naprave se lahko povezujejo
 
 ### Pomanjkljivosti obstoječih mobilnih omrežij
 
-- Relativno dog čas prijave v omrežje
+- Relativno dolg čas prijave v omrežje
 
 - Omrežje zahteva aktivni terminal (keep alive)
 
@@ -3606,7 +3606,7 @@ Uvajanje:
 
 Posebnosti radijskega dela
 
-- deluje s pasovno itino 1.08MHz
+- deluje s pasovno širino 1.08MHz
 
 - Lahko menja kanale
 
@@ -3640,7 +3640,7 @@ Uvajanje:
 
 - Optimizacije delovanja:
   
-  - Manjšpanje hitrosti prenosa
+  - Manjšanje hitrosti prenosa
   
   - Ne podpira mobilnosti
   

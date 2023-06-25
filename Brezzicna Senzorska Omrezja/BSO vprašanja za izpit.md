@@ -426,31 +426,19 @@ Težave so, da mora biti oddajnik in sprejemnik teh signalov precej močen, kar 
 
 ### Opiši CoAP protokol
 
-
-
 ### Opiši algoritem S-MAC
-
-
 
 ### Opiši protokol IEEE 802.15.4
 
-
-
 ### Katere vloge imajo lahko naprave v IEEE 802.15.4
 
-
+### Kakšen je tipičen promet v 802.15.4?
 
 ### Opiši Bluetooth mesh
 
-
-
 ### Katere naloge imajo lahko naprave v Bluetooth Mesh?
 
-
-
 ### Opiši protokol ANT+
-
-
 
 ### Katere so osnovne naloge prenosnega nivoja?
 
@@ -466,6 +454,10 @@ Osnovne naloge so:
 
 ### Zakaj uporabljamo prepletanje?
 
+### Kaj je razlika med zunanjo in notranjo sinhronizacijo?
 
+### Kateri so kazalniki pri topografiji omrežja?
+
+### Katere so težave pri uporabi obstoječih mobilnih omrežij za saenzorske naprave?
 
 ### 
